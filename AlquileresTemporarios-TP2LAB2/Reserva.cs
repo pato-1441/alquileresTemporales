@@ -13,14 +13,22 @@ namespace AlquileresTemporarios_TP2LAB2
         int cantPersonas;
         double costo;
 
+        public double Costo
+        {
+            get { return costo; }
+        }
+
         public Reserva(DateTime fechaInicio, DateTime fechaFin, int cantPerosnas, double costo) 
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
             this.cantPersonas = cantPerosnas;
-            this.costo = costo;
+            
         }
 
+       
+
+       
         
     }
 }

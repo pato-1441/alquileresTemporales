@@ -13,10 +13,11 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public bool AgregarCasa(Casa casa)
         {
+            if ()
             return true;
         }
 
-        public bool AgregarHotel(Hotel hotel)
+        public bool AgregarHotel(HabitacionHotel hotel)
         {
             return true;
         }

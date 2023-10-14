@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
-    internal class Propiedad
+    internal  abstract class Propiedad
     {
         string ubicacion;
         int cantPersonas;
-        double precio;
+       protected double precio;
         int[] caracteristicas;
         bool disponibilidad=true;
+        List<Reserva> reservas;
 
         public Propiedad(string ubicacion, int cantPersonas, double precio, int[] caracteristicas)
         {
@@ -22,6 +23,14 @@ namespace AlquileresTemporarios_TP2LAB2
             this.caracteristicas = caracteristicas;
         }
 
+        public abstract double CalcularPrecio(int cantDias);
+
+        public void AgregarReserva(Reserva reserva)
+        {
+            reservas.Add(reserva);
+            //Agregar al calendario, que todavia no sabemos que hace
+        }
+        
 
     }
 }

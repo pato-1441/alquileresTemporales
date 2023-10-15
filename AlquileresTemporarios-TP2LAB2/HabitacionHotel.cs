@@ -19,7 +19,11 @@ namespace AlquileresTemporarios_TP2LAB2
             this.num = num;
             this.tipo = tipo;
         }
-
+        public override double CalcularPrecio(int cantDias) {
+            double precioFinal=0;
+            precioFinal = cantDias * base.precio;
+            return precioFinal;
+        }
 
     }
 }

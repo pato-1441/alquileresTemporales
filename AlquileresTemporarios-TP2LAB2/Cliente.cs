@@ -10,7 +10,7 @@ namespace AlquileresTemporarios_TP2LAB2
     {
         int dni;
         string nombre;
-
+        public int Dni { get { return dni; } }
         public Cliente (int dni, string nombre)
         {
             this.dni = dni;

@@ -10,7 +10,7 @@ namespace AlquileresTemporarios_TP2LAB2
     {
         string ubicacion;
         int cantPersonas;
-       protected double precio;
+        protected double precio;
         int[] caracteristicas;
         bool disponibilidad=true;
         List<Reserva> reservas;
@@ -25,10 +25,25 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public abstract double CalcularPrecio(int cantDias);
 
-        public void AgregarReserva(Reserva reserva)
+        public bool AgregarReserva(Reserva reserva)
         {
-            reservas.Add(reserva);
+            bool exito = true;
+            if (reservas.Contains(reserva))
+                exito = false;
+            else reservas.Add(reserva);
+            return exito;
             //Agregar al calendario, que todavia no sabemos que hace
+        }
+        public bool QuitarReserva(int nroReserva, int dni) { 
+            bool exito = false;
+            foreach(Reserva reserva in reservas)
+            {
+                if (nroReserva == reserva.NroReserva && dni == reserva.Cliente.Dni) {
+                    reservas.Remove(reserva);
+                    exito = true;
+                }
+            }
+            return exito;
         }
         
 

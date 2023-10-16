@@ -63,11 +63,21 @@
             this.label12 = new System.Windows.Forms.Label();
             this.gbCasa = new System.Windows.Forms.GroupBox();
             this.nudMinimoDias = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSeleccionarImagen = new System.Windows.Forms.Button();
+            this.lImagen = new System.Windows.Forms.Label();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.lDescripcion = new System.Windows.Forms.Label();
+            this.ofdImagen = new System.Windows.Forms.OpenFileDialog();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pbImagenPropiedad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbHotel.SuspendLayout();
             this.gbCasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbTipoPropiedad
@@ -231,7 +241,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(222, 100);
+            this.groupBox1.Size = new System.Drawing.Size(209, 100);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Características";
@@ -239,7 +249,7 @@
             // cbDesayuno
             // 
             this.cbDesayuno.AutoSize = true;
-            this.cbDesayuno.Location = new System.Drawing.Point(140, 27);
+            this.cbDesayuno.Location = new System.Drawing.Point(134, 27);
             this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2);
             this.cbDesayuno.Name = "cbDesayuno";
             this.cbDesayuno.Size = new System.Drawing.Size(74, 17);
@@ -250,7 +260,7 @@
             // cbPileta
             // 
             this.cbPileta.AutoSize = true;
-            this.cbPileta.Location = new System.Drawing.Point(15, 56);
+            this.cbPileta.Location = new System.Drawing.Point(9, 56);
             this.cbPileta.Margin = new System.Windows.Forms.Padding(2);
             this.cbPileta.Name = "cbPileta";
             this.cbPileta.Size = new System.Drawing.Size(52, 17);
@@ -261,7 +271,7 @@
             // cbMascotas
             // 
             this.cbMascotas.AutoSize = true;
-            this.cbMascotas.Location = new System.Drawing.Point(140, 56);
+            this.cbMascotas.Location = new System.Drawing.Point(134, 56);
             this.cbMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.cbMascotas.Name = "cbMascotas";
             this.cbMascotas.Size = new System.Drawing.Size(72, 17);
@@ -272,7 +282,7 @@
             // cbLimpieza
             // 
             this.cbLimpieza.AutoSize = true;
-            this.cbLimpieza.Location = new System.Drawing.Point(68, 56);
+            this.cbLimpieza.Location = new System.Drawing.Point(62, 56);
             this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2);
             this.cbLimpieza.Name = "cbLimpieza";
             this.cbLimpieza.Size = new System.Drawing.Size(67, 17);
@@ -283,7 +293,7 @@
             // cbCochera
             // 
             this.cbCochera.AutoSize = true;
-            this.cbCochera.Location = new System.Drawing.Point(68, 27);
+            this.cbCochera.Location = new System.Drawing.Point(62, 27);
             this.cbCochera.Margin = new System.Windows.Forms.Padding(2);
             this.cbCochera.Name = "cbCochera";
             this.cbCochera.Size = new System.Drawing.Size(66, 17);
@@ -294,7 +304,7 @@
             // cbWifi
             // 
             this.cbWifi.AutoSize = true;
-            this.cbWifi.Location = new System.Drawing.Point(15, 27);
+            this.cbWifi.Location = new System.Drawing.Point(9, 27);
             this.cbWifi.Margin = new System.Windows.Forms.Padding(2);
             this.cbWifi.Name = "cbWifi";
             this.cbWifi.Size = new System.Drawing.Size(50, 17);
@@ -424,7 +434,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 27);
+            this.label12.Location = new System.Drawing.Point(10, 27);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
@@ -438,14 +448,14 @@
             this.gbCasa.Enabled = false;
             this.gbCasa.Location = new System.Drawing.Point(37, 382);
             this.gbCasa.Name = "gbCasa";
-            this.gbCasa.Size = new System.Drawing.Size(200, 100);
+            this.gbCasa.Size = new System.Drawing.Size(190, 100);
             this.gbCasa.TabIndex = 28;
             this.gbCasa.TabStop = false;
             this.gbCasa.Text = "Casa";
             // 
             // nudMinimoDias
             // 
-            this.nudMinimoDias.Location = new System.Drawing.Point(17, 46);
+            this.nudMinimoDias.Location = new System.Drawing.Point(13, 46);
             this.nudMinimoDias.Margin = new System.Windows.Forms.Padding(2);
             this.nudMinimoDias.Maximum = new decimal(new int[] {
             30,
@@ -466,11 +476,86 @@
             0,
             0});
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.btnSeleccionarImagen);
+            this.groupBox2.Controls.Add(this.lImagen);
+            this.groupBox2.Controls.Add(this.tbDescripcion);
+            this.groupBox2.Controls.Add(this.lDescripcion);
+            this.groupBox2.Location = new System.Drawing.Point(481, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 417);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Información";
+            // 
+            // btnSeleccionarImagen
+            // 
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(23, 211);
+            this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(136, 44);
+            this.btnSeleccionarImagen.TabIndex = 30;
+            this.btnSeleccionarImagen.Text = "Seleccionar Imagen";
+            this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
+            this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
+            // 
+            // lImagen
+            // 
+            this.lImagen.AutoSize = true;
+            this.lImagen.Location = new System.Drawing.Point(20, 187);
+            this.lImagen.Name = "lImagen";
+            this.lImagen.Size = new System.Drawing.Size(42, 13);
+            this.lImagen.TabIndex = 2;
+            this.lImagen.Text = "Imagen";
+            // 
+            // tbDescripcion
+            // 
+            this.tbDescripcion.Location = new System.Drawing.Point(23, 43);
+            this.tbDescripcion.Multiline = true;
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.Size = new System.Drawing.Size(136, 130);
+            this.tbDescripcion.TabIndex = 1;
+            // 
+            // lDescripcion
+            // 
+            this.lDescripcion.AutoSize = true;
+            this.lDescripcion.Location = new System.Drawing.Point(20, 26);
+            this.lDescripcion.Name = "lDescripcion";
+            this.lDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lDescripcion.TabIndex = 0;
+            this.lDescripcion.Text = "Descripción";
+            // 
+            // ofdImagen
+            // 
+            this.ofdImagen.FileName = "openFileDialog1";
+            this.ofdImagen.Filter = "Imagenes|*.png*.jpg*.jpeg";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(21, 274);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Imagen seleccionada";
+            // 
+            // pbImagenPropiedad
+            // 
+            this.pbImagenPropiedad.Location = new System.Drawing.Point(23, 293);
+            this.pbImagenPropiedad.Name = "pbImagenPropiedad";
+            this.pbImagenPropiedad.Size = new System.Drawing.Size(136, 91);
+            this.pbImagenPropiedad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad.TabIndex = 30;
+            this.pbImagenPropiedad.TabStop = false;
+            // 
             // AgregarPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 581);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbCasa);
             this.Controls.Add(this.gbHotel);
             this.Controls.Add(this.btnCancelar);
@@ -502,6 +587,9 @@
             this.gbCasa.ResumeLayout(false);
             this.gbCasa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,5 +630,13 @@
         public System.Windows.Forms.CheckBox cbCochera;
         public System.Windows.Forms.CheckBox cbWifi;
         public System.Windows.Forms.NumericUpDown nudMinimoDias;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lDescripcion;
+        private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.Button btnSeleccionarImagen;
+        private System.Windows.Forms.Label lImagen;
+        private System.Windows.Forms.OpenFileDialog ofdImagen;
+        private System.Windows.Forms.PictureBox pbImagenPropiedad;
+        private System.Windows.Forms.Label label13;
     }
 }

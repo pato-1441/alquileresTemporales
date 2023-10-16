@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace AlquileresTemporarios_TP2LAB2
         protected double precio;
         bool[] caracteristicas;
         bool disponibilidad=true;
+        Image imagenPropiedad;
         List<Reserva> reservas;
 
         public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas)
@@ -22,6 +24,8 @@ namespace AlquileresTemporarios_TP2LAB2
             this.precio = precio;
             this.caracteristicas = caracteristicas;
         }
+
+        public Image ImagenPropiedad { get { return imagenPropiedad; } set { this.imagenPropiedad = value; } }
 
         public abstract double CalcularPrecio(int cantDias);
 

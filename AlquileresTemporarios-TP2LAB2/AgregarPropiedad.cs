@@ -32,5 +32,14 @@ namespace AlquileresTemporarios_TP2LAB2
                 gbCasa.Enabled = true;
             }
         }
+
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdImagen = new OpenFileDialog();
+            if (ofdImagen.ShowDialog() == DialogResult.OK)
+            {
+                pbImagenPropiedad.Image = Image.FromFile(ofdImagen.FileName);
+            }
+        }
     }
 }

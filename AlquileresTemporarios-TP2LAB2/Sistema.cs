@@ -29,12 +29,32 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public bool CancelarReserva(int numReserva, int dni)
         {
-            //ConsultarReserva
-            return true;
+            bool exito = false;
+            Propiedad propiedad;
+            if (ConsultarReserva(numReserva, out propiedad) != null)
+            {
+                if (!propiedad.QuitarReserva(numReserva, dni)) throw new Exception("No existe la reserva.");
+                else exito = true;
+            }
+            else { throw new Exception("No existe la reserva."); }
+            return exito;
         }
-        public bool ConsultarReserva(int numReserva)
+        public Reserva ConsultarReserva(int numReserva, out Propiedad propiedad)
         {
-            return false;
+            Reserva unaReserva = null;
+            propiedad = null;
+            bool encontrada = false;
+            int cont = 0;
+            while (!encontrada || cont < listaPropiedades.Count)
+            {
+                if (listaPropiedades[cont].DevolverReserva(numReserva) != null)
+                {
+                    encontrada = true;
+                    propiedad = listaPropiedades[cont];
+                }
+                cont++;
+            }
+            return unaReserva;
         }
         public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fecha)
         {

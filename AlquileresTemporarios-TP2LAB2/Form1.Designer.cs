@@ -61,7 +61,7 @@
             // btnAgregarPropiedad
             // 
             this.btnAgregarPropiedad.Location = new System.Drawing.Point(327, 26);
-            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPropiedad.Name = "btnAgregarPropiedad";
             this.btnAgregarPropiedad.Size = new System.Drawing.Size(178, 67);
             this.btnAgregarPropiedad.TabIndex = 2;
@@ -72,7 +72,7 @@
             // btnConsultarReserva
             // 
             this.btnConsultarReserva.Location = new System.Drawing.Point(518, 26);
-            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarReserva.Name = "btnConsultarReserva";
             this.btnConsultarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnConsultarReserva.TabIndex = 3;
@@ -82,18 +82,19 @@
             // btnEliminarReserva
             // 
             this.btnEliminarReserva.Location = new System.Drawing.Point(711, 26);
-            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarReserva.Name = "btnEliminarReserva";
             this.btnEliminarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnEliminarReserva.TabIndex = 4;
             this.btnEliminarReserva.Text = "Eliminar Reserva";
             this.btnEliminarReserva.UseVisualStyleBackColor = true;
+            this.btnEliminarReserva.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(327, 116);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -113,7 +114,7 @@
             // tbUbicacion
             // 
             this.tbUbicacion.Location = new System.Drawing.Point(29, 178);
-            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.tbUbicacion.Name = "tbUbicacion";
             this.tbUbicacion.Size = new System.Drawing.Size(153, 20);
             this.tbUbicacion.TabIndex = 9;
@@ -131,7 +132,7 @@
             // nudCantPersonas
             // 
             this.nudCantPersonas.Location = new System.Drawing.Point(187, 179);
-            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
             this.nudCantPersonas.Maximum = new decimal(new int[] {
             20,
             0,
@@ -155,7 +156,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(20, 27);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 17);
             this.checkBox1.TabIndex = 13;
@@ -171,9 +172,9 @@
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(29, 362);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(265, 90);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -183,7 +184,7 @@
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(169, 27);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(74, 17);
             this.checkBox6.TabIndex = 18;
@@ -194,7 +195,7 @@
             // 
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(20, 56);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(52, 17);
             this.checkBox5.TabIndex = 17;
@@ -205,7 +206,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(169, 56);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(72, 17);
             this.checkBox4.TabIndex = 16;
@@ -216,7 +217,7 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(87, 56);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(67, 17);
             this.checkBox3.TabIndex = 15;
@@ -227,7 +228,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(87, 27);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(66, 17);
             this.checkBox2.TabIndex = 14;
@@ -237,7 +238,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(29, 475);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(265, 44);
             this.btnBuscar.TabIndex = 16;
@@ -248,7 +249,7 @@
             // fechaDesde
             // 
             this.fechaDesde.Location = new System.Drawing.Point(20, 44);
-            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDesde.MinDate = new System.DateTime(2023, 10, 16, 0, 0, 0, 0);
             this.fechaDesde.Name = "fechaDesde";
             this.fechaDesde.Size = new System.Drawing.Size(216, 20);
@@ -278,7 +279,7 @@
             // fechaHasta
             // 
             this.fechaHasta.Location = new System.Drawing.Point(20, 95);
-            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechaHasta.Name = "fechaHasta";
             this.fechaHasta.Size = new System.Drawing.Size(216, 20);
             this.fechaHasta.TabIndex = 19;
@@ -324,8 +325,9 @@
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler Temporal";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

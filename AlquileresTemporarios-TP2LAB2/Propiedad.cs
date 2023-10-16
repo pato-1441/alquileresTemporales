@@ -45,7 +45,23 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return exito;
         }
-        
+        public Reserva DevolverReserva(int nroReserva)
+        {
+            Reserva reserva = null;
+            bool encontrado = false;
+            int cont = 0;
+            while (!encontrado && cont < reservas.Count)
+            {
+                if (reservas[cont].NroReserva == nroReserva)
+                {
+                    reserva = reservas[cont];
+                    encontrado = true;
+                }
+                cont++;
+            }
+            return reserva;
+        }
+
 
     }
 }

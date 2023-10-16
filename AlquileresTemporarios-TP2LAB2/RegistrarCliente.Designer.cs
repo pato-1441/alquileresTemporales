@@ -30,7 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +38,9 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(17, 129);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 34);
             this.button1.TabIndex = 0;
@@ -48,28 +49,29 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(97, 129);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 34);
             this.button2.TabIndex = 1;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre";
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Location = new System.Drawing.Point(14, 21);
+            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(44, 13);
+            this.lbNombre.TabIndex = 2;
+            this.lbNombre.Text = "Nombre";
             // 
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(17, 40);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(156, 20);
             this.tbNombre.TabIndex = 3;
@@ -77,7 +79,7 @@
             // tbDNI
             // 
             this.tbDNI.Location = new System.Drawing.Point(17, 93);
-            this.tbDNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDNI.Margin = new System.Windows.Forms.Padding(2);
             this.tbDNI.Name = "tbDNI";
             this.tbDNI.Size = new System.Drawing.Size(156, 20);
             this.tbDNI.TabIndex = 5;
@@ -100,11 +102,12 @@
             this.Controls.Add(this.tbDNI);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNombre);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistrarCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,12 +115,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbDNI;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbNombre;
+        public System.Windows.Forms.TextBox tbNombre;
+        public System.Windows.Forms.TextBox tbDNI;
+        public System.Windows.Forms.Button button1;
     }
 }

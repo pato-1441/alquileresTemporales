@@ -245,9 +245,9 @@
             this.checkBox4.Location = new System.Drawing.Point(148, 56);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(81, 17);
+            this.checkBox4.Size = new System.Drawing.Size(72, 17);
             this.checkBox4.TabIndex = 16;
-            this.checkBox4.Text = "Pet-Friendly";
+            this.checkBox4.Text = "Mascotas";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3

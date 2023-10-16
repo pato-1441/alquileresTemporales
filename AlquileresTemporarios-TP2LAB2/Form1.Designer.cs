@@ -50,10 +50,12 @@
             this.lbfechaHasta = new System.Windows.Forms.Label();
             this.fechaHasta = new System.Windows.Forms.DateTimePicker();
             this.gbFecha = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbFecha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarPropiedad
@@ -294,11 +296,22 @@
             this.gbFecha.TabStop = false;
             this.gbFecha.Text = "Fecha";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(265, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 541);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbFecha);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
@@ -321,6 +334,7 @@
             this.groupBox1.PerformLayout();
             this.gbFecha.ResumeLayout(false);
             this.gbFecha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +362,7 @@
         private System.Windows.Forms.Label lbfechaHasta;
         private System.Windows.Forms.DateTimePicker fechaHasta;
         private System.Windows.Forms.GroupBox gbFecha;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -43,7 +43,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public List<Propiedad> ConsultarPropiedades(string ubicacion)
         {
-            return List<Propiedad>;
+            return List<Propiedad>; 
         }
 
         public List<Propiedad> ConsultarPropiedades(string ubicacion, int cantPersonas)

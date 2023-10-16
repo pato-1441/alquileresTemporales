@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
-    public partial class Form1 : Form
+    public partial class AgregarPropiedad : Form
     {
-        public Form1()
+        public AgregarPropiedad()
         {
             InitializeComponent();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

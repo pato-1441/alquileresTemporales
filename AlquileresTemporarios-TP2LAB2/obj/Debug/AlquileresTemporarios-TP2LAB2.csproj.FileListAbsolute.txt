@@ -1,0 +1,7 @@
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.AssemblyReference.cache
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.SuggestedBindingRedirects.cache
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Form1.resources
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Properties.Resources.resources
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.RegistrarCliente.resources
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.GenerateResource.cache
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CoreCompileInputs.cache

@@ -73,6 +73,9 @@
     </Compile>
     <Compile Include="Reserva.cs" />
     <Compile Include="Sistema.cs" />
+    <EmbeddedResource Include="AgregarPropiedad.resx">
+      <DependentUpon>AgregarPropiedad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

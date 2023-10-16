@@ -41,12 +41,12 @@ namespace AlquileresTemporarios_TP2LAB2
             return true;
         }
 
-        public List<Propiedad> ConsultarPropiedades(string ubicacion)
+       /* public List<Propiedad> ConsultarPropiedades(string ubicacion)
         {
             return List<Propiedad>; 
-        }
+        }*/
 
-        public List<Propiedad> ConsultarPropiedades(string ubicacion, int cantPersonas)
+        /*public List<Propiedad> ConsultarPropiedades(string ubicacion, int cantPersonas)
         {
            
         }
@@ -55,7 +55,6 @@ namespace AlquileresTemporarios_TP2LAB2
         {
 
         }
-
-
+        */
     }
 }

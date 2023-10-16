@@ -17,9 +17,30 @@ namespace AlquileresTemporarios_TP2LAB2
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void fechaDesde_ValueChanged(object sender, EventArgs e)
+        {
+            fechaHasta.MinDate = fechaDesde.Value;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarPropiedad_Click(object sender, EventArgs e)
+        {
+            AgregarPropiedad agregarPropiedad = new AgregarPropiedad();
+            if (agregarPropiedad.ShowDialog() == DialogResult.OK)
+            {
+                //Propiedad nuevaPropiedad = new Casa();
+            }
         }
     }
 }

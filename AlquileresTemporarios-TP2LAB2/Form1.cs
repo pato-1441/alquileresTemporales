@@ -36,9 +36,10 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnAgregarPropiedad_Click(object sender, EventArgs e)
         {
-            AgregarPropiedad agregarPropiedad = new AgregarPropiedad();
-            if (agregarPropiedad.ShowDialog() == DialogResult.OK)
+            AgregarPropiedad modalAgregarPropiedad = new AgregarPropiedad();
+            if (modalAgregarPropiedad.ShowDialog() == DialogResult.OK)
             {
+                MessageBox.Show("aceptaste");
                 //Propiedad nuevaPropiedad = new Casa();
             }
         }

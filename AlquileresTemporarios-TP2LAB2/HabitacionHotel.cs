@@ -9,15 +9,16 @@ namespace AlquileresTemporarios_TP2LAB2
     internal class HabitacionHotel:Propiedad
     {
         string nombreHotel;
-        int estrellas;
+        int cantEstrellas;
         int tipo;
-        int num;
+        int numHabitacion;
 
-        public HabitacionHotel ( string ubicacion, int cantPersonas, double precio, int[] caracteristicas, string nombreHotel, int num, int tipo) : base(ubicacion, cantPersonas,precio, caracteristicas)
+        public HabitacionHotel ( string ubicacion, int cantPersonas, double precio, int[] caracteristicas, string nombreHotel, int numHabitacion, int tipo, int cantEstrellas) : base(ubicacion, cantPersonas,precio, caracteristicas)
         {
             this.nombreHotel = nombreHotel;
-            this.num = num;
+            this.numHabitacion = numHabitacion;
             this.tipo = tipo;
+            this.cantEstrellas = cantEstrellas;
         }
         public override double CalcularPrecio(int cantDias) {
             double precioFinal=0;

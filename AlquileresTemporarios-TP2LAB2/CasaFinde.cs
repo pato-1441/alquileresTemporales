@@ -9,7 +9,7 @@ namespace AlquileresTemporarios_TP2LAB2
     internal class CasaFinde: Casa
     {
 
-        public CasaFinde(string ubicacion, int cantPersonas, double precio, int[] caracteristicas, int minimoDias) : base(ubicacion, cantPersonas, precio, caracteristicas, minimoDias) { 
+        public CasaFinde(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, int minimoDias) : base(ubicacion, cantPersonas, precio, caracteristicas, minimoDias) { 
         
         }
 

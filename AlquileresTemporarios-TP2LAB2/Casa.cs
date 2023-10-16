@@ -9,7 +9,7 @@ namespace AlquileresTemporarios_TP2LAB2
     internal class Casa :Propiedad
     {
         int minimoDias;      
-        public Casa(string ubicacion, int cantPersonas, double precio, int[] caracteristicas, int minimoDias): base(ubicacion, cantPersonas,precio, caracteristicas)
+        public Casa(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, int minimoDias): base(ubicacion, cantPersonas,precio, caracteristicas)
         {
             this.minimoDias = minimoDias;
         }

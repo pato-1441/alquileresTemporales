@@ -19,14 +19,14 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void cbTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTipoPropiedad.SelectedIndex == 0)
+            if (cmbTipoPropiedad.SelectedIndex == 0)
             {
                 gbCasa.Enabled = false;
                 gbHotel.Enabled = true;
                 cbDesayuno.Enabled = false;
                 cbDesayuno.Checked = true;
 
-            } else if (cbTipoPropiedad.SelectedIndex == 1 || cbTipoPropiedad.SelectedIndex == 2)
+            } else if (cmbTipoPropiedad.SelectedIndex == 1 || cmbTipoPropiedad.SelectedIndex == 2)
             {
                 gbHotel.Enabled = false;
                 gbCasa.Enabled = true;

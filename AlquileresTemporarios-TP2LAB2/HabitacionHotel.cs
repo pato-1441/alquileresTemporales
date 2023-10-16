@@ -13,7 +13,7 @@ namespace AlquileresTemporarios_TP2LAB2
         int tipo;
         int numHabitacion;
 
-        public HabitacionHotel ( string ubicacion, int cantPersonas, double precio, int[] caracteristicas, string nombreHotel, int numHabitacion, int tipo, int cantEstrellas) : base(ubicacion, cantPersonas,precio, caracteristicas)
+        public HabitacionHotel (string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string nombreHotel, int numHabitacion, int tipo, int cantEstrellas) : base(ubicacion, cantPersonas,precio, caracteristicas)
         {
             this.nombreHotel = nombreHotel;
             this.numHabitacion = numHabitacion;

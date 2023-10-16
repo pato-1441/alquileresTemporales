@@ -8,14 +8,14 @@ namespace AlquileresTemporarios_TP2LAB2
 {
     internal  abstract class Propiedad
     {
-        string ubicacion;
+        string[] ubicacion;
         int cantPersonas;
         protected double precio;
-        int[] caracteristicas;
+        bool[] caracteristicas;
         bool disponibilidad=true;
         List<Reserva> reservas;
 
-        public Propiedad(string ubicacion, int cantPersonas, double precio, int[] caracteristicas)
+        public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas)
         {
             this.ubicacion = ubicacion;
             this.cantPersonas = cantPersonas;

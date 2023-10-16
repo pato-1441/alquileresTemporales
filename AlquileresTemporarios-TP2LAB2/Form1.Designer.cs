@@ -32,7 +32,7 @@
             this.btnAgregarPropiedad = new System.Windows.Forms.Button();
             this.btnConsultarReserva = new System.Windows.Forms.Button();
             this.btnEliminarReserva = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPropiedades = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUbicacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.fechaHasta = new System.Windows.Forms.DateTimePicker();
             this.gbFecha = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbFecha.SuspendLayout();
@@ -90,16 +90,16 @@
             this.btnEliminarReserva.UseVisualStyleBackColor = true;
             this.btnEliminarReserva.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
-            // dataGridView1
+            // dgvPropiedades
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(327, 116);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(706, 403);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvPropiedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPropiedades.Location = new System.Drawing.Point(327, 116);
+            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPropiedades.Name = "dgvPropiedades";
+            this.dgvPropiedades.RowHeadersWidth = 51;
+            this.dgvPropiedades.RowTemplate.Height = 24;
+            this.dgvPropiedades.Size = new System.Drawing.Size(706, 403);
+            this.dgvPropiedades.TabIndex = 5;
             // 
             // label1
             // 
@@ -320,7 +320,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbUbicacion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPropiedades);
             this.Controls.Add(this.btnEliminarReserva);
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
@@ -330,7 +330,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler Temporal";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -346,7 +346,7 @@
         private System.Windows.Forms.Button btnAgregarPropiedad;
         private System.Windows.Forms.Button btnConsultarReserva;
         private System.Windows.Forms.Button btnEliminarReserva;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPropiedades;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbUbicacion;
         private System.Windows.Forms.Label label3;

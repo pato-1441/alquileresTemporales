@@ -39,8 +39,37 @@ namespace AlquileresTemporarios_TP2LAB2
             AgregarPropiedad modalAgregarPropiedad = new AgregarPropiedad();
             if (modalAgregarPropiedad.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("aceptaste");
-                //Propiedad nuevaPropiedad = new Casa();
+                int tipoPropiedad = modalAgregarPropiedad.cmbTipoPropiedad.SelectedIndex;
+                string[] ubicacion = { modalAgregarPropiedad.tbDireccion.Text, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.cmbProvincias.SelectedIndex.ToString() };
+                bool[] caracteristicas = {modalAgregarPropiedad.cbCochera.Checked, modalAgregarPropiedad.cbPileta.Checked,
+                                                  modalAgregarPropiedad.cbWifi.Checked, modalAgregarPropiedad.cbLimpieza.Checked,
+                                                  modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
+                Propiedad propiedad;
+                switch (tipoPropiedad)
+                {
+                    case 0:
+                        propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                        Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbNombreHotel.Text,
+                                        Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.Text),
+                                        Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex) + 2));
+                        sistema.AgregarHotel((HabitacionHotel)propiedad);
+                        dgvPropiedades.Rows.Add(propiedad);
+                        break;
+                    case 1:
+                        propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                        sistema.AgregarCasa((Casa)propiedad);
+                        dgvPropiedades.Rows.Add(propiedad);
+                        break;
+                    case 2:
+                        propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                        sistema.AgregarCasa((CasaFinde)propiedad);
+                        dgvPropiedades.Rows.Add(propiedad);
+                        break;
+                    
+                }
+                
             }
         }
 

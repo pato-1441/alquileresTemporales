@@ -28,59 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbTipoPropiedad = new System.Windows.Forms.ComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarPropiedad));
+            this.cmbTipoPropiedad = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDireccion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cbProvincias = new System.Windows.Forms.ComboBox();
+            this.tbLocalidad = new System.Windows.Forms.TextBox();
+            this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.nudCantPersonas = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.tbPrecioXNoche = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbDesayuno = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbPileta = new System.Windows.Forms.CheckBox();
+            this.cbMascotas = new System.Windows.Forms.CheckBox();
+            this.cbLimpieza = new System.Windows.Forms.CheckBox();
+            this.cbCochera = new System.Windows.Forms.CheckBox();
+            this.cbWifi = new System.Windows.Forms.CheckBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tbNumHabitacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbTipoHabitacion = new System.Windows.Forms.ComboBox();
+            this.cmbTipoHabitacion = new System.Windows.Forms.ComboBox();
             this.tbNombreHotel = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.gbHotel = new System.Windows.Forms.GroupBox();
-            this.cbCantEstrellas = new System.Windows.Forms.ComboBox();
+            this.cmbCantEstrellas = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cbMinimoDias = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.gbCasa = new System.Windows.Forms.GroupBox();
+            this.nudMinimoDias = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbHotel.SuspendLayout();
             this.gbCasa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbTipoPropiedad
+            // cmbTipoPropiedad
             // 
-            this.cbTipoPropiedad.FormattingEnabled = true;
-            this.cbTipoPropiedad.Items.AddRange(new object[] {
+            this.cmbTipoPropiedad.FormattingEnabled = true;
+            this.cmbTipoPropiedad.Items.AddRange(new object[] {
             "Habitacion de hotel",
             "Casa",
             "Casa fin de semana"});
-            this.cbTipoPropiedad.Location = new System.Drawing.Point(37, 56);
-            this.cbTipoPropiedad.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTipoPropiedad.Name = "cbTipoPropiedad";
-            this.cbTipoPropiedad.Size = new System.Drawing.Size(161, 21);
-            this.cbTipoPropiedad.TabIndex = 0;
-            this.cbTipoPropiedad.SelectedIndexChanged += new System.EventHandler(this.cbTipoPropiedad_SelectedIndexChanged);
+            this.cmbTipoPropiedad.Location = new System.Drawing.Point(37, 56);
+            this.cmbTipoPropiedad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipoPropiedad.Name = "cmbTipoPropiedad";
+            this.cmbTipoPropiedad.Size = new System.Drawing.Size(161, 21);
+            this.cmbTipoPropiedad.TabIndex = 0;
+            this.cmbTipoPropiedad.SelectedIndexChanged += new System.EventHandler(this.cbTipoPropiedad_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -121,13 +123,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Localidad";
             // 
-            // textBox1
+            // tbDireccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 215);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 20);
-            this.textBox1.TabIndex = 3;
+            this.tbDireccion.Location = new System.Drawing.Point(37, 215);
+            this.tbDireccion.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDireccion.Name = "tbDireccion";
+            this.tbDireccion.Size = new System.Drawing.Size(105, 20);
+            this.tbDireccion.TabIndex = 3;
             // 
             // label5
             // 
@@ -139,18 +141,18 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Direccion";
             // 
-            // textBox2
+            // tbLocalidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(37, 161);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 20);
-            this.textBox2.TabIndex = 2;
+            this.tbLocalidad.Location = new System.Drawing.Point(37, 161);
+            this.tbLocalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.tbLocalidad.Name = "tbLocalidad";
+            this.tbLocalidad.Size = new System.Drawing.Size(105, 20);
+            this.tbLocalidad.TabIndex = 2;
             // 
-            // cbProvincias
+            // cmbProvincias
             // 
-            this.cbProvincias.FormattingEnabled = true;
-            this.cbProvincias.Items.AddRange(new object[] {
+            this.cmbProvincias.FormattingEnabled = true;
+            this.cmbProvincias.Items.AddRange(new object[] {
             "Buenos Aires",
             "CABA",
             "Catamarca",
@@ -175,11 +177,11 @@
             "Santiago del Estero",
             "Tierra Del Fuego",
             "Tucumán"});
-            this.cbProvincias.Location = new System.Drawing.Point(37, 104);
-            this.cbProvincias.Margin = new System.Windows.Forms.Padding(2);
-            this.cbProvincias.Name = "cbProvincias";
-            this.cbProvincias.Size = new System.Drawing.Size(161, 21);
-            this.cbProvincias.TabIndex = 1;
+            this.cmbProvincias.Location = new System.Drawing.Point(37, 104);
+            this.cmbProvincias.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProvincias.Name = "cmbProvincias";
+            this.cmbProvincias.Size = new System.Drawing.Size(161, 21);
+            this.cmbProvincias.TabIndex = 1;
             // 
             // label6
             // 
@@ -220,11 +222,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbDesayuno);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.cbPileta);
+            this.groupBox1.Controls.Add(this.cbMascotas);
+            this.groupBox1.Controls.Add(this.cbLimpieza);
+            this.groupBox1.Controls.Add(this.cbCochera);
+            this.groupBox1.Controls.Add(this.cbWifi);
             this.groupBox1.Location = new System.Drawing.Point(250, 382);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -237,7 +239,7 @@
             // cbDesayuno
             // 
             this.cbDesayuno.AutoSize = true;
-            this.cbDesayuno.Location = new System.Drawing.Point(144, 27);
+            this.cbDesayuno.Location = new System.Drawing.Point(140, 27);
             this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2);
             this.cbDesayuno.Name = "cbDesayuno";
             this.cbDesayuno.Size = new System.Drawing.Size(74, 17);
@@ -245,80 +247,80 @@
             this.cbDesayuno.Text = "Desayuno";
             this.cbDesayuno.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cbPileta
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(19, 56);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(52, 17);
-            this.checkBox5.TabIndex = 12;
-            this.checkBox5.Text = "Pileta";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbPileta.AutoSize = true;
+            this.cbPileta.Location = new System.Drawing.Point(15, 56);
+            this.cbPileta.Margin = new System.Windows.Forms.Padding(2);
+            this.cbPileta.Name = "cbPileta";
+            this.cbPileta.Size = new System.Drawing.Size(52, 17);
+            this.cbPileta.TabIndex = 12;
+            this.cbPileta.Text = "Pileta";
+            this.cbPileta.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cbMascotas
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(144, 56);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(72, 17);
-            this.checkBox4.TabIndex = 14;
-            this.checkBox4.Text = "Mascotas";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbMascotas.AutoSize = true;
+            this.cbMascotas.Location = new System.Drawing.Point(140, 56);
+            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2);
+            this.cbMascotas.Name = "cbMascotas";
+            this.cbMascotas.Size = new System.Drawing.Size(72, 17);
+            this.cbMascotas.TabIndex = 14;
+            this.cbMascotas.Text = "Mascotas";
+            this.cbMascotas.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbLimpieza
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(72, 56);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(67, 17);
-            this.checkBox3.TabIndex = 13;
-            this.checkBox3.Text = "Limpieza";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbLimpieza.AutoSize = true;
+            this.cbLimpieza.Location = new System.Drawing.Point(68, 56);
+            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2);
+            this.cbLimpieza.Name = "cbLimpieza";
+            this.cbLimpieza.Size = new System.Drawing.Size(67, 17);
+            this.cbLimpieza.TabIndex = 13;
+            this.cbLimpieza.Text = "Limpieza";
+            this.cbLimpieza.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbCochera
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(72, 27);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(66, 17);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "Cochera";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbCochera.AutoSize = true;
+            this.cbCochera.Location = new System.Drawing.Point(68, 27);
+            this.cbCochera.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCochera.Name = "cbCochera";
+            this.cbCochera.Size = new System.Drawing.Size(66, 17);
+            this.cbCochera.TabIndex = 10;
+            this.cbCochera.Text = "Cochera";
+            this.cbCochera.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbWifi
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(19, 27);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Wi-Fi";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbWifi.AutoSize = true;
+            this.cbWifi.Location = new System.Drawing.Point(15, 27);
+            this.cbWifi.Margin = new System.Windows.Forms.Padding(2);
+            this.cbWifi.Name = "cbWifi";
+            this.cbWifi.Size = new System.Drawing.Size(50, 17);
+            this.cbWifi.TabIndex = 9;
+            this.cbWifi.Text = "Wi-Fi";
+            this.cbWifi.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(37, 507);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 45);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAceptar.Location = new System.Drawing.Point(346, 507);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(314, 45);
+            this.btnAceptar.TabIndex = 15;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(250, 507);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(222, 45);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(37, 507);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(303, 45);
+            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // tbNumHabitacion
             // 
@@ -348,18 +350,18 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Tipo de habitación";
             // 
-            // cbTipoHabitacion
+            // cmbTipoHabitacion
             // 
-            this.cbTipoHabitacion.FormattingEnabled = true;
-            this.cbTipoHabitacion.Items.AddRange(new object[] {
+            this.cmbTipoHabitacion.FormattingEnabled = true;
+            this.cmbTipoHabitacion.Items.AddRange(new object[] {
             "Simple",
             "Doble",
             "Triple"});
-            this.cbTipoHabitacion.Location = new System.Drawing.Point(19, 151);
-            this.cbTipoHabitacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTipoHabitacion.Name = "cbTipoHabitacion";
-            this.cbTipoHabitacion.Size = new System.Drawing.Size(161, 21);
-            this.cbTipoHabitacion.TabIndex = 8;
+            this.cmbTipoHabitacion.Location = new System.Drawing.Point(19, 151);
+            this.cmbTipoHabitacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipoHabitacion.Name = "cmbTipoHabitacion";
+            this.cmbTipoHabitacion.Size = new System.Drawing.Size(161, 21);
+            this.cmbTipoHabitacion.TabIndex = 8;
             // 
             // tbNombreHotel
             // 
@@ -381,13 +383,13 @@
             // 
             // gbHotel
             // 
-            this.gbHotel.Controls.Add(this.cbCantEstrellas);
+            this.gbHotel.Controls.Add(this.cmbCantEstrellas);
             this.gbHotel.Controls.Add(this.label11);
             this.gbHotel.Controls.Add(this.label10);
             this.gbHotel.Controls.Add(this.tbNombreHotel);
             this.gbHotel.Controls.Add(this.label8);
             this.gbHotel.Controls.Add(this.tbNumHabitacion);
-            this.gbHotel.Controls.Add(this.cbTipoHabitacion);
+            this.gbHotel.Controls.Add(this.cmbTipoHabitacion);
             this.gbHotel.Controls.Add(this.label9);
             this.gbHotel.Enabled = false;
             this.gbHotel.Location = new System.Drawing.Point(250, 38);
@@ -397,17 +399,17 @@
             this.gbHotel.TabStop = false;
             this.gbHotel.Text = "Hotel";
             // 
-            // cbCantEstrellas
+            // cmbCantEstrellas
             // 
-            this.cbCantEstrellas.FormattingEnabled = true;
-            this.cbCantEstrellas.Items.AddRange(new object[] {
+            this.cmbCantEstrellas.FormattingEnabled = true;
+            this.cmbCantEstrellas.Items.AddRange(new object[] {
             "★ ★",
             "★ ★ ★"});
-            this.cbCantEstrellas.Location = new System.Drawing.Point(19, 206);
-            this.cbCantEstrellas.Margin = new System.Windows.Forms.Padding(2);
-            this.cbCantEstrellas.Name = "cbCantEstrellas";
-            this.cbCantEstrellas.Size = new System.Drawing.Size(161, 21);
-            this.cbCantEstrellas.TabIndex = 24;
+            this.cmbCantEstrellas.Location = new System.Drawing.Point(19, 206);
+            this.cmbCantEstrellas.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCantEstrellas.Name = "cmbCantEstrellas";
+            this.cmbCantEstrellas.Size = new System.Drawing.Size(161, 21);
+            this.cmbCantEstrellas.TabIndex = 24;
             // 
             // label11
             // 
@@ -418,19 +420,6 @@
             this.label11.Size = new System.Drawing.Size(105, 13);
             this.label11.TabIndex = 25;
             this.label11.Text = "Cantidad de estrellas";
-            // 
-            // cbMinimoDias
-            // 
-            this.cbMinimoDias.FormattingEnabled = true;
-            this.cbMinimoDias.Items.AddRange(new object[] {
-            "Simple",
-            "Doble",
-            "Triple"});
-            this.cbMinimoDias.Location = new System.Drawing.Point(16, 46);
-            this.cbMinimoDias.Margin = new System.Windows.Forms.Padding(2);
-            this.cbMinimoDias.Name = "cbMinimoDias";
-            this.cbMinimoDias.Size = new System.Drawing.Size(161, 21);
-            this.cbMinimoDias.TabIndex = 26;
             // 
             // label12
             // 
@@ -444,8 +433,8 @@
             // 
             // gbCasa
             // 
+            this.gbCasa.Controls.Add(this.nudMinimoDias);
             this.gbCasa.Controls.Add(this.label12);
-            this.gbCasa.Controls.Add(this.cbMinimoDias);
             this.gbCasa.Enabled = false;
             this.gbCasa.Location = new System.Drawing.Point(37, 382);
             this.gbCasa.Name = "gbCasa";
@@ -454,33 +443,57 @@
             this.gbCasa.TabStop = false;
             this.gbCasa.Text = "Casa";
             // 
+            // nudMinimoDias
+            // 
+            this.nudMinimoDias.Location = new System.Drawing.Point(17, 46);
+            this.nudMinimoDias.Margin = new System.Windows.Forms.Padding(2);
+            this.nudMinimoDias.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudMinimoDias.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinimoDias.Name = "nudMinimoDias";
+            this.nudMinimoDias.Size = new System.Drawing.Size(163, 20);
+            this.nudMinimoDias.TabIndex = 29;
+            this.nudMinimoDias.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AgregarPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 581);
+            this.ClientSize = new System.Drawing.Size(696, 581);
             this.Controls.Add(this.gbCasa);
             this.Controls.Add(this.gbHotel);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbPrecioXNoche);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nudCantPersonas);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbProvincias);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbProvincias);
+            this.Controls.Add(this.tbLocalidad);
+            this.Controls.Add(this.tbDireccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbTipoPropiedad);
+            this.Controls.Add(this.cmbTipoPropiedad);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AgregarPropiedad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AgregarPropiedad";
+            this.Text = "Agregar propiedad";
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -488,46 +501,46 @@
             this.gbHotel.PerformLayout();
             this.gbCasa.ResumeLayout(false);
             this.gbCasa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbTipoPropiedad;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cbProvincias;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown nudCantPersonas;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbPrecioXNoche;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbDesayuno;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox tbNumHabitacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbTipoHabitacion;
-        private System.Windows.Forms.TextBox tbNombreHotel;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox gbHotel;
-        private System.Windows.Forms.ComboBox cbCantEstrellas;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbMinimoDias;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox gbCasa;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.ComboBox cmbTipoPropiedad;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox tbDireccion;
+        public System.Windows.Forms.TextBox tbLocalidad;
+        public System.Windows.Forms.ComboBox cmbProvincias;
+        public System.Windows.Forms.NumericUpDown nudCantPersonas;
+        public System.Windows.Forms.TextBox tbPrecioXNoche;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox gbHotel;
+        public System.Windows.Forms.GroupBox gbCasa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox tbNumHabitacion;
+        public System.Windows.Forms.ComboBox cmbTipoHabitacion;
+        public System.Windows.Forms.TextBox tbNombreHotel;
+        public System.Windows.Forms.ComboBox cmbCantEstrellas;
+        public System.Windows.Forms.CheckBox cbDesayuno;
+        public System.Windows.Forms.CheckBox cbPileta;
+        public System.Windows.Forms.CheckBox cbMascotas;
+        public System.Windows.Forms.CheckBox cbLimpieza;
+        public System.Windows.Forms.CheckBox cbCochera;
+        public System.Windows.Forms.CheckBox cbWifi;
+        public System.Windows.Forms.NumericUpDown nudMinimoDias;
     }
 }

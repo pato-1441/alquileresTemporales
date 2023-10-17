@@ -16,7 +16,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
-
+        int cantImagenesCargadas = 1;
         private void cbTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipoPropiedad.SelectedIndex == 0)
@@ -38,7 +38,31 @@ namespace AlquileresTemporarios_TP2LAB2
             OpenFileDialog ofdImagen = new OpenFileDialog();
             if (ofdImagen.ShowDialog() == DialogResult.OK)
             {
-                pbImagenPropiedad.Image = Image.FromFile(ofdImagen.FileName);
+                switch (cantImagenesCargadas)
+                {
+                    case 1:
+                        pbImagenPropiedad1.Image = Image.FromFile(ofdImagen.FileName);
+                        cantImagenesCargadas++;
+                        break;
+                    case 2:
+                        pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
+                        cantImagenesCargadas++;
+                        break;
+                    case 3:
+                        pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
+                        cantImagenesCargadas++;
+                        break;
+                    case 4:
+                        pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
+                        cantImagenesCargadas++;
+                        break;
+                    case 5:
+                        pbImagenPropiedad5.Image = Image.FromFile(ofdImagen.FileName);
+                        cantImagenesCargadas++;
+                        btnSeleccionarImagen.Enabled = false;
+                        break;
+                }
+                
             }
         }
     }

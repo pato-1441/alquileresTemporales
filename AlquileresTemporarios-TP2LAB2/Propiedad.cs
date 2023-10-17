@@ -12,20 +12,31 @@ namespace AlquileresTemporarios_TP2LAB2
         string[] ubicacion;
         int cantPersonas;
         protected double precio;
+        string descripcion;
         bool[] caracteristicas;
         bool disponibilidad=true;
-        Image imagenPropiedad;
+        Image[] imagenesPropiedad= new Image[5];
         List<Reserva> reservas;
 
-        public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas)
+        public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion)
         {
             this.ubicacion = ubicacion;
             this.cantPersonas = cantPersonas;
             this.precio = precio;
             this.caracteristicas = caracteristicas;
+            this.descripcion = descripcion;
         }
 
-        public Image ImagenPropiedad { get { return imagenPropiedad; } set { this.imagenPropiedad = value; } }
+        public Image[] ImagenPropiedad { get { return imagenesPropiedad; } }
+        public string Descripcion { get { return descripcion; } }
+        public void AñadirImagenes(Image imagen1, Image imagen2, Image imagen3 ,Image imagen4, Image imagen5)
+        {
+            imagenesPropiedad[0]= imagen1;
+            imagenesPropiedad[1]= imagen2;
+            imagenesPropiedad[2] = imagen3;
+            imagenesPropiedad[3] = imagen4; 
+            imagenesPropiedad[4] = imagen5;
+        }
 
         public abstract double CalcularPrecio(int cantDias);
 

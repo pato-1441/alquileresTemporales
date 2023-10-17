@@ -17,11 +17,11 @@ namespace AlquileresTemporarios_TP2LAB2
             InitializeComponent();
         }
         Sistema sistema;
-
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sistema = new Sistema();
+            sistema = new Sistema();            
         }
 
         private void fechaDesde_ValueChanged(object sender, EventArgs e)
@@ -44,32 +44,56 @@ namespace AlquileresTemporarios_TP2LAB2
                 bool[] caracteristicas = {modalAgregarPropiedad.cbCochera.Checked, modalAgregarPropiedad.cbPileta.Checked,
                                                   modalAgregarPropiedad.cbWifi.Checked, modalAgregarPropiedad.cbLimpieza.Checked,
                                                   modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
+
                 Propiedad propiedad;
+
+               
                 switch (tipoPropiedad)
                 {
                     case 0:
                         propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                        Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbNombreHotel.Text,
+                                        Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
                                         Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.Text),
                                         Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex) + 2));
+                        propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad2.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad3.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad4.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad5.Image);
                         sistema.AgregarHotel((HabitacionHotel)propiedad);
-                        dgvPropiedades.Rows.Add(propiedad);
+                        dgvPropiedades.Columns.Add("colImagen", "Imagen");
+                        dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
                         break;
                     case 1:
                         propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                        propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad2.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad3.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad4.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad5.Image);
                         sistema.AgregarCasa((Casa)propiedad);
-                        dgvPropiedades.Rows.Add(propiedad);
+                        dgvPropiedades.Columns.Add("colImagen", "Imagen");
+                        dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
                         break;
                     case 2:
                         propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
+                        propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad2.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad3.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad4.Image,
+                                                modalAgregarPropiedad.pbImagenPropiedad5.Image);
                         sistema.AgregarCasa((CasaFinde)propiedad);
-                        dgvPropiedades.Rows.Add(propiedad);
+
+                        DataGridViewRow fila = new DataGridViewRow();
+                        DataGridViewImageCell columna = new DataGridViewImageCell();
+                        columna.Value = propiedad.ImagenPropiedad[0];
+                        fila.Cells.Add(columna);
+                        dgvPropiedades.Rows.Add(fila);
+                        
                         break;
-                    
-                }
-                
+                }               
             }
         }
 

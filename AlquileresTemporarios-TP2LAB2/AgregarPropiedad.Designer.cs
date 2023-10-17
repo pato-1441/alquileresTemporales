@@ -64,20 +64,27 @@
             this.gbCasa = new System.Windows.Forms.GroupBox();
             this.nudMinimoDias = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbImagenPropiedad5 = new System.Windows.Forms.PictureBox();
+            this.pbImagenPropiedad4 = new System.Windows.Forms.PictureBox();
+            this.pbImagenPropiedad3 = new System.Windows.Forms.PictureBox();
+            this.pbImagenPropiedad2 = new System.Windows.Forms.PictureBox();
+            this.pbImagenPropiedad1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnSeleccionarImagen = new System.Windows.Forms.Button();
-            this.lImagen = new System.Windows.Forms.Label();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.ofdImagen = new System.Windows.Forms.OpenFileDialog();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pbImagenPropiedad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbHotel.SuspendLayout();
             this.gbCasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbTipoPropiedad
@@ -315,9 +322,9 @@
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAceptar.Location = new System.Drawing.Point(346, 507);
+            this.btnAceptar.Location = new System.Drawing.Point(427, 507);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(314, 45);
+            this.btnAceptar.Size = new System.Drawing.Size(363, 45);
             this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -327,7 +334,7 @@
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(37, 507);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(303, 45);
+            this.btnCancelar.Size = new System.Drawing.Size(369, 45);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -478,44 +485,92 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pbImagenPropiedad);
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad5);
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad4);
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad3);
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad2);
+            this.groupBox2.Controls.Add(this.pbImagenPropiedad1);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.btnSeleccionarImagen);
-            this.groupBox2.Controls.Add(this.lImagen);
             this.groupBox2.Controls.Add(this.tbDescripcion);
             this.groupBox2.Controls.Add(this.lDescripcion);
             this.groupBox2.Location = new System.Drawing.Point(481, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(179, 417);
+            this.groupBox2.Size = new System.Drawing.Size(309, 444);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información";
             // 
+            // pbImagenPropiedad5
+            // 
+            this.pbImagenPropiedad5.Location = new System.Drawing.Point(114, 344);
+            this.pbImagenPropiedad5.Name = "pbImagenPropiedad5";
+            this.pbImagenPropiedad5.Size = new System.Drawing.Size(85, 64);
+            this.pbImagenPropiedad5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad5.TabIndex = 34;
+            this.pbImagenPropiedad5.TabStop = false;
+            // 
+            // pbImagenPropiedad4
+            // 
+            this.pbImagenPropiedad4.Location = new System.Drawing.Point(23, 346);
+            this.pbImagenPropiedad4.Name = "pbImagenPropiedad4";
+            this.pbImagenPropiedad4.Size = new System.Drawing.Size(85, 64);
+            this.pbImagenPropiedad4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad4.TabIndex = 33;
+            this.pbImagenPropiedad4.TabStop = false;
+            // 
+            // pbImagenPropiedad3
+            // 
+            this.pbImagenPropiedad3.Location = new System.Drawing.Point(205, 261);
+            this.pbImagenPropiedad3.Name = "pbImagenPropiedad3";
+            this.pbImagenPropiedad3.Size = new System.Drawing.Size(85, 64);
+            this.pbImagenPropiedad3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad3.TabIndex = 32;
+            this.pbImagenPropiedad3.TabStop = false;
+            // 
+            // pbImagenPropiedad2
+            // 
+            this.pbImagenPropiedad2.Location = new System.Drawing.Point(114, 261);
+            this.pbImagenPropiedad2.Name = "pbImagenPropiedad2";
+            this.pbImagenPropiedad2.Size = new System.Drawing.Size(85, 64);
+            this.pbImagenPropiedad2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad2.TabIndex = 31;
+            this.pbImagenPropiedad2.TabStop = false;
+            // 
+            // pbImagenPropiedad1
+            // 
+            this.pbImagenPropiedad1.Location = new System.Drawing.Point(23, 261);
+            this.pbImagenPropiedad1.Name = "pbImagenPropiedad1";
+            this.pbImagenPropiedad1.Size = new System.Drawing.Size(85, 64);
+            this.pbImagenPropiedad1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenPropiedad1.TabIndex = 30;
+            this.pbImagenPropiedad1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 235);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Imagenes seleccionadas";
+            // 
             // btnSeleccionarImagen
             // 
-            this.btnSeleccionarImagen.Location = new System.Drawing.Point(23, 211);
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(205, 344);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
-            this.btnSeleccionarImagen.Size = new System.Drawing.Size(136, 44);
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(85, 64);
             this.btnSeleccionarImagen.TabIndex = 30;
-            this.btnSeleccionarImagen.Text = "Seleccionar Imagen";
+            this.btnSeleccionarImagen.Text = "Adjuntar Imagenes";
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
             this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
-            // 
-            // lImagen
-            // 
-            this.lImagen.AutoSize = true;
-            this.lImagen.Location = new System.Drawing.Point(20, 187);
-            this.lImagen.Name = "lImagen";
-            this.lImagen.Size = new System.Drawing.Size(42, 13);
-            this.lImagen.TabIndex = 2;
-            this.lImagen.Text = "Imagen";
             // 
             // tbDescripcion
             // 
             this.tbDescripcion.Location = new System.Drawing.Point(23, 43);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
-            this.tbDescripcion.Size = new System.Drawing.Size(136, 130);
+            this.tbDescripcion.Size = new System.Drawing.Size(267, 157);
             this.tbDescripcion.TabIndex = 1;
             // 
             // lDescripcion
@@ -532,29 +587,11 @@
             this.ofdImagen.FileName = "openFileDialog1";
             this.ofdImagen.Filter = "Imagenes|*.png*.jpg*.jpeg";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(21, 274);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 13);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Imagen seleccionada";
-            // 
-            // pbImagenPropiedad
-            // 
-            this.pbImagenPropiedad.Location = new System.Drawing.Point(23, 293);
-            this.pbImagenPropiedad.Name = "pbImagenPropiedad";
-            this.pbImagenPropiedad.Size = new System.Drawing.Size(136, 91);
-            this.pbImagenPropiedad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagenPropiedad.TabIndex = 30;
-            this.pbImagenPropiedad.TabStop = false;
-            // 
             // AgregarPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 581);
+            this.ClientSize = new System.Drawing.Size(823, 581);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbCasa);
             this.Controls.Add(this.gbHotel);
@@ -589,7 +626,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinimoDias)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,11 +673,14 @@
         public System.Windows.Forms.NumericUpDown nudMinimoDias;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lDescripcion;
-        private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.Button btnSeleccionarImagen;
-        private System.Windows.Forms.Label lImagen;
         private System.Windows.Forms.OpenFileDialog ofdImagen;
-        private System.Windows.Forms.PictureBox pbImagenPropiedad;
         private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.PictureBox pbImagenPropiedad1;
+        public System.Windows.Forms.PictureBox pbImagenPropiedad5;
+        public System.Windows.Forms.PictureBox pbImagenPropiedad4;
+        public System.Windows.Forms.PictureBox pbImagenPropiedad3;
+        public System.Windows.Forms.PictureBox pbImagenPropiedad2;
+        public System.Windows.Forms.TextBox tbDescripcion;
     }
 }

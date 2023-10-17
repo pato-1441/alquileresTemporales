@@ -51,6 +51,7 @@
             this.fechaHasta = new System.Windows.Forms.DateTimePicker();
             this.gbFecha = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Imagenes = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,6 +94,8 @@
             // dgvPropiedades
             // 
             this.dgvPropiedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPropiedades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Imagenes});
             this.dgvPropiedades.Location = new System.Drawing.Point(327, 116);
             this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPropiedades.Name = "dgvPropiedades";
@@ -307,6 +310,13 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // Imagenes
+            // 
+            this.Imagenes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Imagenes.HeaderText = "Imagenes";
+            this.Imagenes.Name = "Imagenes";
+            this.Imagenes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +375,7 @@
         private System.Windows.Forms.DateTimePicker fechaHasta;
         private System.Windows.Forms.GroupBox gbFecha;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewImageColumn Imagenes;
     }
 }
 

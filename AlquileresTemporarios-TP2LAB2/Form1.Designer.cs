@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnAgregarPropiedad = new System.Windows.Forms.Button();
             this.btnConsultarReserva = new System.Windows.Forms.Button();
             this.btnEliminarReserva = new System.Windows.Forms.Button();
             this.dgvPropiedades = new System.Windows.Forms.DataGridView();
+            this.Imagenes = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUbicacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.fechaHasta = new System.Windows.Forms.DateTimePicker();
             this.gbFecha = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Imagenes = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,10 +62,10 @@
             // 
             // btnAgregarPropiedad
             // 
-            this.btnAgregarPropiedad.Location = new System.Drawing.Point(327, 26);
-            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarPropiedad.Location = new System.Drawing.Point(436, 32);
+            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarPropiedad.Name = "btnAgregarPropiedad";
-            this.btnAgregarPropiedad.Size = new System.Drawing.Size(178, 67);
+            this.btnAgregarPropiedad.Size = new System.Drawing.Size(237, 82);
             this.btnAgregarPropiedad.TabIndex = 2;
             this.btnAgregarPropiedad.Text = "Agregar propiedad";
             this.btnAgregarPropiedad.UseVisualStyleBackColor = true;
@@ -72,20 +73,20 @@
             // 
             // btnConsultarReserva
             // 
-            this.btnConsultarReserva.Location = new System.Drawing.Point(518, 26);
-            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultarReserva.Location = new System.Drawing.Point(691, 32);
+            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultarReserva.Name = "btnConsultarReserva";
-            this.btnConsultarReserva.Size = new System.Drawing.Size(178, 67);
+            this.btnConsultarReserva.Size = new System.Drawing.Size(237, 82);
             this.btnConsultarReserva.TabIndex = 3;
             this.btnConsultarReserva.Text = "Consultar Reserva";
             this.btnConsultarReserva.UseVisualStyleBackColor = true;
             // 
             // btnEliminarReserva
             // 
-            this.btnEliminarReserva.Location = new System.Drawing.Point(711, 26);
-            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarReserva.Location = new System.Drawing.Point(948, 32);
+            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarReserva.Name = "btnEliminarReserva";
-            this.btnEliminarReserva.Size = new System.Drawing.Size(178, 67);
+            this.btnEliminarReserva.Size = new System.Drawing.Size(237, 82);
             this.btnEliminarReserva.TabIndex = 4;
             this.btnEliminarReserva.Text = "Eliminar Reserva";
             this.btnEliminarReserva.UseVisualStyleBackColor = true;
@@ -93,49 +94,64 @@
             // 
             // dgvPropiedades
             // 
+            this.dgvPropiedades.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPropiedades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPropiedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPropiedades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Imagenes});
-            this.dgvPropiedades.Location = new System.Drawing.Point(327, 116);
-            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPropiedades.Location = new System.Drawing.Point(436, 143);
+            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPropiedades.Name = "dgvPropiedades";
             this.dgvPropiedades.RowHeadersWidth = 51;
             this.dgvPropiedades.RowTemplate.Height = 24;
-            this.dgvPropiedades.Size = new System.Drawing.Size(706, 403);
+            this.dgvPropiedades.Size = new System.Drawing.Size(941, 496);
             this.dgvPropiedades.TabIndex = 5;
+            // 
+            // Imagenes
+            // 
+            this.Imagenes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Imagenes.HeaderText = "Imagenes";
+            this.Imagenes.MinimumWidth = 6;
+            this.Imagenes.Name = "Imagenes";
+            this.Imagenes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 159);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(35, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Ubicación";
             // 
             // tbUbicacion
             // 
-            this.tbUbicacion.Location = new System.Drawing.Point(29, 178);
-            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUbicacion.Location = new System.Drawing.Point(39, 219);
+            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUbicacion.Name = "tbUbicacion";
-            this.tbUbicacion.Size = new System.Drawing.Size(153, 20);
+            this.tbUbicacion.Size = new System.Drawing.Size(203, 22);
             this.tbUbicacion.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(184, 160);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(245, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(140, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Cantidad de personas";
             // 
             // nudCantPersonas
             // 
-            this.nudCantPersonas.Location = new System.Drawing.Point(187, 179);
-            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
+            this.nudCantPersonas.Location = new System.Drawing.Point(249, 220);
+            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudCantPersonas.Maximum = new decimal(new int[] {
             20,
             0,
@@ -147,7 +163,7 @@
             0,
             0});
             this.nudCantPersonas.Name = "nudCantPersonas";
-            this.nudCantPersonas.Size = new System.Drawing.Size(107, 20);
+            this.nudCantPersonas.Size = new System.Drawing.Size(143, 22);
             this.nudCantPersonas.TabIndex = 12;
             this.nudCantPersonas.Value = new decimal(new int[] {
             1,
@@ -158,10 +174,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(20, 27);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1.Location = new System.Drawing.Point(27, 33);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
+            this.checkBox1.Size = new System.Drawing.Size(60, 20);
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "Wi-Fi";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -174,11 +190,11 @@
             this.groupBox1.Controls.Add(this.checkBox3);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 362);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(39, 446);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(265, 90);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(353, 111);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Características";
@@ -186,10 +202,10 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(169, 27);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox6.Location = new System.Drawing.Point(225, 33);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(74, 17);
+            this.checkBox6.Size = new System.Drawing.Size(91, 20);
             this.checkBox6.TabIndex = 18;
             this.checkBox6.Text = "Desayuno";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -197,10 +213,10 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(20, 56);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox5.Location = new System.Drawing.Point(27, 69);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(52, 17);
+            this.checkBox5.Size = new System.Drawing.Size(63, 20);
             this.checkBox5.TabIndex = 17;
             this.checkBox5.Text = "Pileta";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -208,10 +224,10 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(169, 56);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox4.Location = new System.Drawing.Point(225, 69);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(72, 17);
+            this.checkBox4.Size = new System.Drawing.Size(88, 20);
             this.checkBox4.TabIndex = 16;
             this.checkBox4.Text = "Mascotas";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -219,10 +235,10 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(87, 56);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox3.Location = new System.Drawing.Point(116, 69);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(67, 17);
+            this.checkBox3.Size = new System.Drawing.Size(83, 20);
             this.checkBox3.TabIndex = 15;
             this.checkBox3.Text = "Limpieza";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -230,20 +246,20 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(87, 27);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox2.Location = new System.Drawing.Point(116, 33);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(66, 17);
+            this.checkBox2.Size = new System.Drawing.Size(80, 20);
             this.checkBox2.TabIndex = 14;
             this.checkBox2.Text = "Cochera";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(29, 475);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(39, 585);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(265, 44);
+            this.btnBuscar.Size = new System.Drawing.Size(353, 54);
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -251,40 +267,38 @@
             // 
             // fechaDesde
             // 
-            this.fechaDesde.Location = new System.Drawing.Point(20, 44);
-            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaDesde.Location = new System.Drawing.Point(27, 54);
+            this.fechaDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaDesde.MinDate = new System.DateTime(2023, 10, 16, 0, 0, 0, 0);
             this.fechaDesde.Name = "fechaDesde";
-            this.fechaDesde.Size = new System.Drawing.Size(216, 20);
+            this.fechaDesde.Size = new System.Drawing.Size(287, 22);
             this.fechaDesde.TabIndex = 17;
             this.fechaDesde.ValueChanged += new System.EventHandler(this.fechaDesde_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 25);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(23, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(48, 16);
             this.label4.TabIndex = 18;
             this.label4.Text = "Desde";
             // 
             // lbfechaHasta
             // 
             this.lbfechaHasta.AutoSize = true;
-            this.lbfechaHasta.Location = new System.Drawing.Point(17, 76);
-            this.lbfechaHasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbfechaHasta.Location = new System.Drawing.Point(23, 94);
             this.lbfechaHasta.Name = "lbfechaHasta";
-            this.lbfechaHasta.Size = new System.Drawing.Size(35, 13);
+            this.lbfechaHasta.Size = new System.Drawing.Size(43, 16);
             this.lbfechaHasta.TabIndex = 20;
             this.lbfechaHasta.Text = "Hasta";
             // 
             // fechaHasta
             // 
-            this.fechaHasta.Location = new System.Drawing.Point(20, 95);
-            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaHasta.Location = new System.Drawing.Point(27, 117);
+            this.fechaHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaHasta.Name = "fechaHasta";
-            this.fechaHasta.Size = new System.Drawing.Size(216, 20);
+            this.fechaHasta.Size = new System.Drawing.Size(287, 22);
             this.fechaHasta.TabIndex = 19;
             // 
             // gbFecha
@@ -293,9 +307,11 @@
             this.gbFecha.Controls.Add(this.lbfechaHasta);
             this.gbFecha.Controls.Add(this.fechaDesde);
             this.gbFecha.Controls.Add(this.fechaHasta);
-            this.gbFecha.Location = new System.Drawing.Point(29, 214);
+            this.gbFecha.Location = new System.Drawing.Point(39, 263);
+            this.gbFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbFecha.Name = "gbFecha";
-            this.gbFecha.Size = new System.Drawing.Size(265, 134);
+            this.gbFecha.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFecha.Size = new System.Drawing.Size(353, 165);
             this.gbFecha.TabIndex = 21;
             this.gbFecha.TabStop = false;
             this.gbFecha.Text = "Fecha";
@@ -303,25 +319,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(353, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // Imagenes
-            // 
-            this.Imagenes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Imagenes.HeaderText = "Imagenes";
-            this.Imagenes.Name = "Imagenes";
-            this.Imagenes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 541);
+            this.ClientSize = new System.Drawing.Size(1416, 666);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbFecha);
             this.Controls.Add(this.btnBuscar);
@@ -335,7 +345,7 @@
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler Temporal";

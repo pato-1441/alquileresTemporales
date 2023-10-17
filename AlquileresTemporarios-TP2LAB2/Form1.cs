@@ -40,7 +40,7 @@ namespace AlquileresTemporarios_TP2LAB2
             if (modalAgregarPropiedad.ShowDialog() == DialogResult.OK)
             {
                 int tipoPropiedad = modalAgregarPropiedad.cmbTipoPropiedad.SelectedIndex;
-                string[] ubicacion = { modalAgregarPropiedad.tbDireccion.Text, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.cmbProvincias.SelectedIndex.ToString() };
+                string[] ubicacion = { modalAgregarPropiedad.tbDireccion.Text, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.cmbProvincias.SelectedItem.ToString() };
                 bool[] caracteristicas = {modalAgregarPropiedad.cbCochera.Checked, modalAgregarPropiedad.cbPileta.Checked,
                                                   modalAgregarPropiedad.cbWifi.Checked, modalAgregarPropiedad.cbLimpieza.Checked,
                                                   modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
@@ -53,8 +53,8 @@ namespace AlquileresTemporarios_TP2LAB2
                     case 0:
                         propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
                                         Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
-                                        Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.Text),
-                                        Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex) + 2));
+                                        Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.SelectedIndex),
+                                        Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2);
                         propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
                                                 modalAgregarPropiedad.pbImagenPropiedad2.Image,
                                                 modalAgregarPropiedad.pbImagenPropiedad3.Image,
@@ -62,6 +62,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                                 modalAgregarPropiedad.pbImagenPropiedad5.Image);
                         sistema.AgregarHotel((HabitacionHotel)propiedad);
                         dgvPropiedades.Columns.Add("colImagen", "Imagen");
+                        dgvPropiedades.Columns[0].Width = 50;
                         dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
                         break;
                     case 1:
@@ -74,6 +75,8 @@ namespace AlquileresTemporarios_TP2LAB2
                                                 modalAgregarPropiedad.pbImagenPropiedad5.Image);
                         sistema.AgregarCasa((Casa)propiedad);
                         dgvPropiedades.Columns.Add("colImagen", "Imagen");
+                        dgvPropiedades.Columns[0].Width = 150;
+
                         dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
                         break;
                     case 2:

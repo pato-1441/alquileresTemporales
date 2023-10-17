@@ -74,6 +74,7 @@
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.lDescripcion = new System.Windows.Forms.Label();
             this.ofdImagen = new System.Windows.Forms.OpenFileDialog();
+            this.btnAplicar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbHotel.SuspendLayout();
@@ -214,9 +215,24 @@
             // 
             this.nudCantPersonas.Location = new System.Drawing.Point(38, 273);
             this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
+            this.nudCantPersonas.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudCantPersonas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCantPersonas.Name = "nudCantPersonas";
             this.nudCantPersonas.Size = new System.Drawing.Size(90, 20);
             this.nudCantPersonas.TabIndex = 4;
+            this.nudCantPersonas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label7
             // 
@@ -322,9 +338,10 @@
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAceptar.Location = new System.Drawing.Point(427, 507);
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Location = new System.Drawing.Point(566, 507);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(363, 45);
+            this.btnAceptar.Size = new System.Drawing.Size(224, 45);
             this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -332,9 +349,9 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(37, 507);
+            this.btnCancelar.Location = new System.Drawing.Point(302, 507);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(369, 45);
+            this.btnCancelar.Size = new System.Drawing.Size(224, 45);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -587,11 +604,22 @@
             this.ofdImagen.FileName = "openFileDialog1";
             this.ofdImagen.Filter = "Imagenes|*.png*.jpg*.jpeg";
             // 
+            // btnAplicar
+            // 
+            this.btnAplicar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAplicar.Location = new System.Drawing.Point(38, 507);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(224, 45);
+            this.btnAplicar.TabIndex = 30;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = true;
+            // 
             // AgregarPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 581);
+            this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbCasa);
             this.Controls.Add(this.gbHotel);
@@ -682,5 +710,6 @@
         public System.Windows.Forms.PictureBox pbImagenPropiedad3;
         public System.Windows.Forms.PictureBox pbImagenPropiedad2;
         public System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.Button btnAplicar;
     }
 }

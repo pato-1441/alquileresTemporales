@@ -13,13 +13,24 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public bool AgregarCasa(Casa casa)
         {
-          
-            return true;
+            bool exito = false;
+            if (!listaPropiedades.Contains(casa))
+            {
+                listaPropiedades.Add(casa);
+                exito = true;   
+            }
+            return exito;
         }
 
         public bool AgregarHotel(HabitacionHotel hotel)
         {
-            return true;
+            bool exito = false;
+            if (!listaPropiedades.Contains(hotel))
+            {
+                listaPropiedades.Add(hotel);
+                exito = true;
+            }
+            return exito;
         }
 
         public int ReservarPropiedad(Propiedad propiedad, Cliente cliente)
@@ -56,15 +67,25 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return unaReserva;
         }
-        public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fecha)
+        public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fechaInicio, DateTime fechaFin)
         {
             return true;
         }
 
-       /* public List<Propiedad> ConsultarPropiedades(string ubicacion)
+        public List<Propiedad> ConsultarPropiedades(string []ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
-            return List<Propiedad>; 
-        }*/
+            List<Propiedad> propiedadesMatch = new List<Propiedad>();
+
+            foreach (Propiedad propiedad in listaPropiedades)
+            {
+                if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[1] == ubicacion[1]
+                    && propiedad.Ubicacion[2] == ubicacion[2])
+                {
+                   propiedadesMatch.Add(propiedad);
+                }
+            }
+            return propiedadesMatch; 
+        }
 
         /*public List<Propiedad> ConsultarPropiedades(string ubicacion, int cantPersonas)
         {

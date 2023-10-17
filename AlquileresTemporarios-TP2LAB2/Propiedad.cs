@@ -17,7 +17,10 @@ namespace AlquileresTemporarios_TP2LAB2
         bool disponibilidad=true;
         Image[] imagenesPropiedad= new Image[5];
         List<Reserva> reservas;
-
+        public string[] Ubicacion
+        {
+            get { return ubicacion; }
+        }
         public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion)
         {
             this.ubicacion = ubicacion;

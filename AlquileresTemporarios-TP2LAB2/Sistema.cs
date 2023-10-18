@@ -87,15 +87,34 @@ namespace AlquileresTemporarios_TP2LAB2
             return propiedadesMatch; 
         }
 
-        /*public List<Propiedad> ConsultarPropiedades(string ubicacion, int cantPersonas)
+        public List<Propiedad> ConsultarPropiedades(string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
-           
+            List<Propiedad> propiedadesMatch = new List<Propiedad>();
+            foreach(Propiedad propiedad in ConsultarPropiedades(ubicacion,fechaInicio,fechaFin))
+            {
+                if(propiedad.CantPersonas == cantPersonas)
+                {
+                    propiedadesMatch.Add(propiedad) ;
+                }
+            }
+
+            return propiedadesMatch;
         }
 
-        public List<Propiedad> ConsultarPropiedades (string ubicacion, int cantPeronsas, int[] especificaciones)
+        public List<Propiedad> ConsultarPropiedades (string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, bool[] especificaciones)
         {
+            List<Propiedad> propiedadesMatch = new List<Propiedad> ();
+            propiedadesMatch = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin, cantPersonas);
+            foreach (Propiedad propiedad in propiedadesMatch)
+            {
+                for(int i =0; i<6; i++)
+                {
+                    if (especificaciones[i] == true && propiedad.Caracteristicas[i] == false) propiedadesMatch.Remove(propiedad); 
+                }
+            }
 
+            return propiedadesMatch;
         }
-        */
+        
     }
 }

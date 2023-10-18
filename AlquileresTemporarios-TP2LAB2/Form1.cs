@@ -34,6 +34,19 @@ namespace AlquileresTemporarios_TP2LAB2
 
         }
 
+        private DataGridViewRow CrearFilaPropiedad(string tipoPropiedad, string ubicacion, string descripcion, string precio)
+        {
+            DataGridViewRow fila = new DataGridViewRow();
+            string[] caracteristicas = {tipoPropiedad, ubicacion, descripcion, precio};
+            for(int i = 0; i<4; i++)
+            {
+                DataGridViewCell columna = new DataGridViewTextBoxCell();
+                columna.Value = caracteristicas[i];
+                fila.Cells.Add(columna);
+            }
+            return fila;
+        }
+
         private void btnAgregarPropiedad_Click(object sender, EventArgs e)
         {
             AgregarPropiedad modalAgregarPropiedad = new AgregarPropiedad();
@@ -45,14 +58,13 @@ namespace AlquileresTemporarios_TP2LAB2
                 try
                 {
                     int tipoPropiedad = modalAgregarPropiedad.cmbTipoPropiedad.SelectedIndex;
-                string[] ubicacion = { modalAgregarPropiedad.tbDireccion.Text, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.cmbProvincias.SelectedItem.ToString() };
-                bool[] caracteristicas = {modalAgregarPropiedad.cbCochera.Checked, modalAgregarPropiedad.cbPileta.Checked,
-                                                  modalAgregarPropiedad.cbWifi.Checked, modalAgregarPropiedad.cbLimpieza.Checked,
-                                                  modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
+                    string[] ubicacion = { modalAgregarPropiedad.tbDireccion.Text, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.cmbProvincias.SelectedItem.ToString() };
+                    bool[] caracteristicas = {modalAgregarPropiedad.cbCochera.Checked, modalAgregarPropiedad.cbPileta.Checked,
+                                                      modalAgregarPropiedad.cbWifi.Checked, modalAgregarPropiedad.cbLimpieza.Checked,
+                                                      modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
 
-                Propiedad propiedad;
-
-                
+                    Propiedad propiedad;
+                    
                     switch (tipoPropiedad)
                     {
                         case 0:
@@ -66,9 +78,9 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad4.Image,
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarHotel((HabitacionHotel)propiedad);
-                            dgvPropiedades.Columns.Add("colImagen", "Imagen");
-                            dgvPropiedades.Columns[0].Width = 50;
-                            dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
+
+                            DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaHotel);
                             break;
                         case 1:
                             propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
@@ -79,10 +91,9 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad4.Image,
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarCasa((Casa)propiedad);
-                            dgvPropiedades.Columns.Add("colImagen", "Imagen");
-                            dgvPropiedades.Columns[0].Width = 150;
 
-                            dgvPropiedades.Rows.Add(propiedad.ImagenPropiedad[0]);
+                            DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaCasa);
                             break;
                         case 2:
                             propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
@@ -94,17 +105,14 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarCasa((CasaFinde)propiedad);
 
-                            DataGridViewRow fila = new DataGridViewRow();
-                            DataGridViewImageCell columna = new DataGridViewImageCell();
-                            columna.Value = propiedad.ImagenPropiedad[0];
-                            fila.Cells.Add(columna);
-                            dgvPropiedades.Rows.Add(fila);
-
+                            DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, ("$"+modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaCasaFinde);
                             break;
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     MessageBox.Show("Por favor, complete todos los campos.");
                 }
             

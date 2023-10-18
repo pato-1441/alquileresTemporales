@@ -9,7 +9,7 @@ namespace AlquileresTemporarios_TP2LAB2
 {
     internal class Sistema
     {
-        List<Propiedad> listaPropiedades; 
+        List<Propiedad> listaPropiedades = new List<Propiedad>(); 
 
         public bool AgregarCasa(Casa casa)
         {

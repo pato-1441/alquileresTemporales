@@ -34,8 +34,14 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return caracteristicas; }
         }
 
+        public List<Reserva> Reservas
+        {
+            get { return reservas; }
+        }
+
         public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion)
         {
+            reservas = new List<Reserva>();
             this.ubicacion = ubicacion;
             this.cantPersonas = cantPersonas;
             this.precio = precio;

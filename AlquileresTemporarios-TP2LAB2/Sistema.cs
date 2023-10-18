@@ -69,10 +69,16 @@ namespace AlquileresTemporarios_TP2LAB2
         }
         public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fechaInicio, DateTime fechaFin)
         {
-            return true;
+            bool exito = false;
+            //if(propiedad.Reservas.Count>0)
+            foreach (Reserva reserva in propiedad.Reservas)
+            {
+                if (!(fechaInicio < reserva.FechaInicio || fechaFin > reserva.FechaFin)) exito = true;
+            }
+            return exito;
         }
 
-        public List<Propiedad> ConsultarPropiedades(string []ubicacion, DateTime fechaInicio, DateTime fechaFin)
+        private  List<Propiedad> ConsultarPropiedades(string []ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
             List<Propiedad> propiedadesMatch = new List<Propiedad>();
 
@@ -87,7 +93,23 @@ namespace AlquileresTemporarios_TP2LAB2
             return propiedadesMatch; 
         }
 
-        public List<Propiedad> ConsultarPropiedades(string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
+       
+        private List<Propiedad> ConsultarPropiedades(string provincia, DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<Propiedad> propiedadesMatch = new List<Propiedad>();
+           
+            foreach (Propiedad propiedad in listaPropiedades)
+            {
+                if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[2] == provincia)
+                {
+                    propiedadesMatch.Add(propiedad);
+                }
+            }
+            return propiedadesMatch;
+        }
+
+        
+        private List<Propiedad> ConsultarPropiedades(string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
             List<Propiedad> propiedadesMatch = new List<Propiedad>();
             foreach(Propiedad propiedad in ConsultarPropiedades(ubicacion,fechaInicio,fechaFin))
@@ -115,6 +137,8 @@ namespace AlquileresTemporarios_TP2LAB2
 
             return propiedadesMatch;
         }
+
+
         
     }
 }

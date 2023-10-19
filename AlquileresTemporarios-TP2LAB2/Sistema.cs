@@ -69,11 +69,11 @@ namespace AlquileresTemporarios_TP2LAB2
         }
         public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fechaInicio, DateTime fechaFin)
         {
-            bool exito = false;
+            bool exito = true;
             //if(propiedad.Reservas.Count>0)
             foreach (Reserva reserva in propiedad.Reservas)
             {
-                if (!(fechaInicio < reserva.FechaInicio || fechaFin > reserva.FechaFin)) exito = true;
+                if (!(fechaFin < reserva.FechaInicio || fechaInicio > reserva.FechaFin)) exito = false;
             }
             return exito;
         }
@@ -84,8 +84,8 @@ namespace AlquileresTemporarios_TP2LAB2
 
             foreach (Propiedad propiedad in listaPropiedades)
             {
-                if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[1] == ubicacion[1]
-                    && propiedad.Ubicacion[2] == ubicacion[2])
+                if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[1] == ubicacion[0]
+                    && propiedad.Ubicacion[2] == ubicacion[1])
                 {
                    propiedadesMatch.Add(propiedad);
                 }

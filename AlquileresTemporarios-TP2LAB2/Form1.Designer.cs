@@ -200,7 +200,7 @@
             this.groupBox1.Controls.Add(this.cbLimpieza);
             this.groupBox1.Controls.Add(this.cbCochera);
             this.groupBox1.Controls.Add(this.cbWifi);
-            this.groupBox1.Location = new System.Drawing.Point(29, 395);
+            this.groupBox1.Location = new System.Drawing.Point(29, 389);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -319,7 +319,7 @@
             this.gbFecha.Controls.Add(this.lbfechaHasta);
             this.gbFecha.Controls.Add(this.fechaDesde);
             this.gbFecha.Controls.Add(this.fechaHasta);
-            this.gbFecha.Location = new System.Drawing.Point(29, 256);
+            this.gbFecha.Location = new System.Drawing.Point(29, 248);
             this.gbFecha.Name = "gbFecha";
             this.gbFecha.Size = new System.Drawing.Size(265, 134);
             this.gbFecha.TabIndex = 21;

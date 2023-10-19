@@ -14,7 +14,6 @@ namespace AlquileresTemporarios_TP2LAB2
         protected double precio;
         string descripcion;
         bool[] caracteristicas;
-        bool disponibilidad=true;
         Image[] imagenesPropiedad= new Image[5];
         List<Reserva> reservas;
 

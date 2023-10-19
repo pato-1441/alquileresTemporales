@@ -179,12 +179,33 @@ namespace AlquileresTemporarios_TP2LAB2
 
         }
 
+       /* private void dgvPropiedades_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPropiedades.SelectedRows.Count > 0) // Verifica si hay alguna fila seleccionada
+            {
+                DataGridViewRow row = dgvPropiedades.SelectedRows[0]; // Obtiene la primera fila seleccionada
+                string value = row.Cells["colUbicacion"].Value.ToString();
+            }
+        }*/
+
         private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             VerPropiedad verPropiedad = new VerPropiedad();
-            if (verPropiedad.ShowDialog() == DialogResult.OK)
+
+            if (e.RowIndex >= 0)
             {
-                MessageBox.Show("FUNCIONA!");
+                DataGridViewRow row = this.dgvPropiedades.Rows[e.RowIndex];
+
+
+                verPropiedad.lbUbicacion.Text = row.Cells["ColUbicacion"].Value.ToString();
+                verPropiedad.lbPrecio.Text = row.Cells["colPrecio"].Value.ToString();
+                verPropiedad.tbDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
+                //verPropiedad. = row.Cells["colCaracteristicas"].Value.ToString();
+            }
+
+            if(verPropiedad.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Se pudo!");
             }
         }
     }

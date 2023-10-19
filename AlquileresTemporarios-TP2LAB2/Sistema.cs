@@ -11,6 +11,11 @@ namespace AlquileresTemporarios_TP2LAB2
     {
         List<Propiedad> listaPropiedades = new List<Propiedad>(); 
 
+
+        public List<Propiedad> ListaPropiedades
+        {
+            get { return listaPropiedades; }
+        }
         public bool AgregarCasa(Casa casa)
         {
             bool exito = false;

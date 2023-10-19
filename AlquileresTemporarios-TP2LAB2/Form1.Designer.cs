@@ -387,6 +387,7 @@
             this.colTipoPropiedad.HeaderText = "Tipo propiedad";
             this.colTipoPropiedad.MinimumWidth = 6;
             this.colTipoPropiedad.Name = "colTipoPropiedad";
+            this.colTipoPropiedad.ReadOnly = true;
             // 
             // colCaracteristicas
             // 
@@ -394,6 +395,7 @@
             this.colCaracteristicas.HeaderText = "Características";
             this.colCaracteristicas.MinimumWidth = 6;
             this.colCaracteristicas.Name = "colCaracteristicas";
+            this.colCaracteristicas.ReadOnly = true;
             // 
             // colUbicacion
             // 
@@ -401,6 +403,7 @@
             this.colUbicacion.HeaderText = "Ubicación";
             this.colUbicacion.MinimumWidth = 6;
             this.colUbicacion.Name = "colUbicacion";
+            this.colUbicacion.ReadOnly = true;
             // 
             // colDescripcion
             // 
@@ -408,6 +411,7 @@
             this.colDescripcion.HeaderText = "Descripción";
             this.colDescripcion.MinimumWidth = 6;
             this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
             // 
             // colCantPersonas
             // 
@@ -415,6 +419,7 @@
             this.colCantPersonas.HeaderText = "Cant. Personas";
             this.colCantPersonas.MinimumWidth = 6;
             this.colCantPersonas.Name = "colCantPersonas";
+            this.colCantPersonas.ReadOnly = true;
             // 
             // colPrecio
             // 
@@ -422,12 +427,15 @@
             this.colPrecio.HeaderText = "Precio";
             this.colPrecio.MinimumWidth = 6;
             this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // colDetalles
             // 
+            this.colDetalles.DataPropertyName = "Ver Detalles";
             this.colDetalles.HeaderText = "Ver Detalles";
             this.colDetalles.MinimumWidth = 6;
             this.colDetalles.Name = "colDetalles";
+            this.colDetalles.ReadOnly = true;
             this.colDetalles.Width = 125;
             // 
             // Form1

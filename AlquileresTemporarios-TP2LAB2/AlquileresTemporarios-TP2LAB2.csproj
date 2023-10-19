@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="Reserva.cs" />
     <Compile Include="Sistema.cs" />
+    <Compile Include="VerPropiedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerPropiedad.Designer.cs">
+      <DependentUpon>VerPropiedad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarPropiedad.resx">
       <DependentUpon>AgregarPropiedad.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +97,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerPropiedad.resx">
+      <DependentUpon>VerPropiedad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

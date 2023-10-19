@@ -37,3 +37,4 @@ E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\Al
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CoreCompileInputs.cache
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources

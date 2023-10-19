@@ -43,6 +43,7 @@ namespace AlquileresTemporarios_TP2LAB2
             
         }
 
+        //agregas las propiedades al dataGrid
         private DataGridViewRow CrearFilaPropiedad(string tipoPropiedad,bool[] caracteristicas, string ubicacion, string descripcion, string cantPersonas, string precio)
         {
             DataGridViewRow fila = new DataGridViewRow();
@@ -88,7 +89,6 @@ namespace AlquileresTemporarios_TP2LAB2
         private void btnAgregarPropiedad_Click(object sender, EventArgs e)
         {
             AgregarPropiedad modalAgregarPropiedad = new AgregarPropiedad();
-          //  bool exito = false;
            
 
             if (modalAgregarPropiedad.ShowDialog() == DialogResult.OK)
@@ -179,6 +179,13 @@ namespace AlquileresTemporarios_TP2LAB2
 
         }
 
-
+        private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            VerPropiedad verPropiedad = new VerPropiedad();
+            if (verPropiedad.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("FUNCIONA!");
+            }
+        }
     }
 }

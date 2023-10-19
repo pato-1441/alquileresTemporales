@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
+    [Serializable]
     internal class Sistema
     {
+        
         List<Propiedad> listaPropiedades = new List<Propiedad>(); 
 
 

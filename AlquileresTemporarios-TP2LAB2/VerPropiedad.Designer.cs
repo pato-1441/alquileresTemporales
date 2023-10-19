@@ -172,6 +172,7 @@
             this.Controls.Add(this.pbImagen2);
             this.Controls.Add(this.pbImagen1);
             this.Name = "VerPropiedad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VerPropiedad";
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen3)).EndInit();

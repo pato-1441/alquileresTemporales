@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.Serialization.Formatters;
 namespace AlquileresTemporarios_TP2LAB2
 {
+    [Serializable]
     internal static class Program
     {
         /// <summary>

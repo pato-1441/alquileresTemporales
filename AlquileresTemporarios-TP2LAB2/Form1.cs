@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -17,12 +20,31 @@ namespace AlquileresTemporarios_TP2LAB2
             InitializeComponent();
         }
         Sistema sistema;
-        
 
+        string archivoInicial = Application.StartupPath + "\\sistema.bin";
+        BinaryFormatter datosBinarios = new BinaryFormatter();
         private void Form1_Load(object sender, EventArgs e)
         {
-            sistema = new Sistema();            
+            
+            if (File.Exists(archivoInicial))
+            {
+                FileStream archivo = new FileStream(archivoInicial, FileMode.Open, FileAccess.Read);
+                sistema = (Sistema)datosBinarios.Deserialize(archivo); //si o si hay que  castear
+                archivo.Close();
+            }
+            else sistema = new Sistema();
         }
+
+      
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (File.Exists(archivoInicial)) File.Delete(archivoInicial);
+            FileStream archivo = new FileStream(archivoInicial, FileMode.CreateNew, FileAccess.Write);
+            datosBinarios.Serialize(archivo, sistema);
+            archivo.Close();
+        }
+
 
         private void fechaDesde_ValueChanged(object sender, EventArgs e)
         {
@@ -200,7 +222,6 @@ namespace AlquileresTemporarios_TP2LAB2
                 verPropiedad.lbUbicacion.Text = row.Cells["ColUbicacion"].Value.ToString();
                 verPropiedad.lbPrecio.Text = row.Cells["colPrecio"].Value.ToString();
                 verPropiedad.tbDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
-                //verPropiedad. = row.Cells["colCaracteristicas"].Value.ToString();
             }
 
             if(verPropiedad.ShowDialog() == DialogResult.OK)

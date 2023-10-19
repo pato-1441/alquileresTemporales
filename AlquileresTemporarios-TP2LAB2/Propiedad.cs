@@ -4,9 +4,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization;
 
-namespace AlquileresTemporarios_TP2LAB2
+namespace AlquileresTemporarios_TP2LAB2 
 {
+    [Serializable]
     internal  abstract class Propiedad
     {
         string[] ubicacion;

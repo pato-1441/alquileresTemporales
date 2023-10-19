@@ -43,16 +43,45 @@ namespace AlquileresTemporarios_TP2LAB2
             
         }
 
-        private DataGridViewRow CrearFilaPropiedad(string tipoPropiedad, string ubicacion, string descripcion, string precio)
+        private DataGridViewRow CrearFilaPropiedad(string tipoPropiedad,bool[] caracteristicas, string ubicacion, string descripcion, string cantPersonas, string precio)
         {
             DataGridViewRow fila = new DataGridViewRow();
-            string[] caracteristicas = {tipoPropiedad, ubicacion, descripcion, precio};
-            for(int i = 0; i<4; i++)
+            string propCaracteristicas = "";
+            for(int i = 0 ; i < caracteristicas.Length ; i++)
+            {
+                if (caracteristicas[i])
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            propCaracteristicas += "Cochera \n";
+                            break;
+                        case 1:
+                            propCaracteristicas += "Pileta \n";
+                            break;
+                        case 2:
+                            propCaracteristicas += "Wi-Fi \n";
+                            break;
+                        case 3:
+                            propCaracteristicas += "Limpieza \n";
+                            break;
+                        case 4:
+                            propCaracteristicas += "Desayuno \n";
+                            break;
+                        case 5:
+                            propCaracteristicas += "Mascotas \n";
+                            break;
+                    }
+                }
+            }            
+            string[] propiedadAtributos = {tipoPropiedad, propCaracteristicas, ubicacion, descripcion, cantPersonas, precio};
+            for(int i = 0; i<6; i++)
             {
                 DataGridViewCell columna = new DataGridViewTextBoxCell();
-                columna.Value = caracteristicas[i];
+                columna.Value = propiedadAtributos[i];
                 fila.Cells.Add(columna);
             }
+            fila.Height = 20;
             return fila;
         }
 
@@ -88,7 +117,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarHotel((HabitacionHotel)propiedad);
 
-                            DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
                             dgvPropiedades.Rows.Add(filaHotel);
                             break;
                         case 1:
@@ -101,7 +130,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarCasa((Casa)propiedad);
 
-                            DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
                             dgvPropiedades.Rows.Add(filaCasa);
                             break;
                         case 2:
@@ -114,7 +143,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                                     modalAgregarPropiedad.pbImagenPropiedad5.Image);
                             sistema.AgregarCasa((CasaFinde)propiedad);
 
-                            DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", modalAgregarPropiedad.tbLocalidad.Text.ToUpper(), modalAgregarPropiedad.tbDescripcion.Text, ("$"+modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text.ToUpper(), modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$"+modalAgregarPropiedad.tbPrecioXNoche.Text));
                             dgvPropiedades.Rows.Add(filaCasaFinde);
                             break;
                     }

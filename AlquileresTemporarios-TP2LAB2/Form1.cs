@@ -241,11 +241,11 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvPropiedades.Rows[e.RowIndex];
+                DataGridViewRow fila = this.dgvPropiedades.Rows[e.RowIndex];
 
-                verPropiedad.lbUbicacion.Text = row.Cells["ColUbicacion"].Value.ToString();
-                verPropiedad.lbPrecio.Text = row.Cells["colPrecio"].Value.ToString();
-                verPropiedad.tbDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
+                verPropiedad.lbUbicacion.Text = fila.Cells["ColUbicacion"].Value.ToString();
+                verPropiedad.lbPrecio.Text = fila.Cells["colPrecio"].Value.ToString();
+                verPropiedad.tbDescripcion.Text = fila.Cells["colDescripcion"].Value.ToString();
                 verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[0].ImagenPropiedad[0];
                 
                 /*verPropiedad.pbImagen1.
@@ -253,7 +253,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 verPropiedad.pbImagen1.
                 verPropiedad.pbImagen1.*/
 
-                string[] caracteristicas = row.Cells["colCaracteristicas"].Value.ToString().Split('\n');
+                string[] caracteristicas = fila.Cells["colCaracteristicas"].Value.ToString().Split('\n');
 
                 foreach (string c in caracteristicas)
                 {

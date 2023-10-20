@@ -51,3 +51,4 @@ C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\Alquile
 C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CoreCompileInputs.cache
 C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources

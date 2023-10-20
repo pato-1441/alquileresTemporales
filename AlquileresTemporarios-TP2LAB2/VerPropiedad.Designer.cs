@@ -40,6 +40,7 @@
             this.lbPrecio = new System.Windows.Forms.Label();
             this.btnReservar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lCaracteristicas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen4)).BeginInit();
@@ -51,77 +52,85 @@
             // 
             this.lbUbicacion.AutoSize = true;
             this.lbUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUbicacion.Location = new System.Drawing.Point(12, 291);
+            this.lbUbicacion.Location = new System.Drawing.Point(25, 235);
+            this.lbUbicacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUbicacion.Name = "lbUbicacion";
-            this.lbUbicacion.Size = new System.Drawing.Size(24, 32);
+            this.lbUbicacion.Size = new System.Drawing.Size(20, 26);
             this.lbUbicacion.TabIndex = 7;
             this.lbUbicacion.Text = "-";
             // 
             // pbImagen5
             // 
-            this.pbImagen5.Location = new System.Drawing.Point(738, 148);
+            this.pbImagen5.Location = new System.Drawing.Point(409, 144);
+            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen5.Name = "pbImagen5";
-            this.pbImagen5.Size = new System.Drawing.Size(184, 125);
+            this.pbImagen5.Size = new System.Drawing.Size(127, 78);
             this.pbImagen5.TabIndex = 6;
             this.pbImagen5.TabStop = false;
             // 
             // pbImagen3
             // 
-            this.pbImagen3.Location = new System.Drawing.Point(534, 148);
+            this.pbImagen3.Location = new System.Drawing.Point(554, 144);
+            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen3.Name = "pbImagen3";
-            this.pbImagen3.Size = new System.Drawing.Size(184, 125);
+            this.pbImagen3.Size = new System.Drawing.Size(127, 78);
             this.pbImagen3.TabIndex = 5;
             this.pbImagen3.TabStop = false;
             // 
             // pbImagen4
             // 
-            this.pbImagen4.Location = new System.Drawing.Point(738, 12);
+            this.pbImagen4.Location = new System.Drawing.Point(554, 28);
+            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen4.Name = "pbImagen4";
-            this.pbImagen4.Size = new System.Drawing.Size(184, 125);
+            this.pbImagen4.Size = new System.Drawing.Size(127, 84);
             this.pbImagen4.TabIndex = 4;
             this.pbImagen4.TabStop = false;
             // 
             // pbImagen2
             // 
-            this.pbImagen2.Location = new System.Drawing.Point(534, 12);
+            this.pbImagen2.Location = new System.Drawing.Point(409, 28);
+            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen2.Name = "pbImagen2";
-            this.pbImagen2.Size = new System.Drawing.Size(184, 125);
+            this.pbImagen2.Size = new System.Drawing.Size(127, 84);
             this.pbImagen2.TabIndex = 3;
             this.pbImagen2.TabStop = false;
             // 
             // pbImagen1
             // 
-            this.pbImagen1.Location = new System.Drawing.Point(12, 12);
+            this.pbImagen1.Location = new System.Drawing.Point(30, 28);
+            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen1.Name = "pbImagen1";
-            this.pbImagen1.Size = new System.Drawing.Size(500, 261);
+            this.pbImagen1.Size = new System.Drawing.Size(354, 194);
             this.pbImagen1.TabIndex = 0;
             this.pbImagen1.TabStop = false;
             // 
             // tbDescripcion
             // 
-            this.tbDescripcion.Location = new System.Drawing.Point(18, 335);
+            this.tbDescripcion.Location = new System.Drawing.Point(30, 272);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
-            this.tbDescripcion.Size = new System.Drawing.Size(494, 209);
+            this.tbDescripcion.Size = new System.Drawing.Size(356, 171);
             this.tbDescripcion.TabIndex = 8;
             // 
             // lbCaracteristicas
             // 
             this.lbCaracteristicas.FormattingEnabled = true;
-            this.lbCaracteristicas.ItemHeight = 16;
-            this.lbCaracteristicas.Location = new System.Drawing.Point(534, 332);
+            this.lbCaracteristicas.Location = new System.Drawing.Point(400, 270);
+            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbCaracteristicas.Name = "lbCaracteristicas";
-            this.lbCaracteristicas.Size = new System.Drawing.Size(120, 212);
+            this.lbCaracteristicas.Size = new System.Drawing.Size(91, 173);
             this.lbCaracteristicas.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(782, 377);
+            this.label1.Location = new System.Drawing.Point(598, 321);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 22);
+            this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "Precio";
             // 
@@ -129,18 +138,20 @@
             // 
             this.lbPrecio.AutoSize = true;
             this.lbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecio.Location = new System.Drawing.Point(782, 418);
+            this.lbPrecio.Location = new System.Drawing.Point(598, 348);
+            this.lbPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(17, 22);
+            this.lbPrecio.Size = new System.Drawing.Size(14, 18);
             this.lbPrecio.TabIndex = 12;
             this.lbPrecio.Text = "-";
             // 
             // btnReservar
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnReservar.Location = new System.Drawing.Point(693, 496);
+            this.btnReservar.Location = new System.Drawing.Point(601, 404);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(106, 48);
+            this.btnReservar.Size = new System.Drawing.Size(80, 39);
             this.btnReservar.TabIndex = 13;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
@@ -148,18 +159,31 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(819, 496);
+            this.btnCancelar.Location = new System.Drawing.Point(507, 404);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 48);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 39);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lCaracteristicas
+            // 
+            this.lCaracteristicas.AutoSize = true;
+            this.lCaracteristicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lCaracteristicas.Location = new System.Drawing.Point(397, 243);
+            this.lCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lCaracteristicas.Name = "lCaracteristicas";
+            this.lCaracteristicas.Size = new System.Drawing.Size(122, 18);
+            this.lCaracteristicas.TabIndex = 15;
+            this.lCaracteristicas.Text = "Caracteristicas";
+            // 
             // VerPropiedad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 574);
+            this.ClientSize = new System.Drawing.Size(722, 473);
+            this.Controls.Add(this.lCaracteristicas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.lbPrecio);
@@ -172,6 +196,7 @@
             this.Controls.Add(this.pbImagen4);
             this.Controls.Add(this.pbImagen2);
             this.Controls.Add(this.pbImagen1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VerPropiedad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VerPropiedad";
@@ -199,5 +224,6 @@
         public System.Windows.Forms.Label lbPrecio;
         public System.Windows.Forms.Button btnReservar;
         public System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lCaracteristicas;
     }
 }

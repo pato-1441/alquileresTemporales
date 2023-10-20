@@ -17,7 +17,7 @@ namespace AlquileresTemporarios_TP2LAB2
         protected double precio;
         string descripcion;
         bool[] caracteristicas;
-        Image[] imagenesPropiedad= new Image[5];
+        Image[] imagenesPropiedad;
         List<Reserva> reservas;
 
 
@@ -53,7 +53,15 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public Image[] ImagenPropiedad { get { return imagenesPropiedad; } }
         public string Descripcion { get { return descripcion; } }
-        public void AñadirImagenes(Image imagen1, Image imagen2, Image imagen3 ,Image imagen4, Image imagen5)
+        public void AñadirImagenes(List<Image> listaImagenes)
+        {
+            imagenesPropiedad=new Image[listaImagenes.Count];
+            for(int i = 0; i < imagenesPropiedad.Count(); i++)
+            {
+                imagenesPropiedad[i] = listaImagenes[i];
+            }
+        }
+        /*public void AñadirImagenes(Image imagen1, Image imagen2, Image imagen3 ,Image imagen4, Image imagen5)
         {
             
                 imagenesPropiedad[0] = imagen1;
@@ -61,7 +69,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 imagenesPropiedad[2] = imagen3;
                 imagenesPropiedad[3] = imagen4;
                 imagenesPropiedad[4] = imagen5;
-        }
+        }*/
 
         public abstract double CalcularPrecio(int cantDias);
 

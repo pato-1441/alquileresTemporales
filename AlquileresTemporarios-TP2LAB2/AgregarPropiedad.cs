@@ -16,7 +16,9 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
-        int cantImagenesCargadas = 1;
+        int cantImagenesCargadas = 0;
+        public List<Image> imagenesCargadas=new List<Image>();
+        
         private void cbTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipoPropiedad.SelectedIndex == 0)
@@ -26,10 +28,19 @@ namespace AlquileresTemporarios_TP2LAB2
                 cbDesayuno.Enabled = false;
                 cbDesayuno.Checked = true;
 
-            } else if (cmbTipoPropiedad.SelectedIndex == 1 || cmbTipoPropiedad.SelectedIndex == 2)
+            } else if (cmbTipoPropiedad.SelectedIndex == 1)
             {
                 gbHotel.Enabled = false;
                 gbCasa.Enabled = true;
+                cbDesayuno.Enabled = true;
+                cbDesayuno.Checked = false;
+            }
+            else
+            {
+                gbHotel.Enabled = false;
+                gbCasa.Enabled = false;
+                cbDesayuno.Enabled = true;
+                cbDesayuno.Checked = false;
             }
         }
 
@@ -40,24 +51,29 @@ namespace AlquileresTemporarios_TP2LAB2
             {
                 switch (cantImagenesCargadas)
                 {
-                    case 1:
+                    case 0:
                         pbImagenPropiedad1.Image = Image.FromFile(ofdImagen.FileName);
+                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
+                        cantImagenesCargadas++;
+                        break;
+                    case 1:
+                        pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
+                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
                         cantImagenesCargadas++;
                         break;
                     case 2:
-                        pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
+                        pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
+                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
                         cantImagenesCargadas++;
                         break;
                     case 3:
-                        pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
+                        pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
+                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
                         cantImagenesCargadas++;
                         break;
                     case 4:
-                        pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
-                        cantImagenesCargadas++;
-                        break;
-                    case 5:
                         pbImagenPropiedad5.Image = Image.FromFile(ofdImagen.FileName);
+                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
                         cantImagenesCargadas++;
                         btnSeleccionarImagen.Enabled = false;
                         break;

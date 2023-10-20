@@ -40,6 +40,7 @@
             this.lbPrecio = new System.Windows.Forms.Label();
             this.btnReservar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lbPrueba = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen4)).BeginInit();
@@ -147,6 +148,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(819, 496);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 48);
@@ -154,11 +156,21 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lbPrueba
+            // 
+            this.lbPrueba.AutoSize = true;
+            this.lbPrueba.Location = new System.Drawing.Point(738, 306);
+            this.lbPrueba.Name = "lbPrueba";
+            this.lbPrueba.Size = new System.Drawing.Size(44, 16);
+            this.lbPrueba.TabIndex = 15;
+            this.lbPrueba.Text = "label2";
+            // 
             // VerPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 574);
+            this.Controls.Add(this.lbPrueba);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.lbPrecio);
@@ -198,5 +210,6 @@
         public System.Windows.Forms.Label lbPrecio;
         public System.Windows.Forms.Button btnReservar;
         public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Label lbPrueba;
     }
 }

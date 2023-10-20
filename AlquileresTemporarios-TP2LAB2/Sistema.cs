@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
-    [Serializable]
+   [Serializable]
     internal class Sistema
     {
         
@@ -146,7 +147,9 @@ namespace AlquileresTemporarios_TP2LAB2
             return propiedadesMatch;
         }
 
-
-        
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

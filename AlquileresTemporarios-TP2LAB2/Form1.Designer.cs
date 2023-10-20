@@ -34,6 +34,13 @@
             this.btnConsultarReserva = new System.Windows.Forms.Button();
             this.btnEliminarReserva = new System.Windows.Forms.Button();
             this.dgvPropiedades = new System.Windows.Forms.DataGridView();
+            this.colTipoPropiedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaracteristicas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantPersonas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetalles = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUbicacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,13 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbUbicacionBuscar = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.colTipoPropiedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCaracteristicas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantPersonas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDetalles = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,6 +132,63 @@
             this.dgvPropiedades.Size = new System.Drawing.Size(1081, 512);
             this.dgvPropiedades.TabIndex = 5;
             this.dgvPropiedades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPropiedades_CellContentClick);
+            // 
+            // colTipoPropiedad
+            // 
+            this.colTipoPropiedad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTipoPropiedad.HeaderText = "Tipo propiedad";
+            this.colTipoPropiedad.MinimumWidth = 6;
+            this.colTipoPropiedad.Name = "colTipoPropiedad";
+            this.colTipoPropiedad.ReadOnly = true;
+            // 
+            // colCaracteristicas
+            // 
+            this.colCaracteristicas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCaracteristicas.HeaderText = "Características";
+            this.colCaracteristicas.MinimumWidth = 6;
+            this.colCaracteristicas.Name = "colCaracteristicas";
+            this.colCaracteristicas.ReadOnly = true;
+            // 
+            // colUbicacion
+            // 
+            this.colUbicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUbicacion.HeaderText = "Ubicación";
+            this.colUbicacion.MinimumWidth = 6;
+            this.colUbicacion.Name = "colUbicacion";
+            this.colUbicacion.ReadOnly = true;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescripcion.HeaderText = "Descripción";
+            this.colDescripcion.MinimumWidth = 6;
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.ReadOnly = true;
+            // 
+            // colCantPersonas
+            // 
+            this.colCantPersonas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCantPersonas.HeaderText = "Cant. Personas";
+            this.colCantPersonas.MinimumWidth = 6;
+            this.colCantPersonas.Name = "colCantPersonas";
+            this.colCantPersonas.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.MinimumWidth = 6;
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colDetalles
+            // 
+            this.colDetalles.DataPropertyName = "Ver Detalles";
+            this.colDetalles.HeaderText = "Ver Detalles";
+            this.colDetalles.MinimumWidth = 6;
+            this.colDetalles.Name = "colDetalles";
+            this.colDetalles.ReadOnly = true;
+            this.colDetalles.Width = 125;
             // 
             // label1
             // 
@@ -319,9 +376,9 @@
             this.gbFecha.Controls.Add(this.fechaDesde);
             this.gbFecha.Controls.Add(this.fechaHasta);
             this.gbFecha.Location = new System.Drawing.Point(39, 305);
-            this.gbFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFecha.Margin = new System.Windows.Forms.Padding(4);
             this.gbFecha.Name = "gbFecha";
-            this.gbFecha.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFecha.Padding = new System.Windows.Forms.Padding(4);
             this.gbFecha.Size = new System.Drawing.Size(353, 165);
             this.gbFecha.TabIndex = 21;
             this.gbFecha.TabStop = false;
@@ -331,7 +388,7 @@
             // 
             this.pictureBox1.Image = global::AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
             this.pictureBox1.Location = new System.Drawing.Point(39, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(353, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -381,63 +438,6 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Localidad";
             // 
-            // colTipoPropiedad
-            // 
-            this.colTipoPropiedad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTipoPropiedad.HeaderText = "Tipo propiedad";
-            this.colTipoPropiedad.MinimumWidth = 6;
-            this.colTipoPropiedad.Name = "colTipoPropiedad";
-            this.colTipoPropiedad.ReadOnly = true;
-            // 
-            // colCaracteristicas
-            // 
-            this.colCaracteristicas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCaracteristicas.HeaderText = "Características";
-            this.colCaracteristicas.MinimumWidth = 6;
-            this.colCaracteristicas.Name = "colCaracteristicas";
-            this.colCaracteristicas.ReadOnly = true;
-            // 
-            // colUbicacion
-            // 
-            this.colUbicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUbicacion.HeaderText = "Ubicación";
-            this.colUbicacion.MinimumWidth = 6;
-            this.colUbicacion.Name = "colUbicacion";
-            this.colUbicacion.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescripcion.HeaderText = "Descripción";
-            this.colDescripcion.MinimumWidth = 6;
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colCantPersonas
-            // 
-            this.colCantPersonas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCantPersonas.HeaderText = "Cant. Personas";
-            this.colCantPersonas.MinimumWidth = 6;
-            this.colCantPersonas.Name = "colCantPersonas";
-            this.colCantPersonas.ReadOnly = true;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.MinimumWidth = 6;
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colDetalles
-            // 
-            this.colDetalles.DataPropertyName = "Ver Detalles";
-            this.colDetalles.HeaderText = "Ver Detalles";
-            this.colDetalles.MinimumWidth = 6;
-            this.colDetalles.Name = "colDetalles";
-            this.colDetalles.ReadOnly = true;
-            this.colDetalles.Width = 125;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -462,6 +462,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler Temporal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).EndInit();

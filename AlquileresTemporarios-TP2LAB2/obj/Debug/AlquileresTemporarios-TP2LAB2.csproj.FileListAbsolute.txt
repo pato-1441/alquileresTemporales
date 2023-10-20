@@ -38,3 +38,16 @@ E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\Al
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.exe.config
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.exe
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.pdb
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.AssemblyReference.cache
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.AgregarPropiedad.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Form1.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Properties.Resources.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.RegistrarCliente.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.GenerateResource.cache
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CoreCompileInputs.cache
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
+C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb

@@ -20,6 +20,7 @@ namespace AlquileresTemporarios_TP2LAB2
             InitializeComponent();
         }
         Sistema sistema;
+        List<Propiedad> propiedadesMatch;
 
         string archivoInicial = Application.StartupPath + "\\sistema.bin";
         BinaryFormatter datosBinarios = new BinaryFormatter();
@@ -80,13 +81,16 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow fila in dgvPropiedades.Rows) { 
+            dgvPropiedades.Rows.Remove(fila);
+            }
             bool[] especificaciones = new bool[] { cbCochera.Checked, cbPileta.Checked, cbWifi.Checked, cbLimpieza.Checked, cbDesayuno.Checked, cbMascotas.Checked };
             string[] ubicaciones = new string[] { tbUbicacion.Text.ToUpper(), cbUbicacionBuscar.SelectedItem.ToString() };
-            List<Propiedad> propiedadesMatch = sistema.ConsultarPropiedades(ubicaciones, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value), especificaciones);
+            propiedadesMatch = sistema.ConsultarPropiedades(ubicaciones, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value), especificaciones);
             for (int i = 0; i < propiedadesMatch.Count; i++)
             {
-                MessageBox.Show("Se Encontro!");
+                DataGridViewRow fila = CrearFilaPropiedad(propiedadesMatch[i].ToString(), propiedadesMatch[i].Caracteristicas, propiedadesMatch[i].Ubicacion[0], propiedadesMatch[i].Descripcion, propiedadesMatch[i].CantPersonas.ToString(), propiedadesMatch[i].Precio.ToString("$0.00"));
+                dgvPropiedades.Rows.Add(fila);
             }
 
         }
@@ -167,8 +171,8 @@ namespace AlquileresTemporarios_TP2LAB2
                             
                             sistema.AgregarHotel((HabitacionHotel)propiedad);
 
-                            DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaHotel);
+                           /* DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaHotel);*/
                             break;
                         case 1:
                             propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
@@ -182,8 +186,8 @@ namespace AlquileresTemporarios_TP2LAB2
 
                             sistema.AgregarCasa((Casa)propiedad);
 
-                            DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaCasa);
+                            /*DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaCasa);*/
                             break;
                         case 2:
                             propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
@@ -197,8 +201,8 @@ namespace AlquileresTemporarios_TP2LAB2
 
                             sistema.AgregarCasa((CasaFinde)propiedad);
 
-                            DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text.ToUpper(), modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaCasaFinde);
+                            /*DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text.ToUpper(), modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
+                            dgvPropiedades.Rows.Add(filaCasaFinde);*/
                             break;
                     }
                 }
@@ -241,19 +245,49 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow fila = this.dgvPropiedades.Rows[e.RowIndex];
+                DataGridViewRow row = this.dgvPropiedades.Rows[e.RowIndex];
 
-                verPropiedad.lbUbicacion.Text = fila.Cells["ColUbicacion"].Value.ToString();
-                verPropiedad.lbPrecio.Text = fila.Cells["colPrecio"].Value.ToString();
-                verPropiedad.tbDescripcion.Text = fila.Cells["colDescripcion"].Value.ToString();
-                verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[0].ImagenPropiedad[0];
-                
+                verPropiedad.lbUbicacion.Text = row.Cells["ColUbicacion"].Value.ToString();
+                verPropiedad.lbPrecio.Text = row.Cells["colPrecio"].Value.ToString();
+                verPropiedad.tbDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
+                switch (propiedadesMatch[e.RowIndex].ImagenPropiedad.Length)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        break;
+                    case 2:
+                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
+                        break;
+                    case 3:
+                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
+                        break;
+                    case 4:
+                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen4.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[3];
+                        break;
+                    case 5:
+                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen4.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[3];
+                        verPropiedad.pbImagen5.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[4];
+                        break;
+
+                }
+
                 /*verPropiedad.pbImagen1.
                 verPropiedad.pbImagen1.
                 verPropiedad.pbImagen1.
                 verPropiedad.pbImagen1.*/
 
-                string[] caracteristicas = fila.Cells["colCaracteristicas"].Value.ToString().Split('\n');
+                string[] caracteristicas = row.Cells["colCaracteristicas"].Value.ToString().Split('\n');
 
                 foreach (string c in caracteristicas)
                 {

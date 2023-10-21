@@ -27,6 +27,9 @@ namespace AlquileresTemporarios_TP2LAB2
             precioFinal = cantDias * base.precio;
             return precioFinal;
         }
-
+        public override string ToString()
+        {
+            return "Hotel";
+        }
     }
 }

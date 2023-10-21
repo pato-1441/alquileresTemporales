@@ -20,7 +20,7 @@ namespace AlquileresTemporarios_TP2LAB2
         Image[] imagenesPropiedad;
         List<Reserva> reservas;
 
-
+        public double Precio { get { return precio; } }
         public int CantPersonas
         {
             get { return cantPersonas; }

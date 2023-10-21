@@ -62,52 +62,57 @@
             // pbImagen5
             // 
             this.pbImagen5.Location = new System.Drawing.Point(409, 144);
-            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen5.Name = "pbImagen5";
             this.pbImagen5.Size = new System.Drawing.Size(127, 78);
+            this.pbImagen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen5.TabIndex = 6;
             this.pbImagen5.TabStop = false;
             // 
             // pbImagen3
             // 
             this.pbImagen3.Location = new System.Drawing.Point(554, 144);
-            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen3.Name = "pbImagen3";
             this.pbImagen3.Size = new System.Drawing.Size(127, 78);
+            this.pbImagen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen3.TabIndex = 5;
             this.pbImagen3.TabStop = false;
             // 
             // pbImagen4
             // 
             this.pbImagen4.Location = new System.Drawing.Point(554, 28);
-            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen4.Name = "pbImagen4";
             this.pbImagen4.Size = new System.Drawing.Size(127, 84);
+            this.pbImagen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen4.TabIndex = 4;
             this.pbImagen4.TabStop = false;
             // 
             // pbImagen2
             // 
             this.pbImagen2.Location = new System.Drawing.Point(409, 28);
-            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen2.Name = "pbImagen2";
             this.pbImagen2.Size = new System.Drawing.Size(127, 84);
+            this.pbImagen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen2.TabIndex = 3;
             this.pbImagen2.TabStop = false;
             // 
             // pbImagen1
             // 
             this.pbImagen1.Location = new System.Drawing.Point(30, 28);
-            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen1.Name = "pbImagen1";
             this.pbImagen1.Size = new System.Drawing.Size(354, 194);
+            this.pbImagen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen1.TabIndex = 0;
             this.pbImagen1.TabStop = false;
             // 
             // tbDescripcion
             // 
             this.tbDescripcion.Location = new System.Drawing.Point(30, 272);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
@@ -118,7 +123,7 @@
             // 
             this.lbCaracteristicas.FormattingEnabled = true;
             this.lbCaracteristicas.Location = new System.Drawing.Point(400, 270);
-            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2);
             this.lbCaracteristicas.Name = "lbCaracteristicas";
             this.lbCaracteristicas.Size = new System.Drawing.Size(91, 173);
             this.lbCaracteristicas.TabIndex = 9;
@@ -149,7 +154,7 @@
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReservar.Location = new System.Drawing.Point(601, 404);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(80, 39);
             this.btnReservar.TabIndex = 13;
@@ -160,7 +165,7 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(507, 404);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 39);
             this.btnCancelar.TabIndex = 14;
@@ -196,7 +201,7 @@
             this.Controls.Add(this.pbImagen4);
             this.Controls.Add(this.pbImagen2);
             this.Controls.Add(this.pbImagen1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerPropiedad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VerPropiedad";

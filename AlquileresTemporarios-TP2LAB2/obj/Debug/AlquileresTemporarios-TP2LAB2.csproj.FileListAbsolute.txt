@@ -52,3 +52,4 @@ C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\Alquile
 C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 C:\Users\TUP\Desktop\alquileresTemporales-main\alquileresTemporales-main\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
 E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources

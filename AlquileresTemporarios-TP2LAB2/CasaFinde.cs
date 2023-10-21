@@ -26,6 +26,9 @@ namespace AlquileresTemporarios_TP2LAB2
 
             return precioFinal;
         }
-
+        public override string ToString()
+        {
+            return "Casa fin de semana";
+        }
     }
 }

@@ -81,15 +81,16 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvPropiedades.Rows) { 
-            dgvPropiedades.Rows.Remove(fila);
+            int cantFilas = dgvPropiedades.Rows.Count;
+            for (int i =0;i< cantFilas;i++) {
+                dgvPropiedades.Rows.Remove(dgvPropiedades.Rows[0]);
             }
             bool[] especificaciones = new bool[] { cbCochera.Checked, cbPileta.Checked, cbWifi.Checked, cbLimpieza.Checked, cbDesayuno.Checked, cbMascotas.Checked };
             string[] ubicaciones = new string[] { tbUbicacion.Text.ToUpper(), cbUbicacionBuscar.SelectedItem.ToString() };
             propiedadesMatch = sistema.ConsultarPropiedades(ubicaciones, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value), especificaciones);
-            for (int i = 0; i < propiedadesMatch.Count; i++)
+            foreach (Propiedad propiedad in propiedadesMatch)
             {
-                DataGridViewRow fila = CrearFilaPropiedad(propiedadesMatch[i].ToString(), propiedadesMatch[i].Caracteristicas, propiedadesMatch[i].Ubicacion[0], propiedadesMatch[i].Descripcion, propiedadesMatch[i].CantPersonas.ToString(), propiedadesMatch[i].Precio.ToString("$0.00"));
+                DataGridViewRow fila = CrearFilaPropiedad(propiedad.ToString(), propiedad.Caracteristicas, propiedad.Ubicacion[0], propiedad.Descripcion, propiedad.CantPersonas.ToString(), propiedad.Precio.ToString("$0.00"));
                 dgvPropiedades.Rows.Add(fila);
             }
 
@@ -255,29 +256,29 @@ namespace AlquileresTemporarios_TP2LAB2
                     case 0:
                         break;
                     case 1:
-                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
                         break;
                     case 2:
-                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
                         break;
                     case 3:
-                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
                         break;
                     case 4:
-                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
-                        verPropiedad.pbImagen4.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[3];
+                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen4.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[3];
                         break;
                     case 5:
-                        verPropiedad.pbImagen1.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[2];
-                        verPropiedad.pbImagen4.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[3];
-                        verPropiedad.pbImagen5.Image = sistema.ListaPropiedades[e.RowIndex].ImagenPropiedad[4];
+                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
+                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
+                        verPropiedad.pbImagen3.Image = propiedadesMatch [e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen4.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[3];
+                        verPropiedad.pbImagen5.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[4];
                         break;
 
                 }

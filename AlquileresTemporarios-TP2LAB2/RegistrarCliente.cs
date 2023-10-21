@@ -16,5 +16,10 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (tbDNI == null || tbNombre == null) throw new Exception("No se completaron los datos");
+        }
     }
 }

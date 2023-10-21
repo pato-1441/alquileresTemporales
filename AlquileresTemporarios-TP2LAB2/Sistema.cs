@@ -42,8 +42,13 @@ namespace AlquileresTemporarios_TP2LAB2
             return exito;
         }
 
-        public int ReservarPropiedad(Propiedad propiedad, Cliente cliente)
+        public int ReservarPropiedad(Propiedad propiedad, Cliente cliente, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
+            if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
+                TimeSpan tiempoReserva = fechaFin - fechaInicio;
+                Reserva reserva = new Reserva(fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                propiedad.AgregarReserva(reserva);
+            }
             return 3;
         }
 

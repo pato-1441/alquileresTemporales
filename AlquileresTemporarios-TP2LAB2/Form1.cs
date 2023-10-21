@@ -163,47 +163,23 @@ namespace AlquileresTemporarios_TP2LAB2
                                             Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
                                             Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.SelectedIndex),
                                             Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2);
-                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);
-                                /*propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
-                                                        modalAgregarPropiedad.pbImagenPropiedad2.Image,
-                                                        modalAgregarPropiedad.pbImagenPropiedad3.Image,
-                                                        modalAgregarPropiedad.pbImagenPropiedad4.Image,
-                                                        modalAgregarPropiedad.pbImagenPropiedad5.Image);*/
+                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
                             
                             sistema.AgregarHotel((HabitacionHotel)propiedad);
-
-                           /* DataGridViewRow filaHotel = CrearFilaPropiedad("Hotel", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaHotel);*/
                             break;
                         case 1:
                             propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
                                         Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
-                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);
-                            /*propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad2.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad3.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad4.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad5.Image);*/
+                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
                             sistema.AgregarCasa((Casa)propiedad);
-
-                            /*DataGridViewRow filaCasa = CrearFilaPropiedad("Casa", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaCasa);*/
                             break;
                         case 2:
                             propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
                                         Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
-                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);
-                            /*propiedad.AñadirImagenes(modalAgregarPropiedad.pbImagenPropiedad1.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad2.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad3.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad4.Image,
-                                                    modalAgregarPropiedad.pbImagenPropiedad5.Image);*/
+                            propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
                             sistema.AgregarCasa((CasaFinde)propiedad);
-
-                            /*DataGridViewRow filaCasaFinde = CrearFilaPropiedad("Casa finde", caracteristicas, modalAgregarPropiedad.tbLocalidad.Text.ToUpper(), modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.nudCantPersonas.Value.ToString(), ("$" + modalAgregarPropiedad.tbPrecioXNoche.Text));
-                            dgvPropiedades.Rows.Add(filaCasaFinde);*/
                             break;
                     }
                 }
@@ -221,7 +197,7 @@ namespace AlquileresTemporarios_TP2LAB2
             RegistrarCliente cancelarReserva = new RegistrarCliente();
             cancelarReserva.Text = "Cancelar Reserva";
             cancelarReserva.lbNombre.Text = "Número Reserva";
-            cancelarReserva.button1.Text = "Aceptar";
+            cancelarReserva.btnAceptar.Text = "Aceptar";
             if (cancelarReserva.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -276,7 +252,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     case 5:
                         verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
                         verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = propiedadesMatch [e.RowIndex].ImagenPropiedad[2];
+                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
                         verPropiedad.pbImagen4.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[3];
                         verPropiedad.pbImagen5.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[4];
                         break;
@@ -300,7 +276,22 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (verPropiedad.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Se pudo!");
+                
+                RegistrarCliente registrarCliente = new RegistrarCliente();
+                Cliente cliente;
+                if(registrarCliente.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                        //sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente);
+                        MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito");
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
             else verPropiedad.Dispose();
         }

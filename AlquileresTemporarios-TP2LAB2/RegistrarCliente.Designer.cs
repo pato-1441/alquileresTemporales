@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lbNombre = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -36,16 +36,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(17, 129);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAceptar.Location = new System.Drawing.Point(17, 129);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(76, 34);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Agregar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // button2
             // 
@@ -104,7 +105,7 @@
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAceptar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -120,6 +121,6 @@
         public System.Windows.Forms.Label lbNombre;
         public System.Windows.Forms.TextBox tbNombre;
         public System.Windows.Forms.TextBox tbDNI;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnAceptar;
     }
 }

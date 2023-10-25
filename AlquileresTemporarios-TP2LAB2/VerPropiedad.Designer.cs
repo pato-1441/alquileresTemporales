@@ -153,7 +153,7 @@
             // btnReservar
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnReservar.Location = new System.Drawing.Point(601, 404);
+            this.btnReservar.Location = new System.Drawing.Point(517, 404);
             this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(80, 39);
@@ -164,7 +164,7 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(507, 404);
+            this.btnCancelar.Location = new System.Drawing.Point(601, 404);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 39);
@@ -203,7 +203,7 @@
             this.Controls.Add(this.pbImagen1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VerPropiedad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerPropiedad";
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen3)).EndInit();

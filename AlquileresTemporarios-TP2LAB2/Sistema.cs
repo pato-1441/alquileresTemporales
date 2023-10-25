@@ -81,7 +81,7 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return unaReserva;
         }
-        public bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fechaInicio, DateTime fechaFin)
+        private bool ConsultarDisponibilidad(Propiedad propiedad, DateTime fechaInicio, DateTime fechaFin)
         {
             bool exito = true;
             //if(propiedad.Reservas.Count>0)
@@ -126,7 +126,12 @@ namespace AlquileresTemporarios_TP2LAB2
         private List<Propiedad> ConsultarPropiedades(string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
             List<Propiedad> propiedadesMatch = new List<Propiedad>();
-            foreach(Propiedad propiedad in ConsultarPropiedades(ubicacion,fechaInicio,fechaFin))
+            List<Propiedad> propiedadesMatchAux = new List<Propiedad>();
+
+           if (ubicacion[0] != "") propiedadesMatchAux = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin);
+            else propiedadesMatchAux = ConsultarPropiedades(ubicacion[1], fechaInicio, fechaFin);
+
+            foreach (Propiedad propiedad in propiedadesMatchAux)
             {
                 if(propiedad.CantPersonas == cantPersonas)
                 {

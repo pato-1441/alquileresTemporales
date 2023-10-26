@@ -186,7 +186,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnModificar.Location = new System.Drawing.Point(576, 404);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";

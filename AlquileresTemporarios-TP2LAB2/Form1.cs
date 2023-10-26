@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.XPath;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -263,6 +264,50 @@ namespace AlquileresTemporarios_TP2LAB2
                         }
                     }
                     registrarCliente.Dispose();
+                }else if(result== DialogResult.Yes)
+                        {
+                AgregarPropiedad modificarPropiedad = new AgregarPropiedad();
+                Propiedad propiedad = sistema.ListaPropiedades[e.RowIndex];
+                int tipoPropiedad;
+                if (propiedad.ToString() == "Hotel") tipoPropiedad = 0;
+                else if (propiedad.ToString() == "Casa") tipoPropiedad = 1;
+                else tipoPropiedad = 2;
+                foreach(object obj in modificarPropiedad.Controls)
+                {
+                    if (obj is ComboBox) ((ComboBox)obj).Enabled = false;
+                    else if(obj is TextBox) ((TextBox)obj).Enabled = false;
+                }
+                modificarPropiedad.cmbProvincias.SelectedIndex = tipoPropiedad;
+                modificarPropiedad.tbLocalidad.Text = propiedad.Ubicacion[1];
+                modificarPropiedad.tbDireccion.Text = propiedad.Ubicacion[0];
+                modificarPropiedad.nudCantPersonas.Value = propiedad.CantPersonas;
+                modificarPropiedad.tbPrecioXNoche.Enabled = true;
+                modificarPropiedad.tbPrecioXNoche.Text= propiedad.Precio.ToString("0.00");
+                if (tipoPropiedad == 1)
+                {
+                    modificarPropiedad.gbCasa.Enabled = true;
+                    modificarPropiedad.nudMinimoDias.Value = ((Casa)propiedad).MinimoDias;
+                }
+                modificarPropiedad.tbDescripcion.Enabled = true;
+                modificarPropiedad.tbDescripcion.Text = propiedad.Descripcion;
+                    if (modificarPropiedad.ShowDialog() == DialogResult.OK)
+                    {
+                        bool[] nuevasCaracteristicas = new bool[] { modificarPropiedad.cbCochera.Checked, modificarPropiedad.cbPileta.Checked, modificarPropiedad.cbWifi.Checked, modificarPropiedad.cbLimpieza.Checked, modificarPropiedad.cbDesayuno.Checked, modificarPropiedad.cbMascotas.Checked };
+                        try
+                        {
+                        DialogResult resultado = MessageBox.Show("¿Está seguro de que desea modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            sistema.ModificarPropiedad(propiedad, Convert.ToDouble(modificarPropiedad.tbPrecioXNoche.Text), modificarPropiedad.tbDescripcion.Text, nuevasCaracteristicas, Convert.ToInt32(modificarPropiedad.nudCantPersonas.Value), Convert.ToInt32(modificarPropiedad.nudMinimoDias.Value));
+                            dgvPropiedades.Rows.Clear();
+                        }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                    }
                 }
                 verPropiedad.Dispose();
             

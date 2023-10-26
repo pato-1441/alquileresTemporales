@@ -206,7 +206,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 try
                 {
                     sistema.CancelarReserva(Convert.ToInt32(cancelarReserva.tbNombre.Text), Convert.ToInt32(cancelarReserva.tbDNI.Text));
-                    MessageBox.Show("Se ha eliminado la reserva");                    
+                    MessageBox.Show("Se ha eliminado la reserva.");                    
                 }
                 catch (Exception ex)
                 {

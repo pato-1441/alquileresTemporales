@@ -86,7 +86,10 @@ namespace AlquileresTemporarios_TP2LAB2
                 dgvPropiedades.Rows.Remove(dgvPropiedades.Rows[0]);
             }
             bool[] especificaciones = new bool[] { cbCochera.Checked, cbPileta.Checked, cbWifi.Checked, cbLimpieza.Checked, cbDesayuno.Checked, cbMascotas.Checked };
-            string[] ubicaciones = new string[] { tbUbicacion.Text.ToUpper(), cbUbicacionBuscar.SelectedItem.ToString() };
+            string provincia = null;
+            if (cbUbicacionBuscar.SelectedItem != null)
+                provincia = cbUbicacionBuscar.SelectedItem.ToString();
+            string[] ubicaciones = new string[] { tbUbicacion.Text.ToUpper(), provincia };
             propiedadesMatch = sistema.ConsultarPropiedades(ubicaciones, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value), especificaciones);
             foreach (Propiedad propiedad in propiedadesMatch)
             {
@@ -259,11 +262,6 @@ namespace AlquileresTemporarios_TP2LAB2
 
                 }
 
-                /*verPropiedad.pbImagen1.
-                verPropiedad.pbImagen1.
-                verPropiedad.pbImagen1.
-                verPropiedad.pbImagen1.*/
-
                 string[] caracteristicas = row.Cells["colCaracteristicas"].Value.ToString().Split('\n');
 
                 foreach (string c in caracteristicas)
@@ -288,8 +286,8 @@ namespace AlquileresTemporarios_TP2LAB2
                         try
                         {
                             cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
-                            sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
-                            MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito");
+                            int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
+                            MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: "+ nroReserva);
                         }
                         catch (Exception ex)
                         {
@@ -301,5 +299,80 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             verPropiedad.Dispose();
         }
+
+        private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)
+        {
+            bool exito = false;
+            if (propiedad != null)
+            {
+                switch (propiedad.ImagenPropiedad.Length)
+                {
+                    case 1:
+                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
+                        break;
+                    case 2:
+                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
+                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
+                        break;
+                    case 3:
+                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
+                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
+                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
+                        break;
+                    case 4:
+                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
+                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
+                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
+                        modal.pbImagen4.Image = propiedad.ImagenPropiedad[3];
+                        break;
+                    case 5:
+                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
+                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
+                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
+                        modal.pbImagen4.Image = propiedad.ImagenPropiedad[3];
+                        modal.pbImagen5.Image = propiedad.ImagenPropiedad[4];
+                        break;
+                }
+                modal.tbDescripcion.Text = propiedad.Descripcion;
+                modal.lbPrecio.Text = propiedad.Precio.ToString();
+                modal.lbUbicacion.Text = propiedad.Ubicacion[0] + ", " + propiedad.Ubicacion[1] + ", " + propiedad.Ubicacion[2];
+                string[] enumerador = new string[] { "Cochera", "Pileta", "Wi-Fi", "Limpieza", "Desayuno", "Mascotas" };
+                for (int i = 0; i < propiedad.Caracteristicas.Length; i++)
+                {
+                    if (propiedad.Caracteristicas[i])
+                        modal.lbCaracteristicas.Items.Add(enumerador);
+                }
+                exito = true;
+            }
+            else throw new Exception("No hay propiedad.");
+            return exito;
+        }
+
+        private void btnConsultarReserva_Click(object sender, EventArgs e)
+        {
+            RegistrarCliente modal = new RegistrarCliente();
+            VerPropiedad modalPropiedad = new VerPropiedad();
+            Propiedad propiedad = null;
+            modal.tbDNI.Visible= false;
+            modal.label2.Visible = false;
+            modal.lbNombre.Text = "Número de reserva";
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
+                try
+                {
+                    if (RellenarVerPropiedad(modalPropiedad, propiedad))
+                    {
+                        modalPropiedad.Show();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else MessageBox.Show("No se pudo encontrar una reserva.");
+            }
+        }
     }
-}
+

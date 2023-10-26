@@ -71,7 +71,7 @@
             // btnAgregarPropiedad
             // 
             this.btnAgregarPropiedad.Location = new System.Drawing.Point(327, 26);
-            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPropiedad.Name = "btnAgregarPropiedad";
             this.btnAgregarPropiedad.Size = new System.Drawing.Size(178, 67);
             this.btnAgregarPropiedad.TabIndex = 2;
@@ -82,17 +82,18 @@
             // btnConsultarReserva
             // 
             this.btnConsultarReserva.Location = new System.Drawing.Point(518, 26);
-            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarReserva.Name = "btnConsultarReserva";
             this.btnConsultarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnConsultarReserva.TabIndex = 3;
             this.btnConsultarReserva.Text = "Consultar Reserva";
             this.btnConsultarReserva.UseVisualStyleBackColor = true;
+            this.btnConsultarReserva.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // btnEliminarReserva
             // 
             this.btnEliminarReserva.Location = new System.Drawing.Point(711, 26);
-            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarReserva.Name = "btnEliminarReserva";
             this.btnEliminarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnEliminarReserva.TabIndex = 4;
@@ -125,7 +126,7 @@
             this.colPrecio,
             this.colDetalles});
             this.dgvPropiedades.Location = new System.Drawing.Point(327, 116);
-            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPropiedades.Name = "dgvPropiedades";
             this.dgvPropiedades.RowHeadersWidth = 51;
             this.dgvPropiedades.RowTemplate.Height = 24;
@@ -203,7 +204,7 @@
             // tbUbicacion
             // 
             this.tbUbicacion.Location = new System.Drawing.Point(191, 170);
-            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.tbUbicacion.Name = "tbUbicacion";
             this.tbUbicacion.Size = new System.Drawing.Size(103, 20);
             this.tbUbicacion.TabIndex = 9;
@@ -221,7 +222,7 @@
             // nudCantPersonas
             // 
             this.nudCantPersonas.Location = new System.Drawing.Point(30, 221);
-            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
             this.nudCantPersonas.Maximum = new decimal(new int[] {
             20,
             0,
@@ -245,7 +246,7 @@
             // 
             this.cbWifi.AutoSize = true;
             this.cbWifi.Location = new System.Drawing.Point(20, 27);
-            this.cbWifi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWifi.Margin = new System.Windows.Forms.Padding(2);
             this.cbWifi.Name = "cbWifi";
             this.cbWifi.Size = new System.Drawing.Size(50, 17);
             this.cbWifi.TabIndex = 13;
@@ -261,9 +262,9 @@
             this.groupBox1.Controls.Add(this.cbCochera);
             this.groupBox1.Controls.Add(this.cbWifi);
             this.groupBox1.Location = new System.Drawing.Point(29, 389);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(265, 90);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -273,7 +274,7 @@
             // 
             this.cbDesayuno.AutoSize = true;
             this.cbDesayuno.Location = new System.Drawing.Point(169, 27);
-            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2);
             this.cbDesayuno.Name = "cbDesayuno";
             this.cbDesayuno.Size = new System.Drawing.Size(74, 17);
             this.cbDesayuno.TabIndex = 18;
@@ -284,7 +285,7 @@
             // 
             this.cbPileta.AutoSize = true;
             this.cbPileta.Location = new System.Drawing.Point(20, 56);
-            this.cbPileta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPileta.Margin = new System.Windows.Forms.Padding(2);
             this.cbPileta.Name = "cbPileta";
             this.cbPileta.Size = new System.Drawing.Size(52, 17);
             this.cbPileta.TabIndex = 17;
@@ -295,7 +296,7 @@
             // 
             this.cbMascotas.AutoSize = true;
             this.cbMascotas.Location = new System.Drawing.Point(169, 56);
-            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.cbMascotas.Name = "cbMascotas";
             this.cbMascotas.Size = new System.Drawing.Size(72, 17);
             this.cbMascotas.TabIndex = 16;
@@ -306,7 +307,7 @@
             // 
             this.cbLimpieza.AutoSize = true;
             this.cbLimpieza.Location = new System.Drawing.Point(87, 56);
-            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2);
             this.cbLimpieza.Name = "cbLimpieza";
             this.cbLimpieza.Size = new System.Drawing.Size(67, 17);
             this.cbLimpieza.TabIndex = 15;
@@ -317,7 +318,7 @@
             // 
             this.cbCochera.AutoSize = true;
             this.cbCochera.Location = new System.Drawing.Point(87, 27);
-            this.cbCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCochera.Margin = new System.Windows.Forms.Padding(2);
             this.cbCochera.Name = "cbCochera";
             this.cbCochera.Size = new System.Drawing.Size(66, 17);
             this.cbCochera.TabIndex = 14;
@@ -327,7 +328,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(29, 488);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(265, 44);
             this.btnBuscar.TabIndex = 16;
@@ -338,7 +339,7 @@
             // fechaDesde
             // 
             this.fechaDesde.Location = new System.Drawing.Point(20, 44);
-            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDesde.MinDate = new System.DateTime(2023, 10, 16, 0, 0, 0, 0);
             this.fechaDesde.Name = "fechaDesde";
             this.fechaDesde.Size = new System.Drawing.Size(216, 20);
@@ -368,7 +369,7 @@
             // fechaHasta
             // 
             this.fechaHasta.Location = new System.Drawing.Point(20, 95);
-            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechaHasta.Name = "fechaHasta";
             this.fechaHasta.Size = new System.Drawing.Size(216, 20);
             this.fechaHasta.TabIndex = 19;
@@ -425,7 +426,7 @@
             "Tierra Del Fuego",
             "Tucumán"});
             this.cbUbicacionBuscar.Location = new System.Drawing.Point(28, 169);
-            this.cbUbicacionBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUbicacionBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.cbUbicacionBuscar.Name = "cbUbicacionBuscar";
             this.cbUbicacionBuscar.Size = new System.Drawing.Size(151, 21);
             this.cbUbicacionBuscar.TabIndex = 23;
@@ -460,7 +461,7 @@
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler Temporal";

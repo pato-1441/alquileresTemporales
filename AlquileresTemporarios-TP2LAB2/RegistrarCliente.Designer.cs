@@ -117,10 +117,10 @@
 
         #endregion
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lbNombre;
         public System.Windows.Forms.TextBox tbNombre;
         public System.Windows.Forms.TextBox tbDNI;
         public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Label label2;
     }
 }

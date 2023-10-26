@@ -44,12 +44,14 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public int ReservarPropiedad(Propiedad propiedad, Cliente cliente, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
+            int nroReserva = -1;
             if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 Reserva reserva = new Reserva(fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                nroReserva = reserva.NroReserva;
                 propiedad.AgregarReserva(reserva);
             }
-            return 3;
+            return nroReserva;
         }
 
         public bool CancelarReserva(int numReserva, int dni)
@@ -70,12 +72,13 @@ namespace AlquileresTemporarios_TP2LAB2
             propiedad = null;
             bool encontrada = false;
             int cont = 0;
-            while (!encontrada || cont < listaPropiedades.Count)
+            while (!encontrada && cont < listaPropiedades.Count)
             {
-                if (listaPropiedades[cont].DevolverReserva(numReserva) != null)
+                unaReserva = listaPropiedades[cont].DevolverReserva(numReserva);
+                if (unaReserva != null)
                 {
                     encontrada = true;
-                    propiedad = listaPropiedades[cont];
+                    propiedad = listaPropiedades[cont];                   
                 }
                 cont++;
             }
@@ -144,17 +147,18 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public List<Propiedad> ConsultarPropiedades (string[] ubicacion, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, bool[] especificaciones)
         {
-            List<Propiedad> propiedadesMatch = new List<Propiedad> ();
-            propiedadesMatch = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin, cantPersonas);
-            foreach (Propiedad propiedad in propiedadesMatch)
+            List<Propiedad> propiedadesMatch = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin, cantPersonas);            
+            List<Propiedad> propiedadesMatchBusqueda = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin, cantPersonas);
+            
+            foreach (Propiedad propiedad in propiedadesMatchBusqueda)
             {
                 for(int i =0; i<6; i++)
                 {
                     if (especificaciones[i] == true && propiedad.Caracteristicas[i] == false) propiedadesMatch.Remove(propiedad); 
                 }
             }
-
             return propiedadesMatch;
+
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

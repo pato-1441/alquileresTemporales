@@ -28,26 +28,22 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return fechaFin; }
         }
 
-        public Cliente Cliente { get { return Cliente; } }
+        public Cliente Cliente { get { return cliente; } }
         public int NroReserva { get { return nroReserva; } }
         public double Costo
         {
             get { return costo; }
         }
 
-        public Reserva(DateTime fechaInicio, DateTime fechaFin, int cantPerosnas, double costo, Cliente cliente) 
+        public Reserva(DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente) 
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
-            this.cantPersonas = cantPerosnas;
+            this.cantPersonas = cantPersonas;
+            this.cliente = cliente;
+            this.costo = costo;
             nroReserva = cantidadReservas;
-            cantidadReservas++;
-            
+            cantidadReservas++;            
         }
-
-       
-
-       
-        
     }
 }

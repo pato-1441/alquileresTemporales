@@ -226,51 +226,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvPropiedades.Rows[e.RowIndex];
-
-                verPropiedad.lbUbicacion.Text = row.Cells["ColUbicacion"].Value.ToString();
-                verPropiedad.lbPrecio.Text = row.Cells["colPrecio"].Value.ToString();
-                verPropiedad.tbDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
-                switch (propiedadesMatch[e.RowIndex].ImagenPropiedad.Length)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
-                        break;
-                    case 2:
-                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
-                        break;
-                    case 3:
-                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
-                        break;
-                    case 4:
-                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
-                        verPropiedad.pbImagen4.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[3];
-                        break;
-                    case 5:
-                        verPropiedad.pbImagen1.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[0];
-                        verPropiedad.pbImagen2.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[1];
-                        verPropiedad.pbImagen3.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[2];
-                        verPropiedad.pbImagen4.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[3];
-                        verPropiedad.pbImagen5.Image = propiedadesMatch[e.RowIndex].ImagenPropiedad[4];
-                        break;
-
-                }
-
-                string[] caracteristicas = row.Cells["colCaracteristicas"].Value.ToString().Split('\n');
-
-                foreach (string c in caracteristicas)
-                {
-                    verPropiedad.lbCaracteristicas.Items.Add(c);
-
-                }
-
+                RellenarVerPropiedad(verPropiedad, propiedadesMatch[e.RowIndex]);
             }
 
             if (verPropiedad.ShowDialog() == DialogResult.OK)
@@ -303,37 +259,14 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)
         {
+            PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
             bool exito = false;
+            for(int i = 0; i < propiedad.ImagenPropiedad.Length; i++)
+            {
+                listaPBmodal[i].Image = propiedad.ImagenPropiedad[i];
+            }
             if (propiedad != null)
             {
-                switch (propiedad.ImagenPropiedad.Length)
-                {
-                    case 1:
-                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
-                        break;
-                    case 2:
-                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
-                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
-                        break;
-                    case 3:
-                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
-                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
-                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
-                        break;
-                    case 4:
-                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
-                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
-                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
-                        modal.pbImagen4.Image = propiedad.ImagenPropiedad[3];
-                        break;
-                    case 5:
-                        modal.pbImagen1.Image = propiedad.ImagenPropiedad[0];
-                        modal.pbImagen2.Image = propiedad.ImagenPropiedad[1];
-                        modal.pbImagen3.Image = propiedad.ImagenPropiedad[2];
-                        modal.pbImagen4.Image = propiedad.ImagenPropiedad[3];
-                        modal.pbImagen5.Image = propiedad.ImagenPropiedad[4];
-                        break;
-                }
                 modal.tbDescripcion.Text = propiedad.Descripcion;
                 modal.lbPrecio.Text = propiedad.Precio.ToString();
                 modal.lbUbicacion.Text = propiedad.Ubicacion[0] + ", " + propiedad.Ubicacion[1] + ", " + propiedad.Ubicacion[2];
@@ -341,7 +274,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 for (int i = 0; i < propiedad.Caracteristicas.Length; i++)
                 {
                     if (propiedad.Caracteristicas[i])
-                        modal.lbCaracteristicas.Items.Add(enumerador);
+                        modal.lbCaracteristicas.Items.Add(enumerador[i]);
                 }
                 exito = true;
             }

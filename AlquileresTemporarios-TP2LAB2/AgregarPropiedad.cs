@@ -81,5 +81,20 @@ namespace AlquileresTemporarios_TP2LAB2
                 
             }
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            foreach(Object obj in this.Controls)
+            {
+                if (obj is ComboBox && ((ComboBox)obj).Enabled == true && ((ComboBox)obj).SelectedIndex < 0)
+                {
+                    this.DialogResult = DialogResult.Abort;
+                }
+                else if (obj is TextBox && ((TextBox)obj).Enabled == true && ((TextBox)obj).Text == null)
+                {
+                    this.DialogResult = DialogResult.Abort;
+                }
+            }
+        }
     }
 }

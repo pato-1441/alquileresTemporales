@@ -343,6 +343,7 @@
             this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -657,8 +658,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.ComboBox cmbTipoPropiedad;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox tbDireccion;
@@ -697,5 +696,7 @@
         public System.Windows.Forms.PictureBox pbImagenPropiedad3;
         public System.Windows.Forms.PictureBox pbImagenPropiedad2;
         public System.Windows.Forms.TextBox tbDescripcion;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

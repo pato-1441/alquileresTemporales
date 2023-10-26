@@ -84,7 +84,12 @@ namespace AlquileresTemporarios_TP2LAB2
         }
         public bool QuitarReserva(int nroReserva, int dni) { 
             bool exito = false;
-            foreach(Reserva reserva in reservas)
+            List<Reserva> reservasBuscadas=new List<Reserva>();
+            foreach (Reserva reserva in reservas)
+            {
+                reservasBuscadas.Add(reserva);
+            }            
+            foreach(Reserva reserva in reservasBuscadas)
             {
                 if (nroReserva == reserva.NroReserva && dni == reserva.Cliente.Dni) {
                     reservas.Remove(reserva);

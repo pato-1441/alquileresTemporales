@@ -17,11 +17,6 @@ namespace AlquileresTemporarios_TP2LAB2
         public int Dni
         {
             get { return dni; }
-            private set
-            {
-                Regex verificarDni = new Regex(@"^\\d{1,2}.?\\d{3}.?\\d{3}$");
-                if (!verificarDni.IsMatch(value.ToString())) throw new Exception("El DNI no es válido");
-            }
         }
         public string Nombre
         {
@@ -30,8 +25,12 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public Cliente (int dni, string nombre)
         {
-            this.dni = Dni;
             this.nombre = nombre;
+            Regex verificarDni = new Regex(@"^[0-9]{8}$");
+            if (!verificarDni.IsMatch(dni.ToString())) throw new Exception("El DNI no es válido");
+            {
+                this.dni = dni;
+            }            
         }
     }
 }

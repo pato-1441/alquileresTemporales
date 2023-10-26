@@ -31,5 +31,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             return "Hotel";
         }
-    }
+        
+        
+        }
 }

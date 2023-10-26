@@ -17,7 +17,13 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             this.minimoDias = minimoDias;
         }
-
+        public int MinimoDias
+        {
+            get { return minimoDias; }
+            set { if (value >= 0) minimoDias = value;
+                else throw new Exception("La cantidad de días no es válida. Tiene que ser mayor o igual a cero.");
+                }
+        }
         public override double CalcularPrecio(int cantDias)
         {
             double precioFinal=0;
@@ -34,6 +40,10 @@ namespace AlquileresTemporarios_TP2LAB2
 
             return precioFinal;
         }
+        /*public override bool ModificarPropiedad(double nuevoPrecio, string nuevaDescripcion, bool[] caracteristicas, int cantPersonas, int diasMinimos)
+        {
+
+        }*/
         public override string ToString()
         {
             return "Casa";

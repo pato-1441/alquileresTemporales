@@ -41,6 +41,7 @@
             this.btnReservar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lCaracteristicas = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen4)).BeginInit();
@@ -153,10 +154,10 @@
             // btnReservar
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnReservar.Location = new System.Drawing.Point(517, 404);
+            this.btnReservar.Location = new System.Drawing.Point(514, 404);
             this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(80, 39);
+            this.btnReservar.Size = new System.Drawing.Size(58, 39);
             this.btnReservar.TabIndex = 13;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
@@ -164,10 +165,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(601, 404);
+            this.btnCancelar.Location = new System.Drawing.Point(638, 404);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 39);
+            this.btnCancelar.Size = new System.Drawing.Size(58, 39);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -183,11 +184,23 @@
             this.lCaracteristicas.TabIndex = 15;
             this.lCaracteristicas.Text = "Caracteristicas";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnModificar.Location = new System.Drawing.Point(576, 404);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(58, 39);
+            this.btnModificar.TabIndex = 16;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
             // VerPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 473);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lCaracteristicas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnReservar);
@@ -230,5 +243,6 @@
         public System.Windows.Forms.Button btnReservar;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lCaracteristicas;
+        public System.Windows.Forms.Button btnModificar;
     }
 }

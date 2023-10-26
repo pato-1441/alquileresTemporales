@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -47,6 +48,8 @@ namespace AlquileresTemporarios_TP2LAB2
             int nroReserva = -1;
             if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
+                if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
+
                 Reserva reserva = new Reserva(fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
                 nroReserva = reserva.NroReserva;
                 propiedad.AgregarReserva(reserva);
@@ -104,7 +107,14 @@ namespace AlquileresTemporarios_TP2LAB2
                 if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[1] == ubicacion[0]
                     && propiedad.Ubicacion[2] == ubicacion[1])
                 {
-                   propiedadesMatch.Add(propiedad);
+                    if (propiedad.ToString() == "Casa fin de semana")
+                    {
+                        if (fechaInicio.DayOfWeek.ToString() == "Friday") propiedadesMatch.Add(propiedad);
+                    }
+                    else
+                    {
+                        propiedadesMatch.Add(propiedad);
+                    }
                 }
             }
             return propiedadesMatch; 
@@ -119,7 +129,14 @@ namespace AlquileresTemporarios_TP2LAB2
             {
                 if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[2] == provincia)
                 {
-                    propiedadesMatch.Add(propiedad);
+                    if (propiedad.ToString() == "Casa fin de semana")
+                    {
+                        if (fechaInicio.DayOfWeek.ToString() == "Friday") propiedadesMatch.Add(propiedad);
+                    }
+                    else
+                    {
+                        propiedadesMatch.Add(propiedad);
+                    }
                 }
             }
             return propiedadesMatch;
@@ -159,6 +176,21 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return propiedadesMatch;
 
+        }
+        public bool ModificarPropiedad(Propiedad propiedad, double nuevoPrecio, string nuevaDescripcion, bool[] caracteristicas, int cantPersonas, int diasMinimos)
+        {
+            bool exito = false;
+            try
+            {
+                propiedad.ModificarPropiedad(nuevoPrecio, nuevaDescripcion, caracteristicas, cantPersonas);
+                if (propiedad.ToString() == "Casa") ((Casa)propiedad).MinimoDias = diasMinimos;
+                exito = true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return exito;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

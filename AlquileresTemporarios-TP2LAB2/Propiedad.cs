@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace AlquileresTemporarios_TP2LAB2 
 {
@@ -113,6 +114,23 @@ namespace AlquileresTemporarios_TP2LAB2
                 cont++;
             }
             return reserva;
+        }
+        public bool ModificarPropiedad(double nuevoPrecio, string nuevaDescripcion, bool[] caracteristicas, int cantPersonas)
+        {
+            bool exito = false;
+            try
+            {
+                precio = nuevoPrecio;
+                descripcion = nuevaDescripcion;
+                this.caracteristicas = caracteristicas;
+                this.cantPersonas = cantPersonas;
+                exito = true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return exito;
         }
 
 

@@ -238,33 +238,34 @@ namespace AlquileresTemporarios_TP2LAB2
             {
                 RellenarVerPropiedad(verPropiedad, propiedadesMatch[e.RowIndex]);
             }
-
-            if (verPropiedad.ShowDialog() == DialogResult.OK)
+            DialogResult result = verPropiedad.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 
-                RegistrarCliente registrarCliente = new RegistrarCliente();
-                Cliente cliente;
-                verPropiedad.Show();
-                if(registrarCliente.ShowDialog() == DialogResult.OK)
-                {
-                    DialogResult resultado = MessageBox.Show("Seguro que desea reservar?", "Confirmación",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.Yes)
+                    RegistrarCliente registrarCliente = new RegistrarCliente();
+                    Cliente cliente;
+                    verPropiedad.Show();
+                    if (registrarCliente.ShowDialog() == DialogResult.OK)
                     {
-                        try
+                        DialogResult resultado = MessageBox.Show("Seguro que desea reservar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
                         {
-                            cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
-                            int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
-                            MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: "+ nroReserva);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
+                            try
+                            {
+                                cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                                int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
+                                MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                     }
+                    registrarCliente.Dispose();
                 }
-                registrarCliente.Dispose();
-            }
-            verPropiedad.Dispose();
+                verPropiedad.Dispose();
+            
         }
 
         private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)

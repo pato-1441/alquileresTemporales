@@ -189,10 +189,14 @@ namespace AlquileresTemporarios_TP2LAB2
                                 break;
                         }
                     }
+                    catch (ArgumentNullException ex)
+                    {
+                        MessageBox.Show("Por favor, complete todos los campos.");
+                    }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
-                        MessageBox.Show("Por favor, complete todos los campos.");
+                        
                     }
                     salir = true;
                 }
@@ -277,7 +281,8 @@ namespace AlquileresTemporarios_TP2LAB2
                     if (obj is ComboBox) ((ComboBox)obj).Enabled = false;
                     else if(obj is TextBox) ((TextBox)obj).Enabled = false;
                 }
-                modificarPropiedad.cmbProvincias.SelectedIndex = tipoPropiedad;
+                modificarPropiedad.cmbTipoPropiedad.Text = propiedad.ToString();
+                modificarPropiedad.cmbProvincias.Text = propiedad.Ubicacion[2];
                 modificarPropiedad.tbLocalidad.Text = propiedad.Ubicacion[1];
                 modificarPropiedad.tbDireccion.Text = propiedad.Ubicacion[0];
                 modificarPropiedad.nudCantPersonas.Value = propiedad.CantPersonas;

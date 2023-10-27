@@ -90,9 +90,23 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     this.DialogResult = DialogResult.Abort;
                 }
-                else if (obj is TextBox && ((TextBox)obj).Enabled == true && ((TextBox)obj).Text == null)
+                else if (obj is TextBox && ((TextBox)obj).Enabled == true && ((TextBox)obj).Text == "")
                 {
                     this.DialogResult = DialogResult.Abort;
+                }
+                else if(obj is GroupBox && ((GroupBox)obj).Enabled == true)
+                {
+                    foreach(Object obj2 in ((GroupBox)obj).Controls)
+                    {
+                        if (obj2 is ComboBox && ((ComboBox)obj2).Enabled == true && ((ComboBox)obj2).SelectedIndex < 0)
+                        {
+                            this.DialogResult = DialogResult.Abort;
+                        }
+                        else if (obj2 is TextBox && ((TextBox)obj2).Enabled == true && ((TextBox)obj2).Text == "")
+                        {
+                            this.DialogResult = DialogResult.Abort;
+                        }
+                    }
                 }
             }
         }

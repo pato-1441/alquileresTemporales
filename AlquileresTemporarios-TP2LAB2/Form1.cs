@@ -49,6 +49,8 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (sistema == null)
                 sistema = new Sistema();
+
+            fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
         }
 
 
@@ -77,7 +79,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void fechaDesde_ValueChanged(object sender, EventArgs e)
         {
-            fechaHasta.MinDate = fechaDesde.Value;
+            fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -351,6 +353,8 @@ namespace AlquileresTemporarios_TP2LAB2
             modal.tbDNI.Visible= false;
             modal.label2.Visible = false;
             modal.lbNombre.Text = "Número de reserva";
+            modalPropiedad.btnModificar.Visible = false;
+            modalPropiedad.btnReservar.Visible = false;
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
@@ -358,7 +362,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     if (RellenarVerPropiedad(modalPropiedad, propiedad))
                     {
-                        modalPropiedad.Show();
+                        modalPropiedad.ShowDialog();
                     }
                 }
                 catch (Exception ex)

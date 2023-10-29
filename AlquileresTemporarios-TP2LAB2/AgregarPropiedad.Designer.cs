@@ -687,7 +687,6 @@
         public System.Windows.Forms.NumericUpDown nudMinimoDias;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lDescripcion;
-        private System.Windows.Forms.Button btnSeleccionarImagen;
         private System.Windows.Forms.OpenFileDialog ofdImagen;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.PictureBox pbImagenPropiedad1;
@@ -698,5 +697,6 @@
         public System.Windows.Forms.TextBox tbDescripcion;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Button btnSeleccionarImagen;
     }
 }

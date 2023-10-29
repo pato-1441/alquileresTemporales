@@ -297,24 +297,38 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
                 modificarPropiedad.tbDescripcion.Enabled = true;
                 modificarPropiedad.tbDescripcion.Text = propiedad.Descripcion;
-                    if (modificarPropiedad.ShowDialog() == DialogResult.OK)
+                modificarPropiedad.cantImagenesCargadas = propiedad.ImagenPropiedad.Count();
+                modificarPropiedad.btnSeleccionarImagen.Enabled = false;
+                bool salir = false;
+
+                while (!salir) 
+                {
+                    DialogResult resultadoValidacion = modificarPropiedad.ShowDialog();
+                    if (resultadoValidacion == DialogResult.OK)
                     {
                         bool[] nuevasCaracteristicas = new bool[] { modificarPropiedad.cbCochera.Checked, modificarPropiedad.cbPileta.Checked, modificarPropiedad.cbWifi.Checked, modificarPropiedad.cbLimpieza.Checked, modificarPropiedad.cbDesayuno.Checked, modificarPropiedad.cbMascotas.Checked };
                         try
                         {
-                        DialogResult resultado = MessageBox.Show("¿Está seguro de que desea modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            sistema.ModificarPropiedad(propiedad, Convert.ToDouble(modificarPropiedad.tbPrecioXNoche.Text), modificarPropiedad.tbDescripcion.Text, nuevasCaracteristicas, Convert.ToInt32(modificarPropiedad.nudCantPersonas.Value), Convert.ToInt32(modificarPropiedad.nudMinimoDias.Value));
-                            dgvPropiedades.Rows.Clear();
-                        }
+                            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                sistema.ModificarPropiedad(propiedad, Convert.ToDouble(modificarPropiedad.tbPrecioXNoche.Text), modificarPropiedad.tbDescripcion.Text, nuevasCaracteristicas, Convert.ToInt32(modificarPropiedad.nudCantPersonas.Value), Convert.ToInt32(modificarPropiedad.nudMinimoDias.Value));
+                                dgvPropiedades.Rows.Clear();
+                            }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
+                        finally { salir= true;}
 
                     }
+                    else if (resultadoValidacion == DialogResult.Abort)
+                    {
+                        MessageBox.Show("Por favor, complete todos los campos.");
+                    }else { salir= true;}
+                }
+                
                 }
                 verPropiedad.Dispose();
             
@@ -330,8 +344,9 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             if (propiedad != null)
             {
+                modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
-                modal.lbPrecio.Text = propiedad.Precio.ToString();
+                modal.lbPrecio.Text = propiedad.Precio.ToString("$0.00");
                 modal.lbUbicacion.Text = propiedad.Ubicacion[0] + ", " + propiedad.Ubicacion[1] + ", " + propiedad.Ubicacion[2];
                 string[] enumerador = new string[] { "Cochera", "Pileta", "Wi-Fi", "Limpieza", "Desayuno", "Mascotas" };
                 for (int i = 0; i < propiedad.Caracteristicas.Length; i++)

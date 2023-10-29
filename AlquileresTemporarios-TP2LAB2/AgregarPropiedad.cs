@@ -16,7 +16,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
-        int cantImagenesCargadas = 0;
+        public int cantImagenesCargadas = 0;
         public List<Image> imagenesCargadas=new List<Image>();
         
         private void cbTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,27 +84,34 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            foreach(Object obj in this.Controls)
+            if (cantImagenesCargadas <= 0 || cantImagenesCargadas > 5)
             {
-                if (obj is ComboBox && ((ComboBox)obj).Enabled == true && ((ComboBox)obj).SelectedIndex < 0)
+                this.DialogResult = DialogResult.Abort;
+            }
+            else
+            {
+                foreach (Object obj in this.Controls)
                 {
-                    this.DialogResult = DialogResult.Abort;
-                }
-                else if (obj is TextBox && ((TextBox)obj).Enabled == true && ((TextBox)obj).Text == "")
-                {
-                    this.DialogResult = DialogResult.Abort;
-                }
-                else if(obj is GroupBox && ((GroupBox)obj).Enabled == true)
-                {
-                    foreach(Object obj2 in ((GroupBox)obj).Controls)
+                    if (obj is ComboBox && ((ComboBox)obj).Enabled == true && ((ComboBox)obj).SelectedIndex < 0)
                     {
-                        if (obj2 is ComboBox && ((ComboBox)obj2).Enabled == true && ((ComboBox)obj2).SelectedIndex < 0)
+                        this.DialogResult = DialogResult.Abort;
+                    }
+                    else if (obj is TextBox && ((TextBox)obj).Enabled == true && ((TextBox)obj).Text == "")
+                    {
+                        this.DialogResult = DialogResult.Abort;
+                    }
+                    else if (obj is GroupBox && ((GroupBox)obj).Enabled == true)
+                    {
+                        foreach (Object obj2 in ((GroupBox)obj).Controls)
                         {
-                            this.DialogResult = DialogResult.Abort;
-                        }
-                        else if (obj2 is TextBox && ((TextBox)obj2).Enabled == true && ((TextBox)obj2).Text == "")
-                        {
-                            this.DialogResult = DialogResult.Abort;
+                            if (obj2 is ComboBox && ((ComboBox)obj2).Enabled == true && ((ComboBox)obj2).SelectedIndex < 0)
+                            {
+                                this.DialogResult = DialogResult.Abort;
+                            }
+                            else if (obj2 is TextBox && ((TextBox)obj2).Enabled == true && ((TextBox)obj2).Text == "")
+                            {
+                                this.DialogResult = DialogResult.Abort;
+                            }
                         }
                     }
                 }

@@ -347,7 +347,12 @@ namespace AlquileresTemporarios_TP2LAB2
                 modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
                 modal.lbPrecio.Text = propiedad.Precio.ToString("$0.00");
-                modal.lbUbicacion.Text = propiedad.Ubicacion[0] + ", " + propiedad.Ubicacion[1] + ", " + propiedad.Ubicacion[2];
+                string[] direccion = propiedad.Ubicacion[0].Split(' ');
+                string direccionFinal = "";
+                foreach (string dir in direccion)
+                    direccionFinal += dir[0].ToString().ToUpper() + dir.Substring(1).ToLower() + " ";
+                string ciudad = propiedad.Ubicacion[1].ToLower();
+                modal.lbUbicacion.Text = direccionFinal.Substring(0, direccionFinal.Length - 1) + ", " + ciudad[0].ToString().ToUpper() + ciudad.Substring(1) + ", " + propiedad.Ubicacion[2];
                 string[] enumerador = new string[] { "Cochera", "Pileta", "Wi-Fi", "Limpieza", "Desayuno", "Mascotas" };
                 for (int i = 0; i < propiedad.Caracteristicas.Length; i++)
                 {

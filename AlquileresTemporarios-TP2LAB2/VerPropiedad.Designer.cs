@@ -117,35 +117,35 @@
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcion.Location = new System.Drawing.Point(30, 263);
+            this.tbDescripcion.Location = new System.Drawing.Point(30, 272);
             this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
             this.tbDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDescripcion.Size = new System.Drawing.Size(356, 189);
+            this.tbDescripcion.Size = new System.Drawing.Size(356, 180);
             this.tbDescripcion.TabIndex = 8;
             this.tbDescripcion.TabStop = false;
             // 
             // lbCaracteristicas
             // 
             this.lbCaracteristicas.FormattingEnabled = true;
-            this.lbCaracteristicas.Location = new System.Drawing.Point(428, 308);
+            this.lbCaracteristicas.Location = new System.Drawing.Point(411, 308);
             this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2);
             this.lbCaracteristicas.Name = "lbCaracteristicas";
-            this.lbCaracteristicas.Size = new System.Drawing.Size(91, 82);
+            this.lbCaracteristicas.Size = new System.Drawing.Size(114, 82);
             this.lbCaracteristicas.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(551, 272);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 22);
+            this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Precio Final";
+            this.label1.Text = "Precio final";
             // 
             // lbPrecio
             // 
@@ -183,11 +183,11 @@
             // lCaracteristicas
             // 
             this.lCaracteristicas.AutoSize = true;
-            this.lCaracteristicas.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lCaracteristicas.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lCaracteristicas.Location = new System.Drawing.Point(406, 272);
             this.lCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lCaracteristicas.Name = "lCaracteristicas";
-            this.lCaracteristicas.Size = new System.Drawing.Size(141, 22);
+            this.lCaracteristicas.Size = new System.Drawing.Size(119, 25);
             this.lCaracteristicas.TabIndex = 15;
             this.lCaracteristicas.Text = "Caracteristicas";
             // 
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 473);
+            this.ClientSize = new System.Drawing.Size(712, 477);
             this.ControlBox = false;
             this.Controls.Add(this.btnEliminarPropiedad);
             this.Controls.Add(this.btnModificar);

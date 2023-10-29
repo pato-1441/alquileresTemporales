@@ -65,9 +65,9 @@
             this.lbNombre.Location = new System.Drawing.Point(14, 21);
             this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(44, 13);
+            this.lbNombre.Size = new System.Drawing.Size(90, 13);
             this.lbNombre.TabIndex = 2;
-            this.lbNombre.Text = "Nombre";
+            this.lbNombre.Text = "Nombre completo";
             // 
             // tbNombre
             // 
@@ -107,9 +107,12 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAceptar);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistrarCliente";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "RegistrarCliente";
+            this.Text = "Cliente nuevo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

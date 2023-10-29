@@ -215,8 +215,8 @@ namespace AlquileresTemporarios_TP2LAB2
         private void btnEliminarReserva_Click(object sender, EventArgs e)
         {
             RegistrarCliente cancelarReserva = new RegistrarCliente();
-            cancelarReserva.Text = "Cancelar Reserva";
-            cancelarReserva.lbNombre.Text = "Número Reserva";
+            cancelarReserva.Text = "Eliminar reserva";
+            cancelarReserva.lbNombre.Text = "Número de reserva";
             cancelarReserva.btnAceptar.Text = "Aceptar";
             if (cancelarReserva.ShowDialog() == DialogResult.OK)
             {
@@ -235,115 +235,129 @@ namespace AlquileresTemporarios_TP2LAB2
 
         }
 
-
-
         private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             VerPropiedad verPropiedad = new VerPropiedad();
-
+            Propiedad propiedadConfirmar = null;
             if (e.RowIndex >= 0)
             {
-                RellenarVerPropiedad(verPropiedad, propiedadesMatch[e.RowIndex]);
+                propiedadConfirmar = propiedadesMatch[e.RowIndex];
+                RellenarVerPropiedad(verPropiedad, propiedadConfirmar);
             }
             DialogResult result = verPropiedad.ShowDialog();
             if (result == DialogResult.OK)
-            {
-                
-                    RegistrarCliente registrarCliente = new RegistrarCliente();
-                    Cliente cliente;
-                    verPropiedad.Show();
-                    if (registrarCliente.ShowDialog() == DialogResult.OK)
+            {                
+                RegistrarCliente registrarCliente = new RegistrarCliente();
+                Cliente cliente;
+                verPropiedad.Show();
+                if (registrarCliente.ShowDialog() == DialogResult.OK)
+                {
+                    //// rellenar confirmacion modal
+                    ConfirmacionReserva modalConfirmarReserva = new ConfirmacionReserva();
+                    TimeSpan cantDias = fechaHasta.Value - fechaDesde.Value;
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Tipo de propiedad: " + propiedadConfirmar.ToString());
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Dirección: " + propiedadConfirmar.Ubicacion[0] + ", " + propiedadConfirmar.Ubicacion[1] + ", " + propiedadConfirmar.Ubicacion[2]);
+                    if (propiedadConfirmar is HabitacionHotel)
                     {
-                        DialogResult resultado = MessageBox.Show("Seguro que desea reservar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            try
-                            {
-                                cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
-                                int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
-                                MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
-                        }
+                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Número de habitación: " + ((HabitacionHotel)propiedadConfirmar).NumHabitacion + ", tipo de habitación: " + ((HabitacionHotel)propiedadConfirmar).TipoHabitacion);
+                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de estrellas: " + ((HabitacionHotel)propiedadConfirmar).CantEstrellas );
                     }
-                    registrarCliente.Dispose();
-                }else if(result== DialogResult.Yes)
-                        {
-                AgregarPropiedad modificarPropiedad = new AgregarPropiedad();
-                Propiedad propiedad = sistema.ListaPropiedades[e.RowIndex];
-                int tipoPropiedad;
-                if (propiedad.ToString() == "Hotel") tipoPropiedad = 0;
-                else if (propiedad.ToString() == "Casa") tipoPropiedad = 1;
-                else tipoPropiedad = 2;
-                foreach(object obj in modificarPropiedad.Controls)
-                {
-                    if (obj is ComboBox) ((ComboBox)obj).Enabled = false;
-                    else if(obj is TextBox) ((TextBox)obj).Enabled = false;
-                }
-                modificarPropiedad.cmbTipoPropiedad.Text = propiedad.ToString();
-                modificarPropiedad.cmbProvincias.Text = propiedad.Ubicacion[2];
-                modificarPropiedad.tbLocalidad.Text = propiedad.Ubicacion[1];
-                modificarPropiedad.tbDireccion.Text = propiedad.Ubicacion[0];
-                modificarPropiedad.nudCantPersonas.Value = propiedad.CantPersonas;
-                modificarPropiedad.tbPrecioXNoche.Enabled = true;
-                modificarPropiedad.tbPrecioXNoche.Text= propiedad.Precio.ToString("0.00");
-                if (tipoPropiedad == 1)
-                {
-                    modificarPropiedad.gbCasa.Enabled = true;
-                    modificarPropiedad.nudMinimoDias.Value = ((Casa)propiedad).MinimoDias;
-                }
-                modificarPropiedad.tbDescripcion.Enabled = true;
-                modificarPropiedad.tbDescripcion.Text = propiedad.Descripcion;
-                modificarPropiedad.cantImagenesCargadas = propiedad.ImagenPropiedad.Count();
-                modificarPropiedad.btnSeleccionarImagen.Enabled = false;
-                bool salir = false;
-
-                while (!salir) 
-                {
-                    DialogResult resultadoValidacion = modificarPropiedad.ShowDialog();
-                    if (resultadoValidacion == DialogResult.OK)
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de huespedes admitidos: " + propiedadConfirmar.CantPersonas);
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Reserva a nombre de: " + registrarCliente.tbNombre.Text + ", DNI: " + registrarCliente.tbDNI.Text);
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Fecha y hora de reserva: " +  DateTime.Now.ToString());
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Ingreso el día: " + fechaDesde.Value.ToString());
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Salida el día: " + fechaHasta.Value.ToString());
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio por día: " + (propiedadConfirmar.CalcularPrecio(cantDias.Days) / cantDias.TotalDays).ToString("$00.00"));
+                    modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio total: " + propiedadConfirmar.CalcularPrecio(cantDias.Days).ToString("$00.00"));
+                    // fin rellenar confirmacion modal
+                    DialogResult resultado = modalConfirmarReserva.ShowDialog();
+                    if (resultado == DialogResult.OK)
                     {
-                        bool[] nuevasCaracteristicas = new bool[] { modificarPropiedad.cbCochera.Checked, modificarPropiedad.cbPileta.Checked, modificarPropiedad.cbWifi.Checked, modificarPropiedad.cbLimpieza.Checked, modificarPropiedad.cbDesayuno.Checked, modificarPropiedad.cbMascotas.Checked };
                         try
                         {
-                            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (resultado == DialogResult.Yes)
-                            {
-                                sistema.ModificarPropiedad(propiedad, Convert.ToDouble(modificarPropiedad.tbPrecioXNoche.Text), modificarPropiedad.tbDescripcion.Text, nuevasCaracteristicas, Convert.ToInt32(modificarPropiedad.nudCantPersonas.Value), Convert.ToInt32(modificarPropiedad.nudMinimoDias.Value));
-                                dgvPropiedades.Rows.Clear();
-                            }
+                            cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                            int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
+                            MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
-                        finally { salir= true;}
-
                     }
-                    else if (resultadoValidacion == DialogResult.Abort)
+                }
+                registrarCliente.Dispose();
+                } else if ( result == DialogResult.Yes ) {
+                    AgregarPropiedad modificarPropiedad = new AgregarPropiedad();
+                    Propiedad propiedad = sistema.ListaPropiedades[e.RowIndex];
+                    int tipoPropiedad;
+                    if (propiedad.ToString() == "Hotel") tipoPropiedad = 0;
+                    else if (propiedad.ToString() == "Casa") tipoPropiedad = 1;
+                    else tipoPropiedad = 2;
+                    foreach(object obj in modificarPropiedad.Controls)
                     {
-                        MessageBox.Show("Por favor, complete todos los campos.");
-                    }else { salir= true;}
-                }
+                        if (obj is ComboBox) ((ComboBox)obj).Enabled = false;
+                        else if(obj is TextBox) ((TextBox)obj).Enabled = false;
+                    }
+                    modificarPropiedad.cmbTipoPropiedad.Text = propiedad.ToString();
+                    modificarPropiedad.cmbProvincias.Text = propiedad.Ubicacion[2];
+                    modificarPropiedad.tbLocalidad.Text = propiedad.Ubicacion[1];
+                    modificarPropiedad.tbDireccion.Text = propiedad.Ubicacion[0];
+                    modificarPropiedad.nudCantPersonas.Value = propiedad.CantPersonas;
+                    modificarPropiedad.tbPrecioXNoche.Enabled = true;
+                    modificarPropiedad.tbPrecioXNoche.Text= propiedad.Precio.ToString("0.00");
+                    if (tipoPropiedad == 1)
+                    {
+                        modificarPropiedad.gbCasa.Enabled = true;
+                        modificarPropiedad.nudMinimoDias.Value = ((Casa)propiedad).MinimoDias;
+                    }
+                    modificarPropiedad.tbDescripcion.Enabled = true;
+                    modificarPropiedad.tbDescripcion.Text = propiedad.Descripcion;
+                    modificarPropiedad.cantImagenesCargadas = propiedad.ImagenPropiedad.Count();
+                    modificarPropiedad.btnSeleccionarImagen.Enabled = false;
+                    bool salir = false;
+
+                    while (!salir) 
+                    {
+                        DialogResult resultadoValidacion = modificarPropiedad.ShowDialog();
+                        if (resultadoValidacion == DialogResult.OK)
+                        {
+                            bool[] nuevasCaracteristicas = new bool[] { modificarPropiedad.cbCochera.Checked, modificarPropiedad.cbPileta.Checked, modificarPropiedad.cbWifi.Checked, modificarPropiedad.cbLimpieza.Checked, modificarPropiedad.cbDesayuno.Checked, modificarPropiedad.cbMascotas.Checked };
+                            try
+                            {
+                                DialogResult resultado = MessageBox.Show("¿Está seguro de que desea modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (resultado == DialogResult.Yes)
+                                {
+                                    sistema.ModificarPropiedad(propiedad, Convert.ToDouble(modificarPropiedad.tbPrecioXNoche.Text), modificarPropiedad.tbDescripcion.Text, nuevasCaracteristicas, Convert.ToInt32(modificarPropiedad.nudCantPersonas.Value), Convert.ToInt32(modificarPropiedad.nudMinimoDias.Value));
+                                    dgvPropiedades.Rows.Clear();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                            finally { salir= true;}
+
+                        }
+                        else if (resultadoValidacion == DialogResult.Abort)
+                        {
+                            MessageBox.Show("Por favor, complete todos los campos.");
+                        }else { salir= true;}
+                    }
                 
-                }
-                verPropiedad.Dispose();
-            
+                    }
+                verPropiedad.Dispose();            
         }
 
         private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
-            bool exito = false;
-            for(int i = 0; i < propiedad.ImagenPropiedad.Length; i++)
-            {
-                listaPBmodal[i].Image = propiedad.ImagenPropiedad[i];
-            }
+            bool exito = false;            
             if (propiedad != null)
             {
+                for (int i = 0; i < propiedad.ImagenPropiedad.Length; i++)
+                {
+                    listaPBmodal[i].Image = propiedad.ImagenPropiedad[i];
+                }
                 modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
                 modal.lbPrecio.Text = propiedad.Precio.ToString("$0.00");
@@ -370,28 +384,34 @@ namespace AlquileresTemporarios_TP2LAB2
             RegistrarCliente modal = new RegistrarCliente();
             VerPropiedad modalPropiedad = new VerPropiedad();
             Propiedad propiedad = null;
+            modal.Text = "Consultar reserva";
             modal.tbDNI.Visible= false;
             modal.label2.Visible = false;
             modal.lbNombre.Text = "Número de reserva";
             modalPropiedad.btnModificar.Visible = false;
             modalPropiedad.btnReservar.Visible = false;
-            if (modal.ShowDialog() == DialogResult.OK)
+            modalPropiedad.btnEliminarPropiedad.Visible = false;
+            DialogResult resultado = modal.ShowDialog();
+            if ( resultado == DialogResult.OK )
             {
-                sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
-                try
+                if (modal.tbNombre.Text.Length > 0)
                 {
-                    if (RellenarVerPropiedad(modalPropiedad, propiedad))
+                    sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
+
+                    try
                     {
-                        modalPropiedad.ShowDialog();
+                        if (RellenarVerPropiedad(modalPropiedad, propiedad))
+                        {
+                            modalPropiedad.ShowDialog();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
-            else MessageBox.Show("No se pudo encontrar una reserva.");
-            }
+        }
         }
     }
 

@@ -55,6 +55,12 @@
     <Compile Include="Casa.cs" />
     <Compile Include="CasaFinde.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="ConfirmacionReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionReserva.Designer.cs">
+      <DependentUpon>ConfirmacionReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="AgregarPropiedad.resx">
       <DependentUpon>AgregarPropiedad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmacionReserva.resx">
+      <DependentUpon>ConfirmacionReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

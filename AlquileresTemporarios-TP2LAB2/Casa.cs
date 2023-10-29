@@ -26,24 +26,15 @@ namespace AlquileresTemporarios_TP2LAB2
         }
         public override double CalcularPrecio(int cantDias)
         {
-            double precioFinal=0;
+            double precioFinal = 0;
             int diasDescuento = 0;
-            if(cantDias<minimoDias)
-            {
-                precioFinal = -1;
-            }
-            else 
-            {
-                diasDescuento= cantDias - minimoDias;
-                precioFinal = minimoDias * base.precio + (diasDescuento* (base.precio *0.90));
-            }
+            
+            diasDescuento= cantDias - minimoDias;
+            precioFinal = minimoDias * base.precio + (diasDescuento* (base.precio * 0.90));
+            
 
             return precioFinal;
         }
-        /*public override bool ModificarPropiedad(double nuevoPrecio, string nuevaDescripcion, bool[] caracteristicas, int cantPersonas, int diasMinimos)
-        {
-
-        }*/
         public override string ToString()
         {
             return "Casa";

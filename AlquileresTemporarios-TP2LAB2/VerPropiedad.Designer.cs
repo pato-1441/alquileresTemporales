@@ -53,11 +53,11 @@
             // lbUbicacion
             // 
             this.lbUbicacion.AutoSize = true;
-            this.lbUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUbicacion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUbicacion.Location = new System.Drawing.Point(25, 235);
             this.lbUbicacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUbicacion.Name = "lbUbicacion";
-            this.lbUbicacion.Size = new System.Drawing.Size(20, 26);
+            this.lbUbicacion.Size = new System.Drawing.Size(20, 29);
             this.lbUbicacion.TabIndex = 7;
             this.lbUbicacion.Text = "-";
             // 
@@ -116,7 +116,7 @@
             this.tbDescripcion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescripcion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcion.Location = new System.Drawing.Point(30, 272);
             this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;

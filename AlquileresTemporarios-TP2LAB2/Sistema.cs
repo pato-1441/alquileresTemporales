@@ -63,7 +63,7 @@ namespace AlquileresTemporarios_TP2LAB2
             Propiedad propiedad;
             if (ConsultarReserva(numReserva, out propiedad) != null)
             {
-                if (!propiedad.QuitarReserva(numReserva, dni)) throw new Exception("No existe la reserva.");
+                if (!propiedad.QuitarReserva(numReserva, dni)) throw new Exception("Los datos ingresados no poseen permisos.");
                 else exito = true;
             }
             else { throw new Exception("No existe la reserva."); }

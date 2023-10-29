@@ -193,7 +193,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     }
                     catch (ArgumentNullException ex)
                     {
-                        MessageBox.Show("Por favor, complete todos los campos.");
+                        MessageBox.Show("Por favor, complete todos los campos.", ex.Message);
                     }
                     catch (Exception ex)
                     {
@@ -412,6 +412,34 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
             }
         }
+
+        private void btnImportarReservas_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            FileStream archivo;
+            StreamReader sr;
+            int cantReservas = 0;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    archivo = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    sr = new StreamReader(archivo);
+
+                    string[] linea = sr.ReadLine().Split(';');
+                    while (linea != null)
+                    {
+                        
+
+                        linea = sr.ReadLine().Split(';');
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }            
         }
+    }
     }
 

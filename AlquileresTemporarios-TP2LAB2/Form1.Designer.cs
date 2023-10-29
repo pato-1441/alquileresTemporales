@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnAgregarPropiedad = new System.Windows.Forms.Button();
             this.btnConsultarReserva = new System.Windows.Forms.Button();
@@ -60,6 +60,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbUbicacionBuscar = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnImportarReservas = new System.Windows.Forms.Button();
+            this.btnExportarReservas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,7 +72,7 @@
             // btnAgregarPropiedad
             // 
             this.btnAgregarPropiedad.Location = new System.Drawing.Point(327, 26);
-            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPropiedad.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarPropiedad.Name = "btnAgregarPropiedad";
             this.btnAgregarPropiedad.Size = new System.Drawing.Size(178, 67);
             this.btnAgregarPropiedad.TabIndex = 2;
@@ -81,7 +83,7 @@
             // btnConsultarReserva
             // 
             this.btnConsultarReserva.Location = new System.Drawing.Point(518, 26);
-            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarReserva.Name = "btnConsultarReserva";
             this.btnConsultarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnConsultarReserva.TabIndex = 3;
@@ -92,7 +94,7 @@
             // btnEliminarReserva
             // 
             this.btnEliminarReserva.Location = new System.Drawing.Point(711, 26);
-            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarReserva.Name = "btnEliminarReserva";
             this.btnEliminarReserva.Size = new System.Drawing.Size(178, 67);
             this.btnEliminarReserva.TabIndex = 4;
@@ -107,14 +109,14 @@
             this.dgvPropiedades.AllowUserToResizeColumns = false;
             this.dgvPropiedades.AllowUserToResizeRows = false;
             this.dgvPropiedades.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPropiedades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPropiedades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPropiedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPropiedades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTipoPropiedad,
@@ -124,11 +126,11 @@
             this.colCantPersonas,
             this.colPrecio});
             this.dgvPropiedades.Location = new System.Drawing.Point(327, 116);
-            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPropiedades.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPropiedades.Name = "dgvPropiedades";
             this.dgvPropiedades.RowHeadersWidth = 51;
             this.dgvPropiedades.RowTemplate.Height = 24;
-            this.dgvPropiedades.Size = new System.Drawing.Size(811, 416);
+            this.dgvPropiedades.Size = new System.Drawing.Size(820, 416);
             this.dgvPropiedades.TabIndex = 5;
             this.dgvPropiedades.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPropiedades_CellContentClick);
             // 
@@ -193,7 +195,7 @@
             // tbUbicacion
             // 
             this.tbUbicacion.Location = new System.Drawing.Point(191, 170);
-            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUbicacion.Margin = new System.Windows.Forms.Padding(2);
             this.tbUbicacion.Name = "tbUbicacion";
             this.tbUbicacion.Size = new System.Drawing.Size(103, 20);
             this.tbUbicacion.TabIndex = 9;
@@ -211,7 +213,7 @@
             // nudCantPersonas
             // 
             this.nudCantPersonas.Location = new System.Drawing.Point(30, 221);
-            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
             this.nudCantPersonas.Maximum = new decimal(new int[] {
             20,
             0,
@@ -235,7 +237,7 @@
             // 
             this.cbWifi.AutoSize = true;
             this.cbWifi.Location = new System.Drawing.Point(20, 27);
-            this.cbWifi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWifi.Margin = new System.Windows.Forms.Padding(2);
             this.cbWifi.Name = "cbWifi";
             this.cbWifi.Size = new System.Drawing.Size(50, 17);
             this.cbWifi.TabIndex = 13;
@@ -251,9 +253,9 @@
             this.groupBox1.Controls.Add(this.cbCochera);
             this.groupBox1.Controls.Add(this.cbWifi);
             this.groupBox1.Location = new System.Drawing.Point(29, 389);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(265, 90);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -263,7 +265,7 @@
             // 
             this.cbDesayuno.AutoSize = true;
             this.cbDesayuno.Location = new System.Drawing.Point(169, 27);
-            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2);
             this.cbDesayuno.Name = "cbDesayuno";
             this.cbDesayuno.Size = new System.Drawing.Size(74, 17);
             this.cbDesayuno.TabIndex = 18;
@@ -274,7 +276,7 @@
             // 
             this.cbPileta.AutoSize = true;
             this.cbPileta.Location = new System.Drawing.Point(20, 56);
-            this.cbPileta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPileta.Margin = new System.Windows.Forms.Padding(2);
             this.cbPileta.Name = "cbPileta";
             this.cbPileta.Size = new System.Drawing.Size(52, 17);
             this.cbPileta.TabIndex = 17;
@@ -285,7 +287,7 @@
             // 
             this.cbMascotas.AutoSize = true;
             this.cbMascotas.Location = new System.Drawing.Point(169, 56);
-            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.cbMascotas.Name = "cbMascotas";
             this.cbMascotas.Size = new System.Drawing.Size(72, 17);
             this.cbMascotas.TabIndex = 16;
@@ -296,7 +298,7 @@
             // 
             this.cbLimpieza.AutoSize = true;
             this.cbLimpieza.Location = new System.Drawing.Point(87, 56);
-            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2);
             this.cbLimpieza.Name = "cbLimpieza";
             this.cbLimpieza.Size = new System.Drawing.Size(67, 17);
             this.cbLimpieza.TabIndex = 15;
@@ -307,7 +309,7 @@
             // 
             this.cbCochera.AutoSize = true;
             this.cbCochera.Location = new System.Drawing.Point(87, 27);
-            this.cbCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCochera.Margin = new System.Windows.Forms.Padding(2);
             this.cbCochera.Name = "cbCochera";
             this.cbCochera.Size = new System.Drawing.Size(66, 17);
             this.cbCochera.TabIndex = 14;
@@ -317,7 +319,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(29, 488);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(265, 44);
             this.btnBuscar.TabIndex = 16;
@@ -328,7 +330,7 @@
             // fechaDesde
             // 
             this.fechaDesde.Location = new System.Drawing.Point(20, 44);
-            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDesde.MinDate = new System.DateTime(2023, 10, 16, 0, 0, 0, 0);
             this.fechaDesde.Name = "fechaDesde";
             this.fechaDesde.Size = new System.Drawing.Size(216, 20);
@@ -358,7 +360,7 @@
             // fechaHasta
             // 
             this.fechaHasta.Location = new System.Drawing.Point(20, 95);
-            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechaHasta.Name = "fechaHasta";
             this.fechaHasta.Size = new System.Drawing.Size(216, 20);
             this.fechaHasta.TabIndex = 19;
@@ -415,7 +417,7 @@
             "Tierra Del Fuego",
             "Tucumán"});
             this.cbUbicacionBuscar.Location = new System.Drawing.Point(28, 169);
-            this.cbUbicacionBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUbicacionBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.cbUbicacionBuscar.Name = "cbUbicacionBuscar";
             this.cbUbicacionBuscar.Size = new System.Drawing.Size(151, 21);
             this.cbUbicacionBuscar.TabIndex = 23;
@@ -430,12 +432,35 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Localidad";
             // 
+            // btnImportarReservas
+            // 
+            this.btnImportarReservas.Location = new System.Drawing.Point(902, 26);
+            this.btnImportarReservas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImportarReservas.Name = "btnImportarReservas";
+            this.btnImportarReservas.Size = new System.Drawing.Size(119, 67);
+            this.btnImportarReservas.TabIndex = 25;
+            this.btnImportarReservas.Text = "Importar Reservas";
+            this.btnImportarReservas.UseVisualStyleBackColor = true;
+            this.btnImportarReservas.Click += new System.EventHandler(this.btnImportarReservas_Click);
+            // 
+            // btnExportarReservas
+            // 
+            this.btnExportarReservas.Location = new System.Drawing.Point(1034, 26);
+            this.btnExportarReservas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportarReservas.Name = "btnExportarReservas";
+            this.btnExportarReservas.Size = new System.Drawing.Size(113, 67);
+            this.btnExportarReservas.TabIndex = 26;
+            this.btnExportarReservas.Text = "Exportar Reservas";
+            this.btnExportarReservas.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1182, 577);
+            this.Controls.Add(this.btnExportarReservas);
+            this.Controls.Add(this.btnImportarReservas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbUbicacionBuscar);
             this.Controls.Add(this.pictureBox1);
@@ -451,7 +476,7 @@
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -501,6 +526,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantPersonas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.Button btnImportarReservas;
+        private System.Windows.Forms.Button btnExportarReservas;
     }
 }
 

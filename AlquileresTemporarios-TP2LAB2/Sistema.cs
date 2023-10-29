@@ -14,13 +14,14 @@ namespace AlquileresTemporarios_TP2LAB2
     internal class Sistema
     {
         
-        List<Propiedad> listaPropiedades = new List<Propiedad>(); 
-
-
+        List<Propiedad> listaPropiedades = new List<Propiedad>();
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
         }
+
+        public void ImportarReserva() { }
+        public void ExportarReserva() { }
         public bool AgregarCasa(Casa casa)
         {
             bool exito = false;

@@ -51,6 +51,8 @@ namespace AlquileresTemporarios_TP2LAB2
                 sistema = new Sistema();
 
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
+            Splash splash = new Splash();
+            splash.ShowDialog();
         }
 
 

@@ -27,6 +27,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 gbHotel.Enabled = true;
                 cbDesayuno.Enabled = false;
                 cbDesayuno.Checked = true;
+                gbPropietario.Enabled = false;
 
             } else if (cmbTipoPropiedad.SelectedIndex == 1)
             {
@@ -34,6 +35,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 gbCasa.Enabled = true;
                 cbDesayuno.Enabled = true;
                 cbDesayuno.Checked = false;
+                gbPropietario.Enabled = true;
             }
             else
             {
@@ -41,6 +43,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 gbCasa.Enabled = false;
                 cbDesayuno.Enabled = true;
                 cbDesayuno.Checked = false;
+                gbPropietario.Enabled = true;
             }
         }
 

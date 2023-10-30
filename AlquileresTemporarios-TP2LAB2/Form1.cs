@@ -148,6 +148,7 @@ namespace AlquileresTemporarios_TP2LAB2
         private void btnAgregarPropiedad_Click(object sender, EventArgs e)
         {
             AgregarPropiedad modalAgregarPropiedad = new AgregarPropiedad();
+
             bool salir = false;
             while (!salir)
             {
@@ -163,33 +164,41 @@ namespace AlquileresTemporarios_TP2LAB2
                                                       modalAgregarPropiedad.cbDesayuno.Checked, modalAgregarPropiedad.cbMascotas.Checked};
 
                         Propiedad propiedad;
+                        Propietario propietario;
 
-                        switch (tipoPropiedad)
-                        {
-                            case 0:
-                                propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
-                                                Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.SelectedIndex),
-                                                Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2);
-                                propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
+                            switch (tipoPropiedad)
+                            {
+                                case 0:
 
-                                sistema.AgregarHotel((HabitacionHotel)propiedad);
-                                break;
-                            case 1:
-                                propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                            Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
-                                propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
+                                    propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                                    Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
+                                                    Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.SelectedIndex),
+                                                    Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2);
+                                    propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
-                                sistema.AgregarCasa((Casa)propiedad);
-                                break;
-                            case 2:
-                                propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                            Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value));
-                                propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
+                                    sistema.AgregarHotel((HabitacionHotel)propiedad);
+                                    break;
+                                case 1:
 
-                                sistema.AgregarCasa((CasaFinde)propiedad);
-                                break;
-                        }
+                                    propietario = new Propietario(modalAgregarPropiedad.tbNombrePropietario.Text, Convert.ToInt32(modalAgregarPropiedad.tbDniPropietario.Text));
+
+                                    propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario);
+                                    propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
+
+                                    sistema.AgregarCasa((Casa)propiedad);
+                                    break;
+                                case 2:
+                                     propietario = new Propietario(modalAgregarPropiedad.tbNombrePropietario.Text, Convert.ToInt32(modalAgregarPropiedad.tbDniPropietario.Text));
+
+                                    propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
+                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario);
+                                    propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
+
+                                    sistema.AgregarCasa((CasaFinde)propiedad);
+                                    break;
+                            }
+                        
                     }
                     catch (ArgumentNullException ex)
                     {
@@ -210,6 +219,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     salir = true;
                 }
             }
+            modalAgregarPropiedad.Dispose();
         }
 
         private void btnEliminarReserva_Click(object sender, EventArgs e)

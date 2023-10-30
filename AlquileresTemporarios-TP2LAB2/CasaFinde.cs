@@ -12,7 +12,7 @@ namespace AlquileresTemporarios_TP2LAB2
     {
         
 
-        public CasaFinde(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias) : base(ubicacion, cantPersonas, precio, caracteristicas, descripcion, minimoDias) { 
+        public CasaFinde(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias, Propietario propietario) : base(ubicacion, cantPersonas, precio, caracteristicas, descripcion, minimoDias, propietario) { 
         
         }
 

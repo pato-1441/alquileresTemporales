@@ -20,7 +20,10 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return listaPropiedades; }
         }
 
-        public void ImportarReserva() { }
+        public void ImportarReserva() 
+        {
+
+        }
         public void ExportarReserva() { }
         public bool AgregarCasa(Casa casa)
         {

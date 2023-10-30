@@ -34,7 +34,7 @@ namespace AlquileresTemporarios_TP2LAB2
             //triple
             else if (tipo == 2) precioFinal += (precioFinal * 1.5);
             //tres estrellas
-            if (cantEstrellas == 3) precioFinal += (precioFinal * 0.40);
+            if (cantEstrellas == 3) precioFinal += (base.precio * 0.40);
 
             //suma comision de 3%
             return precioFinal += (precioFinal * 0.3);

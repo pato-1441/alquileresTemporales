@@ -73,3 +73,4 @@ E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\Al
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Splash.resources
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Splash.resources
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Calendario.resources
+C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Calendario.resources

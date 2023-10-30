@@ -56,32 +56,28 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     case 0:
                         pbImagenPropiedad1.Image = Image.FromFile(ofdImagen.FileName);
-                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                        cantImagenesCargadas++;
+                       
                         break;
                     case 1:
                         pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
-                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                        cantImagenesCargadas++;
+                        
                         break;
                     case 2:
                         pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
-                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                        cantImagenesCargadas++;
+                        
                         break;
                     case 3:
                         pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
-                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                        cantImagenesCargadas++;
+                       
                         break;
                     case 4:
                         pbImagenPropiedad5.Image = Image.FromFile(ofdImagen.FileName);
-                        imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                        cantImagenesCargadas++;
+                        
                         btnSeleccionarImagen.Enabled = false;
                         break;
                 }
-                
+                imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
+                cantImagenesCargadas++;
             }
         }
 

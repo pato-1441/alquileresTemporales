@@ -52,6 +52,12 @@
     <Compile Include="AgregarPropiedad.Designer.cs">
       <DependentUpon>AgregarPropiedad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendario.Designer.cs">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Casa.cs" />
     <Compile Include="CasaFinde.cs" />
     <Compile Include="Cliente.cs" />
@@ -94,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="AgregarPropiedad.resx">
       <DependentUpon>AgregarPropiedad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendario.resx">
+      <DependentUpon>Calendario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmacionReserva.resx">
       <DependentUpon>ConfirmacionReserva.cs</DependentUpon>

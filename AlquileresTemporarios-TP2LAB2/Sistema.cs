@@ -13,13 +13,17 @@ namespace AlquileresTemporarios_TP2LAB2
    [Serializable]
     internal class Sistema
     {
-        
+        int cantidadReservas = 0;
         List<Propiedad> listaPropiedades = new List<Propiedad>();
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
         }
-
+        public int CodigoReserva 
+        { 
+            get { return cantidadReservas; }
+            set { cantidadReservas += value; }
+        }
        
         public bool AgregarCasa(Casa casa)
         {
@@ -45,16 +49,16 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public int ReservarPropiedad(Propiedad propiedad, Cliente cliente, DateTime fechaInicio, DateTime fechaFin, int cantPersonas)
         {
-            int nroReserva = -1;
+            
             if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
 
-                Reserva reserva = new Reserva(fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
-                nroReserva = reserva.NroReserva;
+                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                cantidadReservas++;
                 propiedad.AgregarReserva(reserva);
             }
-            return nroReserva;
+            return cantidadReservas-1;
         }
 
         public bool CancelarReserva(int numReserva, int dni)

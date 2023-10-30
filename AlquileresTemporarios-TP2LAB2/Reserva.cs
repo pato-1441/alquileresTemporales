@@ -10,7 +10,6 @@ namespace AlquileresTemporarios_TP2LAB2
     [Serializable]
     internal class Reserva
     {
-        static int cantidadReservas = 0;
         int nroReserva;
         DateTime fechaInicio;
         DateTime fechaFin;
@@ -35,15 +34,14 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return costo; }
         }
 
-        public Reserva(DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente) 
+        public Reserva(int codigo, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente) 
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
             this.cantPersonas = cantPersonas;
             this.cliente = cliente;
             this.costo = costo;
-            nroReserva = cantidadReservas;
-            cantidadReservas++;            
+            nroReserva = codigo;          
         }
     }
 }

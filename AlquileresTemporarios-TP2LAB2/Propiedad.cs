@@ -63,15 +63,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 imagenesPropiedad[i] = listaImagenes[i];
             }
         }
-        /*public void AñadirImagenes(Image imagen1, Image imagen2, Image imagen3 ,Image imagen4, Image imagen5)
-        {
-            
-                imagenesPropiedad[0] = imagen1;
-                imagenesPropiedad[1] = imagen2;
-                imagenesPropiedad[2] = imagen3;
-                imagenesPropiedad[3] = imagen4;
-                imagenesPropiedad[4] = imagen5;
-        }*/
+        
 
         public abstract double CalcularPrecio(int cantDias);
 
@@ -82,8 +74,9 @@ namespace AlquileresTemporarios_TP2LAB2
                 exito = false;
             else reservas.Add(reserva);
             return exito;
-            //Agregar al calendario, que todavia no sabemos que hace
+            
         }
+
         public bool QuitarReserva(int nroReserva, int dni) { 
             bool exito = false;
             List<Reserva> reservasBuscadas=new List<Reserva>();

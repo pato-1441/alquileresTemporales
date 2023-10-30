@@ -20,6 +20,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
+       
         Sistema sistema;
         List<Propiedad> propiedadesMatch;
 
@@ -27,7 +28,8 @@ namespace AlquileresTemporarios_TP2LAB2
         BinaryFormatter datosBinarios = new BinaryFormatter();
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Splash splash = new Splash();
+            splash.ShowDialog();
 
             FileStream archivo = null;
             try
@@ -51,8 +53,6 @@ namespace AlquileresTemporarios_TP2LAB2
                 sistema = new Sistema();
 
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
-            Splash splash = new Splash();
-            splash.ShowDialog();
         }
 
 
@@ -424,6 +424,8 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
             }
         }
+
+        
 
         private void btnImportarReservas_Click(object sender, EventArgs e)
         {

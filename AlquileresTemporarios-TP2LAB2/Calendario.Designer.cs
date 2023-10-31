@@ -34,7 +34,7 @@
             // 
             // mcCalendario
             // 
-            this.mcCalendario.Location = new System.Drawing.Point(18, 18);
+            this.mcCalendario.Location = new System.Drawing.Point(18, 15);
             this.mcCalendario.MaxDate = new System.DateTime(2024, 1, 31, 0, 0, 0, 0);
             this.mcCalendario.MinDate = new System.DateTime(2023, 10, 30, 0, 0, 0, 0);
             this.mcCalendario.Name = "mcCalendario";
@@ -43,9 +43,9 @@
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAceptar.Location = new System.Drawing.Point(95, 192);
+            this.btnAceptar.Location = new System.Drawing.Point(106, 187);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 28);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -54,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 232);
+            this.ClientSize = new System.Drawing.Size(287, 223);
             this.ControlBox = false;
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.mcCalendario);

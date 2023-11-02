@@ -266,42 +266,54 @@ namespace AlquileresTemporarios_TP2LAB2
                     RegistrarCliente registrarCliente = new RegistrarCliente();
                     Cliente cliente;
                     verPropiedad.Show();
-                    if (registrarCliente.ShowDialog() == DialogResult.OK)
+                    bool salir = false;
+                    
+                    while (!salir)
                     {
-                        //// rellenar confirmacion modal
-                        ConfirmacionReserva modalConfirmarReserva = new ConfirmacionReserva();
-                        TimeSpan cantDias = fechaHasta.Value - fechaDesde.Value;
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Tipo de propiedad: " + propiedadConfirmar.ToString());
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Dirección: " + propiedadConfirmar.Ubicacion[0] + ", " + propiedadConfirmar.Ubicacion[1] + ", " + propiedadConfirmar.Ubicacion[2]);
-                        if (propiedadConfirmar is HabitacionHotel)
+                        DialogResult res = registrarCliente.ShowDialog();
+                        if (res == DialogResult.OK)
                         {
-                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Número de habitación: " + ((HabitacionHotel)propiedadConfirmar).NumHabitacion + ", tipo de habitación: " + ((HabitacionHotel)propiedadConfirmar).TipoHabitacion);
-                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de estrellas: " + ((HabitacionHotel)propiedadConfirmar).CantEstrellas );
+                            //// rellenar confirmacion modal
+                            ConfirmacionReserva modalConfirmarReserva = new ConfirmacionReserva();
+                            TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Tipo de propiedad: " + propiedadConfirmar.ToString());
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Dirección: " + propiedadConfirmar.Ubicacion[0] + ", " + propiedadConfirmar.Ubicacion[1] + ", " + propiedadConfirmar.Ubicacion[2]);
+                            if (propiedadConfirmar is HabitacionHotel)
+                            {
+                                modalConfirmarReserva.lbDetallesReserva.Items.Add("Número de habitación: " + ((HabitacionHotel)propiedadConfirmar).NumHabitacion + ", tipo de habitación: " + ((HabitacionHotel)propiedadConfirmar).TipoHabitacion);
+                                modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de estrellas: " + ((HabitacionHotel)propiedadConfirmar).CantEstrellas);
+                            }
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de huespedes admitidos: " + propiedadConfirmar.CantPersonas);
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Reserva a nombre de: " + registrarCliente.tbNombre.Text + ", DNI: " + registrarCliente.tbDNI.Text);
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Fecha y hora de reserva: " + DateTime.Now.ToString());
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Ingreso el día: " + fechaDesde.Value.ToString());
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Salida el día: " + fechaHasta.Value.ToString());
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio por día: " + (propiedadConfirmar.CalcularPrecio(cantDias.Days) / cantDias.Days).ToString("$00.00"));
+                            modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio total: " + propiedadConfirmar.CalcularPrecio(cantDias.Days).ToString("$00.00"));
+                            // fin rellenar confirmacion modal
+                            DialogResult resultado = modalConfirmarReserva.ShowDialog();
+                            if (resultado == DialogResult.OK)
+                            {
+                                try
+                                {
+                                    cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                                    //Hace la reserva
+                                    int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
+                                    MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                            }
+                            salir = true;
                         }
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Cantidad de huespedes admitidos: " + propiedadConfirmar.CantPersonas);
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Reserva a nombre de: " + registrarCliente.tbNombre.Text + ", DNI: " + registrarCliente.tbDNI.Text);
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Fecha y hora de reserva: " +  DateTime.Now.ToString());
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Ingreso el día: " + fechaDesde.Value.ToString());
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Salida el día: " + fechaHasta.Value.ToString());
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio por día: " + (propiedadConfirmar.CalcularPrecio(cantDias.Days) / cantDias.TotalDays).ToString("$00.00"));
-                        modalConfirmarReserva.lbDetallesReserva.Items.Add("Precio total: " + propiedadConfirmar.CalcularPrecio(cantDias.Days).ToString("$00.00"));
-                        // fin rellenar confirmacion modal
-                        DialogResult resultado = modalConfirmarReserva.ShowDialog();
-                        if (resultado == DialogResult.OK)
+                        else if (res == DialogResult.Abort)
                         {
-                            try
-                            {
-                                cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
-                                //Hace la reserva
-                                int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
-                                MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
+                            MessageBox.Show("Por favor, complete todos los campos.");
                         }
-                    }
+                        else salir = true;
+                        }
                     registrarCliente.Dispose();
                     salirVerPropiedad = true;
                     } else if ( result == DialogResult.Yes ) {
@@ -395,7 +407,8 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
             bool exito = false;
-            TimeSpan cantDias = fechaHasta.Value - fechaDesde.Value;
+            //Agregamos una hora ya que cuando hacemos 2 días nos lo toma como 1 día y 59 minutos
+            TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
             if (propiedad != null)
             {
                 for (int i = 0; i < propiedad.ImagenPropiedad.Length; i++)
@@ -416,7 +429,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
                 modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
-                modal.lbPrecioPorDia.Text = propiedad.Precio.ToString("$0.00");
+                modal.lbPrecioPorDia.Text = (propiedad.CalcularPrecio(cantDias.Days) / (cantDias.Days)).ToString("$0.00");///propiedad.Precio.ToString("$0.00");
                 string[] direccion = propiedad.Ubicacion[0].Split(' ');
                 string direccionFinal = "";
                 foreach (string dir in direccion)

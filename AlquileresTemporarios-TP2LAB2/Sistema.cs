@@ -105,6 +105,7 @@ namespace AlquileresTemporarios_TP2LAB2
         private  List<Propiedad> ConsultarPropiedades(string []ubicacion, DateTime fechaInicio, DateTime fechaFin)
         {
             List<Propiedad> propiedadesMatch = new List<Propiedad>();
+            TimeSpan cantDias = fechaFin - fechaInicio;
 
             foreach (Propiedad propiedad in listaPropiedades)
             {
@@ -113,12 +114,12 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     if (propiedad.ToString() == "Casa fin de semana")
                     {
-                        if (fechaInicio.DayOfWeek.ToString() == "Friday") propiedadesMatch.Add(propiedad);
+                        if (fechaInicio.DayOfWeek.ToString() == "Friday" && fechaFin.DayOfWeek.ToString() == "Sunday" && cantDias.Days == 2) propiedadesMatch.Add(propiedad);
                     }
-                    else
+                    else if(propiedad.ToString() == "Casa")
                     {
-                        propiedadesMatch.Add(propiedad);
-                    }
+                        if (cantDias.Days >= ((Casa)propiedad).MinimoDias) propiedadesMatch.Add(propiedad);
+                    }else propiedadesMatch.Add(propiedad);
                 }
             }
             return propiedadesMatch; 
@@ -137,10 +138,10 @@ namespace AlquileresTemporarios_TP2LAB2
                     {
                         if (fechaInicio.DayOfWeek.ToString() == "Friday" && fechaFin.DayOfWeek.ToString()== "Sunday" && cantDias.Days==2) propiedadesMatch.Add(propiedad);
                     }
-                    else
+                    else if(propiedad.ToString() == "Casa")
                     {
-                        propiedadesMatch.Add(propiedad);
-                    }
+                        if(cantDias.Days>= ((Casa)propiedad).MinimoDias)propiedadesMatch.Add(propiedad);
+                    }else propiedadesMatch.Add(propiedad);
                 }
             }
             return propiedadesMatch;

@@ -292,6 +292,7 @@ namespace AlquileresTemporarios_TP2LAB2
                             try
                             {
                                 cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                                //Hace la reserva
                                 int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
                                 MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
                             }
@@ -393,16 +394,29 @@ namespace AlquileresTemporarios_TP2LAB2
         private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
-            bool exito = false;            
+            bool exito = false;
+            TimeSpan cantDias = fechaHasta.Value - fechaDesde.Value;
             if (propiedad != null)
             {
                 for (int i = 0; i < propiedad.ImagenPropiedad.Length; i++)
                 {
                     listaPBmodal[i].Image = propiedad.ImagenPropiedad[i];
                 }
+                if(propiedad is HabitacionHotel)
+                {
+                    modal.lbCantEstrellas.Text = ((HabitacionHotel)propiedad).CantEstrellas.ToString();
+                    modal.lbTipoHab.Text= ((HabitacionHotel)propiedad).TipoHabitacion.ToString();
+                }
+                else
+                {
+                    modal.lbCantEstrellas.Visible = false;
+                    modal.lbTipoHab.Visible = false;
+                    modal.lbHabitacion.Visible = false;
+                }
                 modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
-                modal.lbPrecio.Text = propiedad.Precio.ToString("$0.00");
+                modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
+                modal.lbPrecioPorDia.Text = propiedad.Precio.ToString("$0.00");
                 string[] direccion = propiedad.Ubicacion[0].Split(' ');
                 string direccionFinal = "";
                 foreach (string dir in direccion)

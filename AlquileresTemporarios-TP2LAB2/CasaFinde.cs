@@ -12,8 +12,8 @@ namespace AlquileresTemporarios_TP2LAB2
     {
         
 
-        public CasaFinde(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias, Propietario propietario) : base(ubicacion, cantPersonas, precio, caracteristicas, descripcion, minimoDias, propietario) { 
-        
+        public CasaFinde(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias, Propietario propietario) : base(ubicacion, cantPersonas, precio, caracteristicas, descripcion, minimoDias, propietario) {
+            //minimoDias = 3;
         }
 
         public override double CalcularPrecio(int cantDias)

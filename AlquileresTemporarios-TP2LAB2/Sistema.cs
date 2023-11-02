@@ -54,7 +54,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
 
-                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente);
                 cantidadReservas++;
                 propiedad.AgregarReserva(reserva);
             }
@@ -128,14 +128,14 @@ namespace AlquileresTemporarios_TP2LAB2
         private List<Propiedad> ConsultarPropiedades(string provincia, DateTime fechaInicio, DateTime fechaFin)
         {
             List<Propiedad> propiedadesMatch = new List<Propiedad>();
-           
+            TimeSpan cantDias = fechaFin - fechaInicio;
             foreach (Propiedad propiedad in listaPropiedades)
             {
                 if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin) && propiedad.Ubicacion[2] == provincia)
                 {
                     if (propiedad.ToString() == "Casa fin de semana")
                     {
-                        if (fechaInicio.DayOfWeek.ToString() == "Friday") propiedadesMatch.Add(propiedad);
+                        if (fechaInicio.DayOfWeek.ToString() == "Friday" && fechaFin.DayOfWeek.ToString()== "Sunday" && cantDias.Days==2) propiedadesMatch.Add(propiedad);
                     }
                     else
                     {

@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,10 +21,14 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (tbDNI.Text == "" || tbNombre.Text == "") { 
-                this.DialogResult= DialogResult.Abort; 
-               // throw new Exception("No se completaron los datos"); 
-            }
+            if (tbNombre.Text == "") throw new Exception("No se completaron los datos");
+
+            if (tbDNI.Visible) { 
+            if (tbDNI.Text == "") throw new Exception("No se completaron los datos");
+
+            Regex verificarDni = new Regex(@"^[0-9]{8}$");
+            if (!verificarDni.IsMatch(tbDNI.Text.ToString())) throw new Exception("El DNI no es válido");
+        }
         }
     }
 }

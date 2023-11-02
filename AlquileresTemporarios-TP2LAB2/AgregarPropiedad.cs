@@ -52,32 +52,42 @@ namespace AlquileresTemporarios_TP2LAB2
             OpenFileDialog ofdImagen = new OpenFileDialog();
             if (ofdImagen.ShowDialog() == DialogResult.OK)
             {
-                switch (cantImagenesCargadas)
-                {
-                    case 0:
-                        pbImagenPropiedad1.Image = Image.FromFile(ofdImagen.FileName);
-                       
-                        break;
-                    case 1:
-                        pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
-                        
-                        break;
-                    case 2:
-                        pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
-                        
-                        break;
-                    case 3:
-                        pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
-                       
-                        break;
-                    case 4:
-                        pbImagenPropiedad5.Image = Image.FromFile(ofdImagen.FileName);
-                        
-                        btnSeleccionarImagen.Enabled = false;
-                        break;
+                try {
+                    switch (cantImagenesCargadas)
+                    {
+                        case 0:
+                            pbImagenPropiedad1.Image = Image.FromFile(ofdImagen.FileName);
+
+                            break;
+                        case 1:
+                            pbImagenPropiedad2.Image = Image.FromFile(ofdImagen.FileName);
+
+                            break;
+                        case 2:
+                            pbImagenPropiedad3.Image = Image.FromFile(ofdImagen.FileName);
+
+                            break;
+                        case 3:
+                            pbImagenPropiedad4.Image = Image.FromFile(ofdImagen.FileName);
+
+                            break;
+                        case 4:
+                            pbImagenPropiedad5.Image = Image.FromFile(ofdImagen.FileName);
+
+                            btnSeleccionarImagen.Enabled = false;
+                            break;
+                    }
+                    imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
+                    cantImagenesCargadas++;
                 }
-                imagenesCargadas.Add(Image.FromFile(ofdImagen.FileName));
-                cantImagenesCargadas++;
+                catch(OutOfMemoryException ex)
+                {
+                    MessageBox.Show("La imagen no se pudo cargar. Elija otro formato");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("La imagen no se pudo cargar.\n" + ex.Message);
+                }
             }
         }
 

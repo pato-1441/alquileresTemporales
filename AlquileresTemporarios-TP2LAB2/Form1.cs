@@ -387,6 +387,17 @@ namespace AlquileresTemporarios_TP2LAB2
                     calendario.ShowDialog();
                     calendario.Dispose();
                 }
+                else if (result == DialogResult.No)
+                {
+                    DialogResult opcion = MessageBox.Show("¿Está seguro de que desea Eliminar la propiedad?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (opcion == DialogResult.Yes && sistema.EliminarPropiedad(propiedadesMatch[e.RowIndex]))
+                    {
+                        MessageBox.Show("La propiedad se eliminó con éxito.");
+                        salirVerPropiedad = true;
+                        dgvPropiedades.Rows.Clear();
+                    }
+                    else { MessageBox.Show("No se pudo eliminar la propiedad."); }
+                } 
                 else salirVerPropiedad = true;
 
 

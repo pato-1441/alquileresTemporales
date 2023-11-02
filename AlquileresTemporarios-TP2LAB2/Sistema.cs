@@ -197,7 +197,16 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return exito;
         }
-
+        public bool EliminarPropiedad(Propiedad propiedad)
+        {
+            bool exito = false;
+            if(listaPropiedades.Contains(propiedad))
+            {
+                listaPropiedades.Remove(propiedad);
+                exito = true;
+            }
+            return exito;
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();

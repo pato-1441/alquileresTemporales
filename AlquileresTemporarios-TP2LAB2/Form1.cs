@@ -322,7 +322,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     salirVerPropiedad = true;
                     } else if ( result == DialogResult.Yes ) {
                         AgregarPropiedad modificarPropiedad = new AgregarPropiedad();
-                        Propiedad propiedad = sistema.ListaPropiedades[e.RowIndex];
+                        Propiedad propiedad = propiedadesMatch[e.RowIndex];
                         int tipoPropiedad;
                         if (propiedad.ToString() == "Hotel") tipoPropiedad = 0;
                         else if (propiedad.ToString() == "Casa") tipoPropiedad = 1;
@@ -348,6 +348,13 @@ namespace AlquileresTemporarios_TP2LAB2
                         modificarPropiedad.tbDescripcion.Text = propiedad.Descripcion;
                         modificarPropiedad.cantImagenesCargadas = propiedad.ImagenPropiedad.Count();
                         modificarPropiedad.btnSeleccionarImagen.Enabled = false;
+                        if(!(propiedad is HabitacionHotel)) 
+                    { 
+                        modificarPropiedad.tbNombrePropietario.Text = ((Casa)propiedad).Propietario.Nombre;
+                        modificarPropiedad.tbDniPropietario.Text = ((Casa)propiedad).Propietario.Dni.ToString();
+                        modificarPropiedad.gbPropietario.Enabled = false;
+                    
+                    }
                         bool salir = false;
 
                         while (!salir) 

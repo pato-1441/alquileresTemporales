@@ -231,21 +231,20 @@ namespace AlquileresTemporarios_TP2LAB2
             cancelarReserva.Text = "Eliminar reserva";
             cancelarReserva.lbNombre.Text = "Número de reserva";
             cancelarReserva.btnAceptar.Text = "Aceptar";
-            if (cancelarReserva.ShowDialog() == DialogResult.OK)
+            try
             {
-                try
+                if (cancelarReserva.ShowDialog() == DialogResult.OK)
                 {
                     sistema.CancelarReserva(Convert.ToInt32(cancelarReserva.tbNombre.Text), Convert.ToInt32(cancelarReserva.tbDNI.Text));
-                    MessageBox.Show("Se ha eliminado la reserva.");                    
+                    MessageBox.Show("Se ha eliminado la reserva.");
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                
+                                  
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }           
             cancelarReserva.Dispose();
-
         }
 
         private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)

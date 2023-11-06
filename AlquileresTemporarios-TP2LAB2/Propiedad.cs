@@ -13,6 +13,7 @@ namespace AlquileresTemporarios_TP2LAB2
     [Serializable]
     internal  abstract class Propiedad
     {
+        int id;
         string[] ubicacion;
         int cantPersonas;
         protected double precio;
@@ -21,7 +22,7 @@ namespace AlquileresTemporarios_TP2LAB2
         Image[] imagenesPropiedad;
         List<Reserva> reservas;
         
-
+        public int IdPropiedad { get { return id; } }
         public double Precio { get { return precio; } }
         public int CantPersonas
         {
@@ -43,7 +44,7 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return reservas; }
         }
 
-        public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion)
+        public Propiedad(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int id)
         {
             reservas = new List<Reserva>();
             this.ubicacion = ubicacion;
@@ -51,6 +52,7 @@ namespace AlquileresTemporarios_TP2LAB2
             this.precio = precio;
             this.caracteristicas = caracteristicas;
             this.descripcion = descripcion;
+            this.id = id;
         }
 
         public Image[] ImagenPropiedad { get { return imagenesPropiedad; } }

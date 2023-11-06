@@ -11,12 +11,15 @@ namespace AlquileresTemporarios_TP2LAB2
     internal class Reserva
     {
         int nroReserva;
+        int idPropiedad;
         DateTime fechaInicio;
         DateTime fechaFin;
         int cantPersonas;
         double costo;
         Cliente cliente; 
 
+        public int CantPersonas { get { return cantPersonas; } }
+        public int IdPropiedad { get { return idPropiedad; } }
         public DateTime FechaInicio
         {
             get { return fechaInicio; }
@@ -34,7 +37,7 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return costo; }
         }
 
-        public Reserva(int codigo, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente) 
+        public Reserva(int codigo, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente, int idPropiedad) 
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
@@ -42,6 +45,7 @@ namespace AlquileresTemporarios_TP2LAB2
             this.cliente = cliente;
             this.costo = costo;
             nroReserva = codigo;          
+            this.idPropiedad = idPropiedad;
         }
     }
 }

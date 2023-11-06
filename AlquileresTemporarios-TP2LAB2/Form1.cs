@@ -178,7 +178,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                     propiedad = new HabitacionHotel(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
                                                     Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, modalAgregarPropiedad.tbNombreHotel.Text,
                                                     Convert.ToInt32(modalAgregarPropiedad.tbNumHabitacion.Text), Convert.ToInt32(modalAgregarPropiedad.cmbTipoHabitacion.SelectedIndex),
-                                                    Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2);
+                                                    Convert.ToInt32((modalAgregarPropiedad.cmbCantEstrellas.SelectedIndex)) + 2, sistema.IdPropiedad);
                                     propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
                                     sistema.AgregarHotel((HabitacionHotel)propiedad);
@@ -188,7 +188,8 @@ namespace AlquileresTemporarios_TP2LAB2
                                     propietario = new Propietario(modalAgregarPropiedad.tbNombrePropietario.Text, Convert.ToInt32(modalAgregarPropiedad.tbDniPropietario.Text));
 
                                     propiedad = new Casa(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario);
+                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text,
+                                                Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario, sistema.IdPropiedad);
                                     propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
                                     sistema.AgregarCasa((Casa)propiedad);
@@ -197,7 +198,8 @@ namespace AlquileresTemporarios_TP2LAB2
                                      propietario = new Propietario(modalAgregarPropiedad.tbNombrePropietario.Text, Convert.ToInt32(modalAgregarPropiedad.tbDniPropietario.Text));
 
                                     propiedad = new CasaFinde(ubicacion, Convert.ToInt32(modalAgregarPropiedad.nudCantPersonas.Value),
-                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text, Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario);
+                                                Convert.ToDouble(modalAgregarPropiedad.tbPrecioXNoche.Text), caracteristicas, modalAgregarPropiedad.tbDescripcion.Text,
+                                                Convert.ToInt32(modalAgregarPropiedad.nudMinimoDias.Value), propietario, sistema.IdPropiedad);
                                     propiedad.AñadirImagenes(modalAgregarPropiedad.imagenesCargadas);//Se podrían pasar las imagenes en el constructor
 
                                     sistema.AgregarCasa((CasaFinde)propiedad);
@@ -298,7 +300,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                 {
                                     try
                                     {
-                                        cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.ToString());
+                                        cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.Text.ToString());
                                         //Hace la reserva
                                         int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
@@ -511,7 +513,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnImportarReservas_Click(object sender, EventArgs e)
         {
-           /* OpenFileDialog ofd = new OpenFileDialog();
+            OpenFileDialog ofd = new OpenFileDialog();
             FileStream archivo;
             StreamReader sr;
             int cantReservas = 0;
@@ -534,7 +536,21 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }*/            
+            }           
+        }
+
+        private void btnExportarReservas_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "/reservas.txt";
+            try
+            {
+                sistema.ExportarReservas(path);
+                MessageBox.Show("Reservas exportadas con éxito.");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
     }

@@ -467,6 +467,7 @@
             this.btnExportarReservas.TabIndex = 26;
             this.btnExportarReservas.Text = "Exportar Reservas";
             this.btnExportarReservas.UseVisualStyleBackColor = true;
+            this.btnExportarReservas.Click += new System.EventHandler(this.btnExportarReservas_Click);
             // 
             // reservasToolStripMenuItem
             // 

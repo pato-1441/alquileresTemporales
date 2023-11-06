@@ -15,7 +15,7 @@ namespace AlquileresTemporarios_TP2LAB2
         int minimoDias;
         Propietario propietario;
         public Propietario Propietario { get { return propietario; } }
-        public Casa(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias, Propietario propietario): base (ubicacion, cantPersonas,precio, caracteristicas,descripcion)
+        public Casa(string[] ubicacion, int cantPersonas, double precio, bool[] caracteristicas, string descripcion, int minimoDias, Propietario propietario, int id): base (ubicacion, cantPersonas,precio, caracteristicas,descripcion,id)
         {
             this.minimoDias = minimoDias;
             this.propietario = propietario;

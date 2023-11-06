@@ -7,18 +7,22 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
    [Serializable]
     internal class Sistema
     {
+        int cantPropiedades = 0;
         int cantidadReservas = 0;
         List<Propiedad> listaPropiedades = new List<Propiedad>();
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
         }
+
+        public int IdPropiedad { get { return cantPropiedades; } }
         public int CodigoReserva 
         { 
             get { return cantidadReservas; }
@@ -31,6 +35,7 @@ namespace AlquileresTemporarios_TP2LAB2
             if (!listaPropiedades.Contains(casa))
             {
                 listaPropiedades.Add(casa);
+                cantPropiedades++;
                 exito = true;   
             }
             return exito;
@@ -42,6 +47,7 @@ namespace AlquileresTemporarios_TP2LAB2
             if (!listaPropiedades.Contains(hotel))
             {
                 listaPropiedades.Add(hotel);
+                cantPropiedades++;
                 exito = true;
             }
             return exito;
@@ -54,7 +60,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
 
-                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente);
+                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente, propiedad.IdPropiedad);
                 cantidadReservas++;
                 propiedad.AgregarReserva(reserva);
             }
@@ -206,6 +212,38 @@ namespace AlquileresTemporarios_TP2LAB2
                 exito = true;
             }
             return exito;
+        }
+
+        public void ExportarReservas(string path)
+        {
+            FileStream archivo = null;
+            StreamWriter sr = null;
+            try
+            {
+                archivo = new FileStream(path, FileMode.Create, FileAccess.Write);
+                sr = new StreamWriter(archivo);
+
+                foreach (Propiedad prop in listaPropiedades)
+                {
+                    foreach (Reserva reserva in prop.Reservas)
+                    {
+                        sr.WriteLine(reserva.NroReserva + ";" + reserva.IdPropiedad + ";" + reserva.FechaInicio + ";" + reserva.FechaFin
+                                     + ";" + reserva.CantPersonas + ";" + reserva.Costo + ";" + reserva.Cliente.Dni + ";" + reserva.Cliente.Nombre);
+                    }
+                }
+            }
+            catch(Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (archivo != null && sr != null)
+                {
+                    sr.Dispose();
+                    archivo.Close();
+                }                
+            }
         }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {

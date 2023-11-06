@@ -62,11 +62,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnImportarReservas = new System.Windows.Forms.Button();
             this.btnExportarReservas = new System.Windows.Forms.Button();
+            this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propiedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarPropiedadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msInicio = new System.Windows.Forms.MenuStrip();
+            this.ssInicio = new System.Windows.Forms.StatusStrip();
+            this.sslInicio = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ssLFechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbFecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.msInicio.SuspendLayout();
+            this.ssInicio.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregarPropiedad
@@ -453,12 +468,117 @@
             this.btnExportarReservas.Text = "Exportar Reservas";
             this.btnExportarReservas.UseVisualStyleBackColor = true;
             // 
+            // reservasToolStripMenuItem
+            // 
+            this.reservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarReservasToolStripMenuItem,
+            this.eliminarReservasToolStripMenuItem,
+            this.archivoToolStripMenuItem});
+            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
+            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.reservasToolStripMenuItem.Text = "Reservas";
+            // 
+            // consultarReservasToolStripMenuItem
+            // 
+            this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
+            this.consultarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnConsultarReserva_Click);
+            // 
+            // eliminarReservasToolStripMenuItem
+            // 
+            this.eliminarReservasToolStripMenuItem.Name = "eliminarReservasToolStripMenuItem";
+            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.eliminarReservasToolStripMenuItem.Text = "Eliminar Reserva";
+            this.eliminarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnEliminarReserva_Click);
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.exportarToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.toolStripMenuItem1.Text = "Importar";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.btnImportarReservas_Click);
+            // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Text = "Exportar";
+            // 
+            // propiedadesToolStripMenuItem
+            // 
+            this.propiedadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarPropiedadToolStripMenuItem});
+            this.propiedadesToolStripMenuItem.Name = "propiedadesToolStripMenuItem";
+            this.propiedadesToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.propiedadesToolStripMenuItem.Text = "Propiedades";
+            // 
+            // agregarPropiedadToolStripMenuItem
+            // 
+            this.agregarPropiedadToolStripMenuItem.Name = "agregarPropiedadToolStripMenuItem";
+            this.agregarPropiedadToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.agregarPropiedadToolStripMenuItem.Text = "Agregar Propiedad";
+            this.agregarPropiedadToolStripMenuItem.Click += new System.EventHandler(this.btnAgregarPropiedad_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // msInicio
+            // 
+            this.msInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reservasToolStripMenuItem,
+            this.propiedadesToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
+            this.msInicio.Location = new System.Drawing.Point(0, 0);
+            this.msInicio.Name = "msInicio";
+            this.msInicio.Size = new System.Drawing.Size(1182, 24);
+            this.msInicio.TabIndex = 27;
+            this.msInicio.Text = "Inicio: Complete los filtros";
+            // 
+            // ssInicio
+            // 
+            this.ssInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sslInicio,
+            this.ssLFechaInicio});
+            this.ssInicio.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.ssInicio.Location = new System.Drawing.Point(0, 544);
+            this.ssInicio.Name = "ssInicio";
+            this.ssInicio.Size = new System.Drawing.Size(1182, 22);
+            this.ssInicio.TabIndex = 28;
+            this.ssInicio.Text = "statusStrip1";
+            // 
+            // sslInicio
+            // 
+            this.sslInicio.Name = "sslInicio";
+            this.sslInicio.Size = new System.Drawing.Size(145, 17);
+            this.sslInicio.Text = "Inicio: Complete los filtros";
+            // 
+            // ssLFechaInicio
+            // 
+            this.ssLFechaInicio.Name = "ssLFechaInicio";
+            this.ssLFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ssLFechaInicio.Size = new System.Drawing.Size(118, 17);
+            this.ssLFechaInicio.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1182, 566);
+            this.Controls.Add(this.ssInicio);
             this.Controls.Add(this.btnExportarReservas);
             this.Controls.Add(this.btnImportarReservas);
             this.Controls.Add(this.label2);
@@ -475,7 +595,9 @@
             this.Controls.Add(this.btnEliminarReserva);
             this.Controls.Add(this.btnConsultarReserva);
             this.Controls.Add(this.btnAgregarPropiedad);
+            this.Controls.Add(this.msInicio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msInicio;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -490,6 +612,10 @@
             this.gbFecha.ResumeLayout(false);
             this.gbFecha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.msInicio.ResumeLayout(false);
+            this.msInicio.PerformLayout();
+            this.ssInicio.ResumeLayout(false);
+            this.ssInicio.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,6 +654,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.Button btnImportarReservas;
         private System.Windows.Forms.Button btnExportarReservas;
+        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarReservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarReservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem propiedadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarPropiedadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msInicio;
+        private System.Windows.Forms.StatusStrip ssInicio;
+        private System.Windows.Forms.ToolStripStatusLabel sslInicio;
+        private System.Windows.Forms.ToolStripStatusLabel ssLFechaInicio;
     }
 }
 

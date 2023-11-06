@@ -42,7 +42,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -54,6 +54,8 @@ namespace AlquileresTemporarios_TP2LAB2
                 sistema = new Sistema();
 
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
+            ssLFechaInicio.Text = DateTime.Today.ToShortDateString();
+            ssInicio.Items[1].Alignment = (ToolStripItemAlignment)1;
         }
 
 

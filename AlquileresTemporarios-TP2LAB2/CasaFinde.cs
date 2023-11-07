@@ -21,7 +21,7 @@ namespace AlquileresTemporarios_TP2LAB2
             double precioFinal = 0;
             if (cantDias == 2)
                 precioFinal = base.precio * cantDias;
-            else precioFinal = -1;
+            else throw new Exception("La cantidad de Días no es correcta.");
 
             return precioFinal;
         }

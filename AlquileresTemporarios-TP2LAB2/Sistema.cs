@@ -59,11 +59,19 @@ namespace AlquileresTemporarios_TP2LAB2
             
             if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
+                Reserva reserva;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
-
-                Reserva reserva = new Reserva(cantidadReservas, propiedad.IdPropiedad, fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente);
-                cantidadReservas++;
-                propiedad.AgregarReserva(reserva);
+                try
+                {
+                    reserva = new Reserva(cantidadReservas, propiedad.IdPropiedad, fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                    cantidadReservas++;
+                    propiedad.AgregarReserva(reserva);
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                
             }
             return cantidadReservas-1;
         }
@@ -237,6 +245,7 @@ namespace AlquileresTemporarios_TP2LAB2
                         {
                             if (prop.IdPropiedad.ToString() == linea[1])
                             {
+                                //string[] fechaSeparada = linea[2].Split('/', ' ', ':');
                                 string entradaFechaInicio = linea[2];
                                 DateTime fechaInicio = DateTime.ParseExact(entradaFechaInicio, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
                                 DateTime nuevaFechaInicio = new DateTime(fechaInicio.Year, fechaInicio.Month, fechaInicio.Day,
@@ -264,7 +273,7 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception(ex.Message);
             }
             finally
             {

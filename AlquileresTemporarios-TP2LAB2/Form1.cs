@@ -12,6 +12,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.XPath;
 using System.Reflection;
+using System.Security.Cryptography;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -513,30 +514,17 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnImportarReservas_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            FileStream archivo;
-            StreamReader sr;
-            int cantReservas = 0;
-            if (ofd.ShowDialog() == DialogResult.OK)
+            string path = Application.StartupPath + "/reservas.txt";
+            int cantReservas;
+            try
             {
-                try
-                {
-                    archivo = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
-                    sr = new StreamReader(archivo);
-
-                    string[] linea = sr.ReadLine().Split(';');
-                    while (linea != null)
-                    {
-                        
-
-                        linea = sr.ReadLine().Split(';');
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }           
+            sistema.ImportarReservas(path, out cantReservas);
+            MessageBox.Show(cantReservas + " reservas importadas con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }  
         }
 
         private void btnExportarReservas_Click(object sender, EventArgs e)

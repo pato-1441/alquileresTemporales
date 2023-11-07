@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -60,7 +61,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
 
-                Reserva reserva = new Reserva(cantidadReservas ,fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente, propiedad.IdPropiedad);
+                Reserva reserva = new Reserva(cantidadReservas, propiedad.IdPropiedad, fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days+1), cliente);
                 cantidadReservas++;
                 propiedad.AgregarReserva(reserva);
             }
@@ -212,6 +213,68 @@ namespace AlquileresTemporarios_TP2LAB2
                 exito = true;
             }
             return exito;
+        }
+
+        public void ImportarReservas(string path, out int cantReservas)
+        {            
+            FileStream archivo = null;
+            StreamReader sr = null;
+            cantReservas = 0;            
+            try
+            {
+                archivo = new FileStream(path, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(archivo);
+
+                string lineaEntera = sr.ReadLine();
+                string[] linea;
+
+                while (lineaEntera != null)
+                {
+                    linea = lineaEntera.Split(';');
+                    foreach (Propiedad prop in listaPropiedades)
+                    {
+                        if (linea.Length == 8)
+                        {
+                            if (prop.IdPropiedad.ToString() == linea[1])
+                            {
+                                string entradaFechaInicio = linea[2];
+                                DateTime fechaInicio = DateTime.ParseExact(entradaFechaInicio, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+                                DateTime nuevaFechaInicio = new DateTime(fechaInicio.Year, fechaInicio.Month, fechaInicio.Day,
+                                                                         fechaInicio.Hour, fechaInicio.Minute, fechaInicio.Second);
+
+                                string entradaFechaFin = linea[3];
+                                DateTime fechaFin = DateTime.ParseExact(entradaFechaFin, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+                                DateTime nuevaFechaFin = new DateTime(fechaFin.Year, fechaFin.Month, fechaFin.Day,
+                                                                      fechaFin.Hour, fechaFin.Minute, fechaFin.Second);
+
+                                Cliente cliente = new Cliente(Convert.ToInt32(linea[6]), linea[7]);
+                                Reserva reserva = new Reserva(Convert.ToInt32(linea[0]), Convert.ToInt32(linea[1]), nuevaFechaInicio, nuevaFechaFin, Convert.ToInt32(linea[4]), Convert.ToDouble(linea[5]), cliente);
+                                prop.AgregarReserva(reserva);
+                                cantReservas++;
+                            }
+                        }
+                        else
+                        {
+                            throw new ArgumentException();
+                        }
+                            
+                    }
+                    lineaEntera = sr.ReadLine();                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (archivo != null && sr != null)
+                {
+                    sr.Dispose();
+                    archivo.Close();
+                }
+            }
+            
         }
 
         public void ExportarReservas(string path)

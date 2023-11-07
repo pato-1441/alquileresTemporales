@@ -37,7 +37,7 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return costo; }
         }
 
-        public Reserva(int codigo, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente, int idPropiedad) 
+        public Reserva(int codigo, int idPropiedad, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente ) 
         {
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;

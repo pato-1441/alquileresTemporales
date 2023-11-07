@@ -82,7 +82,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
                 catch(OutOfMemoryException ex)
                 {
-                    MessageBox.Show("La imagen no se pudo cargar. Elija otro formato");
+                    MessageBox.Show("La imagen no se pudo cargar. Elija otro formato" + ex.Message);
                 }
                 catch (Exception ex)
                 {

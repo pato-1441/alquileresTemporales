@@ -93,7 +93,6 @@
             this.btnAgregarPropiedad.TabIndex = 2;
             this.btnAgregarPropiedad.Text = "Agregar propiedad";
             this.btnAgregarPropiedad.UseVisualStyleBackColor = true;
-            this.btnAgregarPropiedad.Click += new System.EventHandler(this.btnAgregarPropiedad_Click);
             // 
             // btnConsultarReserva
             // 
@@ -104,7 +103,6 @@
             this.btnConsultarReserva.TabIndex = 3;
             this.btnConsultarReserva.Text = "Consultar Reserva";
             this.btnConsultarReserva.UseVisualStyleBackColor = true;
-            this.btnConsultarReserva.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // btnEliminarReserva
             // 
@@ -115,7 +113,6 @@
             this.btnEliminarReserva.TabIndex = 4;
             this.btnEliminarReserva.Text = "Eliminar Reserva";
             this.btnEliminarReserva.UseVisualStyleBackColor = true;
-            this.btnEliminarReserva.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
             // dgvPropiedades
             // 
@@ -456,7 +453,6 @@
             this.btnImportarReservas.TabIndex = 25;
             this.btnImportarReservas.Text = "Importar Reservas";
             this.btnImportarReservas.UseVisualStyleBackColor = true;
-            this.btnImportarReservas.Click += new System.EventHandler(this.btnImportarReservas_Click);
             // 
             // btnExportarReservas
             // 
@@ -467,7 +463,6 @@
             this.btnExportarReservas.TabIndex = 26;
             this.btnExportarReservas.Text = "Exportar Reservas";
             this.btnExportarReservas.UseVisualStyleBackColor = true;
-            this.btnExportarReservas.Click += new System.EventHandler(this.btnExportarReservas_Click);
             // 
             // reservasToolStripMenuItem
             // 
@@ -482,14 +477,14 @@
             // consultarReservasToolStripMenuItem
             // 
             this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
-            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
             this.consultarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // eliminarReservasToolStripMenuItem
             // 
             this.eliminarReservasToolStripMenuItem.Name = "eliminarReservasToolStripMenuItem";
-            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarReservasToolStripMenuItem.Text = "Eliminar Reserva";
             this.eliminarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
@@ -499,21 +494,22 @@
             this.toolStripMenuItem1,
             this.exportarToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Importar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.btnImportarReservas_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.btnExportarReservas_Click);
             // 
             // propiedadesToolStripMenuItem
             // 

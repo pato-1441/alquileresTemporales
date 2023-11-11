@@ -572,13 +572,12 @@
             // sslInicio
             // 
             this.sslInicio.Name = "sslInicio";
-            this.sslInicio.Size = new System.Drawing.Size(145, 17);
-            this.sslInicio.Text = "Inicio: Complete los filtros";
+            this.sslInicio.Size = new System.Drawing.Size(36, 17);
+            this.sslInicio.Text = "Inicio";
             // 
             // ssLFechaInicio
             // 
             this.ssLFechaInicio.Name = "ssLFechaInicio";
-            this.ssLFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ssLFechaInicio.Size = new System.Drawing.Size(118, 17);
             this.ssLFechaInicio.Text = "toolStripStatusLabel1";
             // 
@@ -676,8 +675,8 @@
         private System.Windows.Forms.MenuStrip msInicio;
         private System.Windows.Forms.StatusStrip ssInicio;
         private System.Windows.Forms.ToolStripStatusLabel sslInicio;
-        private System.Windows.Forms.ToolStripStatusLabel ssLFechaInicio;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripStatusLabel ssLFechaInicio;
     }
 }
 

@@ -34,6 +34,9 @@
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.sslAgregarCliente = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -95,11 +98,28 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "DNI";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sslAgregarCliente});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 175);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(195, 22);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // sslAgregarCliente
+            // 
+            this.sslAgregarCliente.Name = "sslAgregarCliente";
+            this.sslAgregarCliente.Size = new System.Drawing.Size(109, 17);
+            this.sslAgregarCliente.Text = "Complete los datos";
+            // 
             // RegistrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 177);
+            this.ClientSize = new System.Drawing.Size(195, 197);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tbDNI);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNombre);
@@ -113,6 +133,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cliente nuevo";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +147,7 @@
         public System.Windows.Forms.TextBox tbDNI;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel sslAgregarCliente;
     }
 }

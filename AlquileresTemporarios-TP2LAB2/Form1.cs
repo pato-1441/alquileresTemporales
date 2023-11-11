@@ -327,6 +327,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     salirVerPropiedad = true;
                     } else if ( result == DialogResult.Yes ) {
                         AgregarPropiedad modificarPropiedad = new AgregarPropiedad();
+                        modificarPropiedad.sslAgregarPropiedad.Text = "Modifique la propiedad";
                         Propiedad propiedad = propiedadesMatch[e.RowIndex];
                         int tipoPropiedad;
                         if (propiedad.ToString() == "Hotel") tipoPropiedad = 0;
@@ -505,6 +506,7 @@ namespace AlquileresTemporarios_TP2LAB2
             modalPropiedad.btnModificar.Visible = false;
             modalPropiedad.btnReservar.Visible = false;
             modalPropiedad.btnEliminarPropiedad.Visible = false;
+            modal.sslAgregarCliente.Text = "Consulte la reserva";
             try
             {
                 DialogResult resultado = modal.ShowDialog();

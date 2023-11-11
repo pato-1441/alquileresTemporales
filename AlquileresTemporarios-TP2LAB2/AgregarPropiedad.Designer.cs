@@ -79,6 +79,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tbNombrePropietario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.sslAgregarPropiedad = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbHotel.SuspendLayout();
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad1)).BeginInit();
             this.gbPropietario.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbTipoPropiedad
@@ -101,7 +104,7 @@
             "Casa",
             "Casa fin de semana"});
             this.cmbTipoPropiedad.Location = new System.Drawing.Point(37, 56);
-            this.cmbTipoPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoPropiedad.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoPropiedad.Name = "cmbTipoPropiedad";
             this.cmbTipoPropiedad.Size = new System.Drawing.Size(161, 21);
             this.cmbTipoPropiedad.TabIndex = 0;
@@ -149,7 +152,7 @@
             // tbDireccion
             // 
             this.tbDireccion.Location = new System.Drawing.Point(38, 213);
-            this.tbDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(105, 20);
             this.tbDireccion.TabIndex = 3;
@@ -167,7 +170,7 @@
             // tbLocalidad
             // 
             this.tbLocalidad.Location = new System.Drawing.Point(37, 161);
-            this.tbLocalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLocalidad.Margin = new System.Windows.Forms.Padding(2);
             this.tbLocalidad.Name = "tbLocalidad";
             this.tbLocalidad.Size = new System.Drawing.Size(105, 20);
             this.tbLocalidad.TabIndex = 2;
@@ -201,7 +204,7 @@
             "Tierra Del Fuego",
             "Tucumán"});
             this.cmbProvincias.Location = new System.Drawing.Point(37, 104);
-            this.cmbProvincias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProvincias.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProvincias.Name = "cmbProvincias";
             this.cmbProvincias.Size = new System.Drawing.Size(161, 21);
             this.cmbProvincias.TabIndex = 1;
@@ -219,7 +222,7 @@
             // nudCantPersonas
             // 
             this.nudCantPersonas.Location = new System.Drawing.Point(38, 273);
-            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCantPersonas.Margin = new System.Windows.Forms.Padding(2);
             this.nudCantPersonas.Maximum = new decimal(new int[] {
             20,
             0,
@@ -252,7 +255,7 @@
             // tbPrecioXNoche
             // 
             this.tbPrecioXNoche.Location = new System.Drawing.Point(37, 331);
-            this.tbPrecioXNoche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPrecioXNoche.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrecioXNoche.Name = "tbPrecioXNoche";
             this.tbPrecioXNoche.Size = new System.Drawing.Size(105, 20);
             this.tbPrecioXNoche.TabIndex = 5;
@@ -266,9 +269,9 @@
             this.groupBox1.Controls.Add(this.cbCochera);
             this.groupBox1.Controls.Add(this.cbWifi);
             this.groupBox1.Location = new System.Drawing.Point(250, 400);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(209, 86);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -278,7 +281,7 @@
             // 
             this.cbDesayuno.AutoSize = true;
             this.cbDesayuno.Location = new System.Drawing.Point(134, 27);
-            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDesayuno.Margin = new System.Windows.Forms.Padding(2);
             this.cbDesayuno.Name = "cbDesayuno";
             this.cbDesayuno.Size = new System.Drawing.Size(74, 17);
             this.cbDesayuno.TabIndex = 11;
@@ -289,7 +292,7 @@
             // 
             this.cbPileta.AutoSize = true;
             this.cbPileta.Location = new System.Drawing.Point(9, 56);
-            this.cbPileta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPileta.Margin = new System.Windows.Forms.Padding(2);
             this.cbPileta.Name = "cbPileta";
             this.cbPileta.Size = new System.Drawing.Size(52, 17);
             this.cbPileta.TabIndex = 12;
@@ -300,7 +303,7 @@
             // 
             this.cbMascotas.AutoSize = true;
             this.cbMascotas.Location = new System.Drawing.Point(134, 56);
-            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMascotas.Margin = new System.Windows.Forms.Padding(2);
             this.cbMascotas.Name = "cbMascotas";
             this.cbMascotas.Size = new System.Drawing.Size(72, 17);
             this.cbMascotas.TabIndex = 14;
@@ -311,7 +314,7 @@
             // 
             this.cbLimpieza.AutoSize = true;
             this.cbLimpieza.Location = new System.Drawing.Point(62, 56);
-            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLimpieza.Margin = new System.Windows.Forms.Padding(2);
             this.cbLimpieza.Name = "cbLimpieza";
             this.cbLimpieza.Size = new System.Drawing.Size(67, 17);
             this.cbLimpieza.TabIndex = 13;
@@ -322,7 +325,7 @@
             // 
             this.cbCochera.AutoSize = true;
             this.cbCochera.Location = new System.Drawing.Point(62, 27);
-            this.cbCochera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCochera.Margin = new System.Windows.Forms.Padding(2);
             this.cbCochera.Name = "cbCochera";
             this.cbCochera.Size = new System.Drawing.Size(66, 17);
             this.cbCochera.TabIndex = 10;
@@ -333,7 +336,7 @@
             // 
             this.cbWifi.AutoSize = true;
             this.cbWifi.Location = new System.Drawing.Point(9, 27);
-            this.cbWifi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWifi.Margin = new System.Windows.Forms.Padding(2);
             this.cbWifi.Name = "cbWifi";
             this.cbWifi.Size = new System.Drawing.Size(50, 17);
             this.cbWifi.TabIndex = 9;
@@ -364,7 +367,7 @@
             // tbNumHabitacion
             // 
             this.tbNumHabitacion.Location = new System.Drawing.Point(19, 84);
-            this.tbNumHabitacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNumHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumHabitacion.Name = "tbNumHabitacion";
             this.tbNumHabitacion.Size = new System.Drawing.Size(105, 20);
             this.tbNumHabitacion.TabIndex = 7;
@@ -397,7 +400,7 @@
             "Doble",
             "Triple"});
             this.cmbTipoHabitacion.Location = new System.Drawing.Point(19, 134);
-            this.cmbTipoHabitacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoHabitacion.Name = "cmbTipoHabitacion";
             this.cmbTipoHabitacion.Size = new System.Drawing.Size(161, 21);
             this.cmbTipoHabitacion.TabIndex = 8;
@@ -405,7 +408,7 @@
             // tbNombreHotel
             // 
             this.tbNombreHotel.Location = new System.Drawing.Point(19, 39);
-            this.tbNombreHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombreHotel.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombreHotel.Name = "tbNombreHotel";
             this.tbNombreHotel.Size = new System.Drawing.Size(105, 20);
             this.tbNombreHotel.TabIndex = 6;
@@ -445,7 +448,7 @@
             "★ ★",
             "★ ★ ★"});
             this.cmbCantEstrellas.Location = new System.Drawing.Point(19, 184);
-            this.cmbCantEstrellas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCantEstrellas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCantEstrellas.Name = "cmbCantEstrellas";
             this.cmbCantEstrellas.Size = new System.Drawing.Size(161, 21);
             this.cmbCantEstrellas.TabIndex = 24;
@@ -485,7 +488,7 @@
             // nudMinimoDias
             // 
             this.nudMinimoDias.Location = new System.Drawing.Point(13, 46);
-            this.nudMinimoDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudMinimoDias.Margin = new System.Windows.Forms.Padding(2);
             this.nudMinimoDias.Maximum = new decimal(new int[] {
             30,
             0,
@@ -626,7 +629,7 @@
             // tbDniPropietario
             // 
             this.tbDniPropietario.Location = new System.Drawing.Point(20, 81);
-            this.tbDniPropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDniPropietario.Margin = new System.Windows.Forms.Padding(2);
             this.tbDniPropietario.Name = "tbDniPropietario";
             this.tbDniPropietario.Size = new System.Drawing.Size(162, 20);
             this.tbDniPropietario.TabIndex = 33;
@@ -644,7 +647,7 @@
             // tbNombrePropietario
             // 
             this.tbNombrePropietario.Location = new System.Drawing.Point(20, 38);
-            this.tbNombrePropietario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombrePropietario.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombrePropietario.Name = "tbNombrePropietario";
             this.tbNombrePropietario.Size = new System.Drawing.Size(160, 20);
             this.tbNombrePropietario.TabIndex = 31;
@@ -659,11 +662,28 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Nombre completo";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sslAgregarPropiedad});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 553);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(823, 22);
+            this.statusStrip1.TabIndex = 31;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // sslAgregarPropiedad
+            // 
+            this.sslAgregarPropiedad.Name = "sslAgregarPropiedad";
+            this.sslAgregarPropiedad.Size = new System.Drawing.Size(189, 17);
+            this.sslAgregarPropiedad.Text = "Complete los datos correctamente";
+            // 
             // AgregarPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 558);
+            this.ClientSize = new System.Drawing.Size(823, 575);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gbPropietario);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbCasa);
@@ -685,7 +705,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTipoPropiedad);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AgregarPropiedad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar propiedad";
@@ -706,6 +726,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenPropiedad1)).EndInit();
             this.gbPropietario.ResumeLayout(false);
             this.gbPropietario.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,5 +784,7 @@
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.TextBox tbNombrePropietario;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripStatusLabel sslAgregarPropiedad;
     }
 }

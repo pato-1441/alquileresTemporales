@@ -12,8 +12,14 @@ namespace AlquileresTemporarios_TP2LAB2
     [Serializable]
     internal class Cliente
     {
+        List<int> idReserva = new List<int>();
         int dni;
         string nombre;
+
+        public List<int> IdReserva
+        {
+            get { return idReserva; }
+        }
         public int Dni
         {
             get { return dni; }
@@ -31,6 +37,16 @@ namespace AlquileresTemporarios_TP2LAB2
             {
                 this.dni = dni;
             }            
+        }
+
+        public void AgregarReserva(int id)
+        {
+            idReserva.Add(id);
+        }
+
+        public void QuitarReserva(int nroReserva)
+        {
+            idReserva.Remove(nroReserva);
         }
     }
 }

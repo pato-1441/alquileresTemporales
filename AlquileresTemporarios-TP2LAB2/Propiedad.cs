@@ -89,6 +89,7 @@ namespace AlquileresTemporarios_TP2LAB2
             foreach(Reserva reserva in reservasBuscadas)
             {
                 if (nroReserva == reserva.NroReserva && dni == reserva.Cliente.Dni) {
+                    reserva.Cliente.QuitarReserva(reserva.NroReserva);
                     reservas.Remove(reserva);
                     exito = true;
                 }

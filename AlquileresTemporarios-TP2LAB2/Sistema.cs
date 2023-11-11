@@ -18,6 +18,8 @@ namespace AlquileresTemporarios_TP2LAB2
         int cantPropiedades = 0;
         int cantidadReservas = 0;
         List<Propiedad> listaPropiedades = new List<Propiedad>();
+        List<Cliente> listaClientes = new List<Cliente>();
+        int cantidadClientes = 0;
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
@@ -60,12 +62,22 @@ namespace AlquileresTemporarios_TP2LAB2
             if (ConsultarDisponibilidad(propiedad, fechaInicio, fechaFin)) {
                 TimeSpan tiempoReserva = fechaFin - fechaInicio;
                 Reserva reserva;
+                Cliente clienteReserva;
                 if (propiedad.ToString() == "Casa fin de semana" && fechaInicio.DayOfWeek.ToString() != "Friday") throw new Exception("La fecha de inicio no es un viernes.");
                 try
                 {
-                    reserva = new Reserva(cantidadReservas, propiedad.IdPropiedad, fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), cliente);
+                    
+                    clienteReserva = BuscarCliente(cliente.Dni);
+                    if (clienteReserva == null)
+                    {
+                        clienteReserva = cliente;
+                    }
+                    reserva = new Reserva(cantidadReservas, propiedad.IdPropiedad, fechaInicio, fechaFin, cantPersonas, propiedad.CalcularPrecio(tiempoReserva.Days), clienteReserva);
                     cantidadReservas++;
                     propiedad.AgregarReserva(reserva);
+                    if(!(listaClientes.Contains(clienteReserva)))listaClientes.Add(reserva.Cliente);
+                    cliente.AgregarReserva(reserva.NroReserva);
+           
                 }
                 catch(Exception ex)
                 {
@@ -320,6 +332,21 @@ namespace AlquileresTemporarios_TP2LAB2
                 }                
             }
         }
+
+        public Cliente BuscarCliente(int dni)
+        {
+            Cliente clienteEncontrado = null;
+            foreach(Cliente cliente in listaClientes)
+            {
+                if(cliente.Dni == dni)
+                {
+                    clienteEncontrado = cliente;
+                }
+            }
+            return clienteEncontrado;
+        }
+
+
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();

@@ -429,7 +429,22 @@ namespace AlquileresTemporarios_TP2LAB2
                 calendario.mcCalendario.BoldedDates = fechas.ToArray();
             }
         }
-
+        private bool RellenarVerPropiedadReserva(VerPropiedad modal, Propiedad propiedad, Reserva reserva) 
+        {
+            bool exito = false;
+            exito=RellenarVerPropiedad(modal, propiedad);
+            TimeSpan cantDias = reserva.FechaFin.AddHours(1) - reserva.FechaInicio;
+            try {
+            modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
+            modal.lbPrecioPorDia.Text = (propiedad.CalcularPrecio(cantDias.Days) / (cantDias.Days)).ToString("$0.00");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                exito = false;
+            }
+            return exito;
+        }
         private bool RellenarVerPropiedad(VerPropiedad modal, Propiedad propiedad)
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
@@ -455,8 +470,11 @@ namespace AlquileresTemporarios_TP2LAB2
                 }
                 modal.Text = propiedad.ToString();
                 modal.tbDescripcion.Text = propiedad.Descripcion;
-                modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
-                modal.lbPrecioPorDia.Text = (propiedad.CalcularPrecio(cantDias.Days) / (cantDias.Days)).ToString("$0.00");///propiedad.Precio.ToString("$0.00");
+                if (!((propiedad is CasaFinde) && cantDias.Days != 2))
+                {
+                    modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
+                    modal.lbPrecioPorDia.Text = (propiedad.CalcularPrecio(cantDias.Days) / (cantDias.Days)).ToString("$0.00");///propiedad.Precio.ToString("$0.00");
+                }
                 string[] direccion = propiedad.Ubicacion[0].Split(' ');
                 string direccionFinal = "";
                 foreach (string dir in direccion)
@@ -495,10 +513,10 @@ namespace AlquileresTemporarios_TP2LAB2
 
                     if (modal.tbNombre.Text.Length > 0)
                     {
-                        sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
+                        Reserva reserva= sistema.ConsultarReserva(Convert.ToInt32(modal.tbNombre.Text), out propiedad);
 
 
-                        if (RellenarVerPropiedad(modalPropiedad, propiedad))
+                        if (RellenarVerPropiedadReserva(modalPropiedad, propiedad, reserva))
                         {
                             modalPropiedad.ShowDialog();
                         }

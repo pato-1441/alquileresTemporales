@@ -27,7 +27,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             this.nombre = nombre;
             Regex verificarDni = new Regex(@"^[0-9]{8}$");
-            if (!verificarDni.IsMatch(dni.ToString())) throw new Exception("El DNI no es válido");
+            if (!verificarDni.IsMatch(dni.ToString())) throw new ControlDeUsuarioException();
             {
                 this.dni = dni;
             }            

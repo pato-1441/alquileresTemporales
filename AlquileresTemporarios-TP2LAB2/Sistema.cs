@@ -194,6 +194,9 @@ namespace AlquileresTemporarios_TP2LAB2
                     if (especificaciones[i] == true && propiedad.Caracteristicas[i] == false) propiedadesMatch.Remove(propiedad); 
                 }
             }
+            if (propiedadesMatch.Count == 0 && cantPersonas < 20) {
+                propiedadesMatch = ConsultarPropiedades(ubicacion, fechaInicio, fechaFin, cantPersonas + 1, especificaciones);
+            }
             return propiedadesMatch;
 
         }

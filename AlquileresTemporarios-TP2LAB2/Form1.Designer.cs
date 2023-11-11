@@ -75,6 +75,7 @@
             this.ssInicio = new System.Windows.Forms.StatusStrip();
             this.sslInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.ssLFechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -477,14 +478,14 @@
             // consultarReservasToolStripMenuItem
             // 
             this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
-            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
             this.consultarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // eliminarReservasToolStripMenuItem
             // 
             this.eliminarReservasToolStripMenuItem.Name = "eliminarReservasToolStripMenuItem";
-            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.eliminarReservasToolStripMenuItem.Text = "Eliminar Reserva";
             this.eliminarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
@@ -494,20 +495,20 @@
             this.toolStripMenuItem1,
             this.exportarToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
             this.toolStripMenuItem1.Text = "Importar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.btnImportarReservas_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.btnExportarReservas_Click);
             // 
@@ -529,15 +530,16 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.ayudaToolStripMenuItem.Text = "Acerca de";
             // 
             // msInicio
             // 
             this.msInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservasToolStripMenuItem,
             this.propiedadesToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.ayudaToolStripMenuItem,
+            this.ayudaToolStripMenuItem1});
             this.msInicio.Location = new System.Drawing.Point(0, 0);
             this.msInicio.Name = "msInicio";
             this.msInicio.Size = new System.Drawing.Size(1182, 24);
@@ -568,6 +570,12 @@
             this.ssLFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ssLFechaInicio.Size = new System.Drawing.Size(118, 17);
             this.ssLFechaInicio.Text = "toolStripStatusLabel1";
+            // 
+            // ayudaToolStripMenuItem1
+            // 
+            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // Form1
             // 
@@ -664,6 +672,7 @@
         private System.Windows.Forms.StatusStrip ssInicio;
         private System.Windows.Forms.ToolStripStatusLabel sslInicio;
         private System.Windows.Forms.ToolStripStatusLabel ssLFechaInicio;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
     }
 }
 

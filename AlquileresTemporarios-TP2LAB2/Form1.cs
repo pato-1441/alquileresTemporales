@@ -278,6 +278,7 @@ namespace AlquileresTemporarios_TP2LAB2
                         {
                             if (registrarCliente.ShowDialog() == DialogResult.OK)
                             {
+                                cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.Text.ToString());
                                 //// rellenar confirmacion modal
                                 ConfirmacionReserva modalConfirmarReserva = new ConfirmacionReserva();
                                 TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
@@ -301,7 +302,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                 {
                                     try
                                     {
-                                        cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.Text.ToString());
+                                       
                                         //Hace la reserva
                                         int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);

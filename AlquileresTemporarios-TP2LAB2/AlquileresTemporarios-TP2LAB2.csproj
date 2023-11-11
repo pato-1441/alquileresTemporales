@@ -67,6 +67,7 @@
     <Compile Include="ConfirmacionReserva.Designer.cs">
       <DependentUpon>ConfirmacionReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlDeUsuarioException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

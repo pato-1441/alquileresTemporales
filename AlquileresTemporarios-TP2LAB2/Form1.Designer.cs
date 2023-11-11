@@ -72,10 +72,10 @@
             this.agregarPropiedadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msInicio = new System.Windows.Forms.MenuStrip();
+            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ssInicio = new System.Windows.Forms.StatusStrip();
             this.sslInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.ssLFechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -94,6 +94,7 @@
             this.btnAgregarPropiedad.TabIndex = 2;
             this.btnAgregarPropiedad.Text = "Agregar propiedad";
             this.btnAgregarPropiedad.UseVisualStyleBackColor = true;
+            this.btnAgregarPropiedad.Click += new System.EventHandler(this.btnAgregarPropiedad_Click);
             // 
             // btnConsultarReserva
             // 
@@ -104,6 +105,7 @@
             this.btnConsultarReserva.TabIndex = 3;
             this.btnConsultarReserva.Text = "Consultar Reserva";
             this.btnConsultarReserva.UseVisualStyleBackColor = true;
+            this.btnConsultarReserva.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // btnEliminarReserva
             // 
@@ -114,6 +116,7 @@
             this.btnEliminarReserva.TabIndex = 4;
             this.btnEliminarReserva.Text = "Eliminar Reserva";
             this.btnEliminarReserva.UseVisualStyleBackColor = true;
+            this.btnEliminarReserva.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
             // dgvPropiedades
             // 
@@ -454,6 +457,7 @@
             this.btnImportarReservas.TabIndex = 25;
             this.btnImportarReservas.Text = "Importar Reservas";
             this.btnImportarReservas.UseVisualStyleBackColor = true;
+            this.btnImportarReservas.Click += new System.EventHandler(this.btnImportarReservas_Click);
             // 
             // btnExportarReservas
             // 
@@ -464,6 +468,7 @@
             this.btnExportarReservas.TabIndex = 26;
             this.btnExportarReservas.Text = "Exportar Reservas";
             this.btnExportarReservas.UseVisualStyleBackColor = true;
+            this.btnExportarReservas.Click += new System.EventHandler(this.btnExportarReservas_Click);
             // 
             // reservasToolStripMenuItem
             // 
@@ -546,6 +551,12 @@
             this.msInicio.TabIndex = 27;
             this.msInicio.Text = "Inicio: Complete los filtros";
             // 
+            // ayudaToolStripMenuItem1
+            // 
+            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem1.Text = "Ayuda";
+            // 
             // ssInicio
             // 
             this.ssInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -570,12 +581,6 @@
             this.ssLFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ssLFechaInicio.Size = new System.Drawing.Size(118, 17);
             this.ssLFechaInicio.Text = "toolStripStatusLabel1";
-            // 
-            // ayudaToolStripMenuItem1
-            // 
-            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem1.Text = "Ayuda";
             // 
             // Form1
             // 

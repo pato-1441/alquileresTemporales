@@ -25,6 +25,7 @@ namespace AlquileresTemporarios_TP2LAB2
        
         Sistema sistema;
         List<Propiedad> propiedadesMatch;
+        VerPropiedad verPropiedad;
 
         string archivoInicial = Application.StartupPath + "\\sistema.bin";
         BinaryFormatter datosBinarios = new BinaryFormatter();
@@ -57,9 +58,63 @@ namespace AlquileresTemporarios_TP2LAB2
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
             ssLFechaInicio.Text = DateTime.Today.ToShortDateString();
             ssInicio.Items[1].Alignment = (ToolStripItemAlignment)1;
+
+            //Gestion de Usuarios
+
+            InicioSesion inicio = new InicioSesion();
+            FileStream archivoUsuarios = null;
+            StreamReader sr = null;
+            bool usuarioCorrecto = false;
+            string tipo = null;
+            string ruta = Application.StartupPath + "/usuarios.txt";
+            try
+            {
+                archivoUsuarios = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(archivoUsuarios);
+                string lineaEntera = sr.ReadLine();
+                string[] linea;
+                if (inicio.ShowDialog() == DialogResult.OK)
+                {
+                    while (lineaEntera != null && usuarioCorrecto == false)
+                    {
+                        linea = lineaEntera.Split(';');
+                        if (linea[0] == inicio.tbNombreUsuario.Text && linea[1] == inicio.tbContraseña.Text)
+                        {
+                            usuarioCorrecto = true;
+                            tipo = linea[2];
+                        }
+
+                        lineaEntera = sr.ReadLine();
+
+                    }
+                    if (tipo != "administrador") EsEmpleado();
+                }
+                //nombre;Contraseña;tipo
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if(sr != null) sr.Close();
+                if(archivoUsuarios !=null) archivoUsuarios.Dispose();
+            }
+            
+
         }
 
+      
 
+        private void EsEmpleado()
+        {
+            btnAgregarPropiedad.Visible = false;
+            btnEliminarReserva.Visible = false;
+         //   verPropiedad.btnEliminarPropiedad.Visible = false;
+         //   verPropiedad.btnModificar.Visible = false;
+            
+        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -254,7 +309,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            VerPropiedad verPropiedad = new VerPropiedad();
+            verPropiedad = new VerPropiedad();
             Propiedad propiedadConfirmar = null;
             if (e.RowIndex >= 0)
             {

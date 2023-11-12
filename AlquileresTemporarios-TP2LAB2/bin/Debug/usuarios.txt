@@ -1,0 +1,2 @@
+julieta;julieta;empleado
+matias;matias;administrador

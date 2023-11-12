@@ -13,7 +13,7 @@ using System.Globalization;
 namespace AlquileresTemporarios_TP2LAB2
 {
    [Serializable]
-    internal class Sistema
+    internal class Sistema:IExportar
     {
         int cantPropiedades = 0;
         int cantidadReservas = 0;
@@ -350,6 +350,49 @@ namespace AlquileresTemporarios_TP2LAB2
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
+        }
+
+        public void Exportar(string ruta)
+        {
+            FileStream fs = null;
+            StreamWriter sw = null;
+            try
+            {
+                
+                    fs = new FileStream(ruta, FileMode.Create, FileAccess.Write);
+                    sw = new StreamWriter(fs);
+                    sw.WriteLine("Reservas al: " + DateTime.Now.ToString());
+                    string linea;
+                    foreach (Cliente cliente in listaClientes)
+                    {
+                        linea = cliente.Dni.ToString() + ";" + cliente.Nombre.ToString();
+                        sw.WriteLine(linea);
+                        foreach (int id in cliente.IdReserva)
+                        {
+                            foreach (Propiedad propiedad in listaPropiedades)
+                            {
+                                foreach (Reserva reserva in propiedad.Reservas)
+                                {
+                                    if (reserva.Cliente.Dni == cliente.Dni)
+                                    {
+                                        linea = propiedad.IdPropiedad.ToString() + ";" + reserva.FechaInicio.ToString() + ";" + reserva.FechaFin.ToString();
+                                        sw.WriteLine(linea);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (sw != null) sw.Close();
+                if ( fs != null) fs.Dispose();
+            }
         }
     }
 }

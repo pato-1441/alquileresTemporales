@@ -48,5 +48,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             idReserva.Remove(nroReserva);
         }
+
+     
     }
 }

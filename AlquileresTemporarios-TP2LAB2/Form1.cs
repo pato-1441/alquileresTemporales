@@ -561,6 +561,25 @@ namespace AlquileresTemporarios_TP2LAB2
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void exportarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog sfd = null;
+            try
+            {
+                sfd = new SaveFileDialog();
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    sistema.Exportar(sfd.FileName);
+                    MessageBox.Show("Se han exportado los clientes con sus reservas.");
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
     }
 

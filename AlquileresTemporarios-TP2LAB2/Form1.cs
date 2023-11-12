@@ -69,28 +69,43 @@ namespace AlquileresTemporarios_TP2LAB2
             string ruta = Application.StartupPath + "/usuarios.txt";
             try
             {
-                archivoUsuarios = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-                sr = new StreamReader(archivoUsuarios);
-                string lineaEntera = sr.ReadLine();
-                string[] linea;
-                if (inicio.ShowDialog() == DialogResult.OK)
+                while (!usuarioCorrecto)
                 {
-                    while (lineaEntera != null && usuarioCorrecto == false)
+                    archivoUsuarios = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                    sr = new StreamReader(archivoUsuarios);
+                    string lineaEntera = sr.ReadLine();
+                    string[] linea;
+                
+                    inicio.tbContraseña.Text = "";
+                    if (inicio.ShowDialog() == DialogResult.OK)
                     {
-                        linea = lineaEntera.Split(';');
-                        if (linea[0] == inicio.tbNombreUsuario.Text && linea[1] == inicio.tbContraseña.Text)
+                        while (lineaEntera != null && usuarioCorrecto == false)
                         {
-                            usuarioCorrecto = true;
-                            tipo = linea[2];
-                        }
+                            linea = lineaEntera.Split(';');
+                            if (linea[0] == inicio.tbNombreUsuario.Text && linea[1] == inicio.tbContraseña.Text)
+                            {
+                                usuarioCorrecto = true;
+                                tipo = linea[2];
+                            }
 
-                        lineaEntera = sr.ReadLine();
+                            lineaEntera = sr.ReadLine();
+
+                        }
+                        if (usuarioCorrecto)
+                        {
+                            if (tipo != "administrador")
+                            {
+                                EsEmpleado();
+                            }
+                            else sslInicio.Text += ": Administrador";
+                        }
+                        else MessageBox.Show("Usuario o contraseña incorrectos");
 
                     }
-                    if (tipo != "administrador") EsEmpleado();
+                    else Close();
                 }
                 //nombre;Contraseña;tipo
-                
+                sistema.CambiarUsuario(tipo);
             }
             catch(Exception ex)
             {
@@ -111,6 +126,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             btnAgregarPropiedad.Visible = false;
             btnEliminarReserva.Visible = false;
+            sslInicio.Text += ": Empleado";
          //   verPropiedad.btnEliminarPropiedad.Visible = false;
          //   verPropiedad.btnModificar.Visible = false;
             
@@ -311,6 +327,11 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             verPropiedad = new VerPropiedad();
             Propiedad propiedadConfirmar = null;
+            if (sistema.TipoUsuario == "empleado")
+            {
+                verPropiedad.btnEliminarPropiedad.Visible = false;
+                verPropiedad.btnModificar.Visible = false;
+            }
             if (e.RowIndex >= 0)
             {
                 propiedadConfirmar = propiedadesMatch[e.RowIndex];

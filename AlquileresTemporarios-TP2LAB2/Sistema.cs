@@ -19,20 +19,32 @@ namespace AlquileresTemporarios_TP2LAB2
         int cantidadReservas = 0;
         List<Propiedad> listaPropiedades = new List<Propiedad>();
         List<Cliente> listaClientes = new List<Cliente>();
+        string tipoUsuario;
        /// List<Usuario> listaUsuarios = new List<Usuario>();
         int cantidadClientes = 0;
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
         }
-
+        public string TipoUsuario
+        {
+            get { return tipoUsuario; }
+        }
         public int IdPropiedad { get { return cantPropiedades; } }
         public int CodigoReserva 
         { 
             get { return cantidadReservas; }
             set { cantidadReservas += value; }
         }
-       
+       public void CambiarUsuario(string tipo)
+        {
+            if (tipo == "administrador" || tipo == "empleado")
+            {
+                tipoUsuario = tipo;
+            }
+            else throw new Exception("El tipo de usuario no es un tipo válido.");
+
+        }
         public bool AgregarCasa(Casa casa)
         {
             bool exito = false;

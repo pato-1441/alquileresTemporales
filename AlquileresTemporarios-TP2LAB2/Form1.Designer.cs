@@ -68,6 +68,7 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propiedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarPropiedadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +77,6 @@
             this.ssInicio = new System.Windows.Forms.StatusStrip();
             this.sslInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.ssLFechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
-            this.exportarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -99,7 +99,7 @@
             // 
             // btnConsultarReserva
             // 
-            this.btnConsultarReserva.Location = new System.Drawing.Point(518, 26);
+            this.btnConsultarReserva.Location = new System.Drawing.Point(709, 26);
             this.btnConsultarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarReserva.Name = "btnConsultarReserva";
             this.btnConsultarReserva.Size = new System.Drawing.Size(178, 67);
@@ -110,7 +110,7 @@
             // 
             // btnEliminarReserva
             // 
-            this.btnEliminarReserva.Location = new System.Drawing.Point(711, 26);
+            this.btnEliminarReserva.Location = new System.Drawing.Point(516, 26);
             this.btnEliminarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarReserva.Name = "btnEliminarReserva";
             this.btnEliminarReserva.Size = new System.Drawing.Size(178, 67);
@@ -484,14 +484,14 @@
             // consultarReservasToolStripMenuItem
             // 
             this.consultarReservasToolStripMenuItem.Name = "consultarReservasToolStripMenuItem";
-            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.consultarReservasToolStripMenuItem.Text = "Consultar Reservas";
             this.consultarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnConsultarReserva_Click);
             // 
             // eliminarReservasToolStripMenuItem
             // 
             this.eliminarReservasToolStripMenuItem.Name = "eliminarReservasToolStripMenuItem";
-            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarReservasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.eliminarReservasToolStripMenuItem.Text = "Eliminar Reserva";
             this.eliminarReservasToolStripMenuItem.Click += new System.EventHandler(this.btnEliminarReserva_Click);
             // 
@@ -502,22 +502,29 @@
             this.exportarToolStripMenuItem,
             this.exportarClientesToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.toolStripMenuItem1.Text = "Importar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.btnImportarReservas_Click);
             // 
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.exportarToolStripMenuItem.Text = "Exportar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.btnExportarReservas_Click);
+            // 
+            // exportarClientesToolStripMenuItem
+            // 
+            this.exportarClientesToolStripMenuItem.Name = "exportarClientesToolStripMenuItem";
+            this.exportarClientesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.exportarClientesToolStripMenuItem.Text = "Exportar Clientes";
+            this.exportarClientesToolStripMenuItem.Click += new System.EventHandler(this.exportarClientesToolStripMenuItem_Click);
             // 
             // propiedadesToolStripMenuItem
             // 
@@ -582,13 +589,6 @@
             this.ssLFechaInicio.Name = "ssLFechaInicio";
             this.ssLFechaInicio.Size = new System.Drawing.Size(118, 17);
             this.ssLFechaInicio.Text = "toolStripStatusLabel1";
-            // 
-            // exportarClientesToolStripMenuItem
-            // 
-            this.exportarClientesToolStripMenuItem.Name = "exportarClientesToolStripMenuItem";
-            this.exportarClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportarClientesToolStripMenuItem.Text = "Exportar Clientes";
-            this.exportarClientesToolStripMenuItem.Click += new System.EventHandler(this.exportarClientesToolStripMenuItem_Click);
             // 
             // Form1
             // 

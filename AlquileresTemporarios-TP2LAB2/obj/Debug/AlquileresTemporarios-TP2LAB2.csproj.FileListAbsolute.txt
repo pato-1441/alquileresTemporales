@@ -78,3 +78,15 @@ E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj
 E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Splash.resources
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.InicioSesion.resources
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Práctico II\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.InicioSesion.resources
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.InicioSesion.resources
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.NavegadorWeb.resources
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Core.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Core.xml
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CopyComplete

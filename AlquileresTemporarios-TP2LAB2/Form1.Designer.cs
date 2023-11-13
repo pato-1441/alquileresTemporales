@@ -71,7 +71,6 @@
             this.exportarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propiedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarPropiedadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msInicio = new System.Windows.Forms.MenuStrip();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ssInicio = new System.Windows.Forms.StatusStrip();
@@ -541,18 +540,11 @@
             this.agregarPropiedadToolStripMenuItem.Text = "Agregar Propiedad";
             this.agregarPropiedadToolStripMenuItem.Click += new System.EventHandler(this.btnAgregarPropiedad_Click);
             // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.ayudaToolStripMenuItem.Text = "Acerca de";
-            // 
             // msInicio
             // 
             this.msInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservasToolStripMenuItem,
             this.propiedadesToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
             this.ayudaToolStripMenuItem1});
             this.msInicio.Location = new System.Drawing.Point(0, 0);
             this.msInicio.Name = "msInicio";
@@ -565,6 +557,7 @@
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
             this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
+            this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
             // 
             // ssInicio
             // 
@@ -680,13 +673,12 @@
         private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propiedadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarPropiedadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.MenuStrip msInicio;
         private System.Windows.Forms.StatusStrip ssInicio;
         private System.Windows.Forms.ToolStripStatusLabel sslInicio;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel ssLFechaInicio;
         private System.Windows.Forms.ToolStripMenuItem exportarClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
     }
 }
 

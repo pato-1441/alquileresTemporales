@@ -656,6 +656,12 @@ namespace AlquileresTemporarios_TP2LAB2
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ayudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            NavegadorWeb modal = new NavegadorWeb();
+            modal.ShowDialog();
+        }
     }
     }
 

@@ -119,3 +119,4 @@ C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CopyComplete
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.RegistrarHuesped.resources

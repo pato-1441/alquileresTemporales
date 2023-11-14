@@ -21,7 +21,6 @@ namespace AlquileresTemporarios_TP2LAB2
         List<Cliente> listaClientes = new List<Cliente>();
         string tipoUsuario;
        /// List<Usuario> listaUsuarios = new List<Usuario>();
-        int cantidadClientes = 0;
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }

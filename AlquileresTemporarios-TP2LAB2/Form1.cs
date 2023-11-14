@@ -324,6 +324,7 @@ namespace AlquileresTemporarios_TP2LAB2
             cancelarReserva.Dispose();
         }
 
+        List<string> huespedes = new List<string>();
         private void dgvPropiedades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             verPropiedad = new VerPropiedad();
@@ -379,9 +380,18 @@ namespace AlquileresTemporarios_TP2LAB2
                                 {
                                     try
                                     {
-                                       
                                         //Hace la reserva
                                         int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
+                                        RegistrarHuesped modalHuesped = new RegistrarHuesped();
+                                        for(int i = 0; i < nudCantPersonas.Value-1; i++)
+                                        {
+                                            if (modalHuesped.ShowDialog() == DialogResult.OK)
+                                            {
+                                                huespedes.Add("Nombre: "+ modalHuesped.tbNombre.Text+
+                                                            " DNI: "+ modalHuesped.tbDNI.Text+
+                                                            " Fec. Nacimiento: " + modalHuesped.dtpFecNacimiento.Value.ToShortDateString());
+                                            }
+                                        }
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
                                     }
                                     catch (Exception ex)
@@ -620,7 +630,11 @@ namespace AlquileresTemporarios_TP2LAB2
                                 itemsImpresion.Add("Fecha de inicio: " + reserva.FechaInicio.ToString());
                                 itemsImpresion.Add("Fecha de fin: " + reserva.FechaFin.ToString());
                                 itemsImpresion.Add("Costo total: " + reserva.Costo.ToString("$00.00"));
-
+                                for(int i = 0; i< huespedes.Count; i++)
+                                {
+                                    if (i == 0) itemsImpresion.Add("Huespedes:");
+                                    itemsImpresion.Add(huespedes[i]);
+                                }
 
                                 printDocument1.Print();
                             }
@@ -709,7 +723,7 @@ namespace AlquileresTemporarios_TP2LAB2
             //dibuja titulo
             e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(175, 82));
             float posY = 450;
-            float posX = 10;
+            float posX;
             int renglon = 0;
             while (renglon < itemsImpresion.Count)
             {

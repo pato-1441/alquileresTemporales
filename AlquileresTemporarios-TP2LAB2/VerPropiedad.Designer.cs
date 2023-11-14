@@ -61,58 +61,59 @@
             // 
             this.lbUbicacion.AutoSize = true;
             this.lbUbicacion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUbicacion.Location = new System.Drawing.Point(33, 298);
+            this.lbUbicacion.Location = new System.Drawing.Point(25, 242);
+            this.lbUbicacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUbicacion.Name = "lbUbicacion";
-            this.lbUbicacion.Size = new System.Drawing.Size(25, 37);
+            this.lbUbicacion.Size = new System.Drawing.Size(20, 29);
             this.lbUbicacion.TabIndex = 7;
             this.lbUbicacion.Text = "-";
             // 
             // pbImagen4
             // 
-            this.pbImagen4.Location = new System.Drawing.Point(545, 177);
-            this.pbImagen4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbImagen4.Location = new System.Drawing.Point(409, 144);
+            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen4.Name = "pbImagen4";
-            this.pbImagen4.Size = new System.Drawing.Size(169, 96);
+            this.pbImagen4.Size = new System.Drawing.Size(127, 78);
             this.pbImagen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen4.TabIndex = 6;
             this.pbImagen4.TabStop = false;
             // 
             // pbImagen5
             // 
-            this.pbImagen5.Location = new System.Drawing.Point(739, 177);
-            this.pbImagen5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbImagen5.Location = new System.Drawing.Point(554, 144);
+            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen5.Name = "pbImagen5";
-            this.pbImagen5.Size = new System.Drawing.Size(169, 96);
+            this.pbImagen5.Size = new System.Drawing.Size(127, 78);
             this.pbImagen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen5.TabIndex = 5;
             this.pbImagen5.TabStop = false;
             // 
             // pbImagen3
             // 
-            this.pbImagen3.Location = new System.Drawing.Point(739, 34);
-            this.pbImagen3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbImagen3.Location = new System.Drawing.Point(554, 28);
+            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen3.Name = "pbImagen3";
-            this.pbImagen3.Size = new System.Drawing.Size(169, 103);
+            this.pbImagen3.Size = new System.Drawing.Size(127, 84);
             this.pbImagen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen3.TabIndex = 4;
             this.pbImagen3.TabStop = false;
             // 
             // pbImagen2
             // 
-            this.pbImagen2.Location = new System.Drawing.Point(545, 34);
-            this.pbImagen2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbImagen2.Location = new System.Drawing.Point(409, 28);
+            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen2.Name = "pbImagen2";
-            this.pbImagen2.Size = new System.Drawing.Size(169, 103);
+            this.pbImagen2.Size = new System.Drawing.Size(127, 84);
             this.pbImagen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen2.TabIndex = 3;
             this.pbImagen2.TabStop = false;
             // 
             // pbImagen1
             // 
-            this.pbImagen1.Location = new System.Drawing.Point(40, 34);
-            this.pbImagen1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbImagen1.Location = new System.Drawing.Point(30, 28);
+            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen1.Name = "pbImagen1";
-            this.pbImagen1.Size = new System.Drawing.Size(472, 239);
+            this.pbImagen1.Size = new System.Drawing.Size(354, 194);
             this.pbImagen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen1.TabIndex = 0;
             this.pbImagen1.TabStop = false;
@@ -123,33 +124,33 @@
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbDescripcion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcion.Location = new System.Drawing.Point(40, 352);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbDescripcion.Location = new System.Drawing.Point(30, 286);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
             this.tbDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDescripcion.Size = new System.Drawing.Size(475, 266);
+            this.tbDescripcion.Size = new System.Drawing.Size(356, 216);
             this.tbDescripcion.TabIndex = 8;
             this.tbDescripcion.TabStop = false;
             // 
             // lbCaracteristicas
             // 
             this.lbCaracteristicas.FormattingEnabled = true;
-            this.lbCaracteristicas.ItemHeight = 16;
-            this.lbCaracteristicas.Location = new System.Drawing.Point(547, 404);
-            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbCaracteristicas.Location = new System.Drawing.Point(410, 328);
+            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbCaracteristicas.Name = "lbCaracteristicas";
-            this.lbCaracteristicas.Size = new System.Drawing.Size(151, 100);
+            this.lbCaracteristicas.Size = new System.Drawing.Size(114, 82);
             this.lbCaracteristicas.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(733, 359);
+            this.label1.Location = new System.Drawing.Point(550, 292);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 32);
+            this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Precio final";
             // 
@@ -157,19 +158,20 @@
             // 
             this.lbPrecioFinal.AutoSize = true;
             this.lbPrecioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecioFinal.Location = new System.Drawing.Point(733, 404);
+            this.lbPrecioFinal.Location = new System.Drawing.Point(550, 328);
+            this.lbPrecioFinal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrecioFinal.Name = "lbPrecioFinal";
-            this.lbPrecioFinal.Size = new System.Drawing.Size(17, 22);
+            this.lbPrecioFinal.Size = new System.Drawing.Size(14, 18);
             this.lbPrecioFinal.TabIndex = 12;
             this.lbPrecioFinal.Text = "-";
             // 
             // btnReservar
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnReservar.Location = new System.Drawing.Point(545, 574);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReservar.Location = new System.Drawing.Point(409, 466);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(88, 48);
+            this.btnReservar.Size = new System.Drawing.Size(66, 39);
             this.btnReservar.TabIndex = 13;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
@@ -177,10 +179,10 @@
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(823, 574);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(617, 466);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 48);
+            this.btnCancelar.Size = new System.Drawing.Size(66, 39);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -189,19 +191,20 @@
             // 
             this.lCaracteristicas.AutoSize = true;
             this.lCaracteristicas.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCaracteristicas.Location = new System.Drawing.Point(543, 359);
+            this.lCaracteristicas.Location = new System.Drawing.Point(407, 292);
+            this.lCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lCaracteristicas.Name = "lCaracteristicas";
-            this.lCaracteristicas.Size = new System.Drawing.Size(154, 32);
+            this.lCaracteristicas.Size = new System.Drawing.Size(119, 25);
             this.lCaracteristicas.TabIndex = 15;
             this.lCaracteristicas.Text = "Caracteristicas";
             // 
             // btnModificar
             // 
             this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnModificar.Location = new System.Drawing.Point(637, 574);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Location = new System.Drawing.Point(478, 466);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(88, 48);
+            this.btnModificar.Size = new System.Drawing.Size(66, 39);
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -209,10 +212,10 @@
             // btnEliminarPropiedad
             // 
             this.btnEliminarPropiedad.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnEliminarPropiedad.Location = new System.Drawing.Point(729, 574);
-            this.btnEliminarPropiedad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarPropiedad.Location = new System.Drawing.Point(547, 466);
+            this.btnEliminarPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarPropiedad.Name = "btnEliminarPropiedad";
-            this.btnEliminarPropiedad.Size = new System.Drawing.Size(88, 48);
+            this.btnEliminarPropiedad.Size = new System.Drawing.Size(66, 39);
             this.btnEliminarPropiedad.TabIndex = 17;
             this.btnEliminarPropiedad.Text = "Eliminar";
             this.btnEliminarPropiedad.UseVisualStyleBackColor = true;
@@ -221,9 +224,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(732, 437);
+            this.label2.Location = new System.Drawing.Point(549, 355);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 25);
+            this.label2.Size = new System.Drawing.Size(91, 21);
             this.label2.TabIndex = 18;
             this.label2.Text = "Precio por día";
             // 
@@ -231,9 +235,10 @@
             // 
             this.lbPrecioPorDia.AutoSize = true;
             this.lbPrecioPorDia.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecioPorDia.Location = new System.Drawing.Point(733, 462);
+            this.lbPrecioPorDia.Location = new System.Drawing.Point(550, 375);
+            this.lbPrecioPorDia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrecioPorDia.Name = "lbPrecioPorDia";
-            this.lbPrecioPorDia.Size = new System.Drawing.Size(18, 25);
+            this.lbPrecioPorDia.Size = new System.Drawing.Size(15, 21);
             this.lbPrecioPorDia.TabIndex = 19;
             this.lbPrecioPorDia.Text = "-";
             // 
@@ -241,9 +246,10 @@
             // 
             this.lbHabitacion.AutoSize = true;
             this.lbHabitacion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHabitacion.Location = new System.Drawing.Point(540, 519);
+            this.lbHabitacion.Location = new System.Drawing.Point(405, 422);
+            this.lbHabitacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHabitacion.Name = "lbHabitacion";
-            this.lbHabitacion.Size = new System.Drawing.Size(90, 25);
+            this.lbHabitacion.Size = new System.Drawing.Size(74, 21);
             this.lbHabitacion.TabIndex = 20;
             this.lbHabitacion.Text = "Habitacion";
             // 
@@ -251,9 +257,10 @@
             // 
             this.lbTipoHab.AutoSize = true;
             this.lbTipoHab.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTipoHab.Location = new System.Drawing.Point(636, 519);
+            this.lbTipoHab.Location = new System.Drawing.Point(477, 422);
+            this.lbTipoHab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTipoHab.Name = "lbTipoHab";
-            this.lbTipoHab.Size = new System.Drawing.Size(18, 25);
+            this.lbTipoHab.Size = new System.Drawing.Size(15, 21);
             this.lbTipoHab.TabIndex = 21;
             this.lbTipoHab.Text = "-";
             // 
@@ -261,19 +268,20 @@
             // 
             this.lbCantEstrellas.AutoSize = true;
             this.lbCantEstrellas.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantEstrellas.Location = new System.Drawing.Point(700, 519);
+            this.lbCantEstrellas.Location = new System.Drawing.Point(525, 422);
+            this.lbCantEstrellas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCantEstrellas.Name = "lbCantEstrellas";
-            this.lbCantEstrellas.Size = new System.Drawing.Size(18, 25);
+            this.lbCantEstrellas.Size = new System.Drawing.Size(15, 21);
             this.lbCantEstrellas.TabIndex = 22;
             this.lbCantEstrellas.Text = "-";
             // 
             // btnCalendario
             // 
             this.btnCalendario.DialogResult = System.Windows.Forms.DialogResult.Retry;
-            this.btnCalendario.Location = new System.Drawing.Point(795, 298);
-            this.btnCalendario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCalendario.Location = new System.Drawing.Point(596, 242);
+            this.btnCalendario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCalendario.Name = "btnCalendario";
-            this.btnCalendario.Size = new System.Drawing.Size(117, 49);
+            this.btnCalendario.Size = new System.Drawing.Size(88, 40);
             this.btnCalendario.TabIndex = 23;
             this.btnCalendario.Text = " Ver calendario de reservas";
             this.btnCalendario.UseVisualStyleBackColor = true;
@@ -281,9 +289,10 @@
             // btnImprimir
             // 
             this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Retry;
-            this.btnImprimir.Location = new System.Drawing.Point(729, 574);
+            this.btnImprimir.Location = new System.Drawing.Point(547, 466);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(88, 48);
+            this.btnImprimir.Size = new System.Drawing.Size(66, 39);
             this.btnImprimir.TabIndex = 24;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -291,9 +300,9 @@
             // 
             // VerPropiedad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 658);
+            this.ClientSize = new System.Drawing.Size(709, 556);
             this.ControlBox = false;
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnCalendario);
@@ -318,7 +327,7 @@
             this.Controls.Add(this.pbImagen2);
             this.Controls.Add(this.pbImagen1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VerPropiedad";

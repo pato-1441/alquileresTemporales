@@ -383,7 +383,6 @@ namespace AlquileresTemporarios_TP2LAB2
                                         //Hace la reserva
                                         int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
-                                        printDocument1.Print();
                                     }
                                     catch (Exception ex)
                                     {
@@ -572,6 +571,7 @@ namespace AlquileresTemporarios_TP2LAB2
             return exito;
         }
 
+        
         private void btnConsultarReserva_Click(object sender, EventArgs e)
         {
             RegistrarCliente modal = new RegistrarCliente();
@@ -584,6 +584,7 @@ namespace AlquileresTemporarios_TP2LAB2
             modalPropiedad.btnModificar.Visible = false;
             modalPropiedad.btnReservar.Visible = false;
             modalPropiedad.btnEliminarPropiedad.Visible = false;
+            modalPropiedad.btnImprimir.Visible = true;
             modal.sslAgregarCliente.Text = "Consulte la reserva";
             try
             {
@@ -598,7 +599,31 @@ namespace AlquileresTemporarios_TP2LAB2
 
                         if (RellenarVerPropiedadReserva(modalPropiedad, propiedad, reserva))
                         {
-                            modalPropiedad.ShowDialog();
+                           // modalPropiedad.ShowDialog();
+                            if (modalPropiedad.ShowDialog() == DialogResult.Retry)
+                            {
+                                imagenPropiedad = propiedad.ImagenPropiedad[0];
+                                itemsImpresion = new List<string>();
+
+                                // Agregar elementos a la lista
+                                itemsImpresion.Add("Propiedad: " + propiedad.ToString());
+                                itemsImpresion.Add(propiedad.Ubicacion[0].ToString()+", "+ propiedad.Ubicacion[1].ToString() + ", " + propiedad.Ubicacion[2].ToString());
+
+                                if (propiedad is HabitacionHotel)
+                                {
+                                    itemsImpresion.Add("Tipo de habitación: " + ((HabitacionHotel)propiedad).TipoHabitacion);
+                                    itemsImpresion.Add("Cantidad de estrellas: " + ((HabitacionHotel)propiedad).CantEstrellas.ToString());
+                                }
+
+                                itemsImpresion.Add("Cantidad de personas admitidas: " + propiedad.CantPersonas.ToString());
+                                itemsImpresion.Add("Cliente: " + reserva.Cliente.Nombre.ToString());
+                                itemsImpresion.Add("Fecha de inicio: " + reserva.FechaInicio.ToString());
+                                itemsImpresion.Add("Fecha de fin: " + reserva.FechaFin.ToString());
+                                itemsImpresion.Add("Costo total: " + reserva.Costo.ToString("$00.00"));
+
+
+                                printDocument1.Print();
+                            }
                         }
                     }
 
@@ -668,24 +693,27 @@ namespace AlquileresTemporarios_TP2LAB2
         string textoActual;
         Brush relleno;
         Pen borde;
+        List<string> itemsImpresion;
+        Image imagenPropiedad = null;
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Font fuente = new Font("Arial", 14, FontStyle.Regular);
-            Font fuenteTitulos = new Font("Arial", 25, FontStyle.Bold);
+            Font fuenteTitulos = new Font("Arial", 18, FontStyle.Bold);
             Image icono = AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
-            // Image imagenPropiedad = 
-            e.Graphics.DrawImage(icono, 50, 50, 150, 150);
+            e.Graphics.DrawImage(icono, 50, 50, 100, 100);
+            if(imagenPropiedad != null) e.Graphics.DrawImage(imagenPropiedad, 50, 200, 300, 225);
             textoActual = "Alquileres temporarios";
             SizeF tamañoLinea;
             tamañoLinea = e.Graphics.MeasureString(textoActual, fuenteTitulos);
-            e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(220, 125));
-            float posY = 500;
+            //dibuja titulo
+            e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(175, 82));
+            float posY = 450;
             float posX = 10;
             int renglon = 0;
-            while (renglon < modalConfirmarReserva.lbDetallesReserva.Items.Count)
+            while (renglon < itemsImpresion.Count)
             {
-                textoActual = modalConfirmarReserva.lbDetallesReserva.Items[renglon].ToString();
+                textoActual = itemsImpresion[renglon];
                 tamañoLinea = e.Graphics.MeasureString(textoActual, fuente);
 
                 posX = 50;

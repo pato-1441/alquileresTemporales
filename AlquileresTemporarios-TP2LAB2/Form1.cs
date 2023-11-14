@@ -13,6 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.XPath;
 using System.Reflection;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
@@ -26,7 +27,7 @@ namespace AlquileresTemporarios_TP2LAB2
         Sistema sistema;
         List<Propiedad> propiedadesMatch;
         VerPropiedad verPropiedad;
-
+        ConfirmacionReserva modalConfirmarReserva;
         string archivoInicial = Application.StartupPath + "\\sistema.bin";
         BinaryFormatter datosBinarios = new BinaryFormatter();
         private void Form1_Load(object sender, EventArgs e)
@@ -356,7 +357,7 @@ namespace AlquileresTemporarios_TP2LAB2
                             {
                                 cliente = new Cliente(Convert.ToInt32(registrarCliente.tbDNI.Text), registrarCliente.tbNombre.Text.ToString());
                                 //// rellenar confirmacion modal
-                                ConfirmacionReserva modalConfirmarReserva = new ConfirmacionReserva();
+                                modalConfirmarReserva = new ConfirmacionReserva();
                                 TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
                                 modalConfirmarReserva.lbDetallesReserva.Items.Add("Tipo de propiedad: " + propiedadConfirmar.ToString());
                                 modalConfirmarReserva.lbDetallesReserva.Items.Add("Dirección: " + propiedadConfirmar.Ubicacion[0] + ", " + propiedadConfirmar.Ubicacion[1] + ", " + propiedadConfirmar.Ubicacion[2]);
@@ -382,6 +383,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                         //Hace la reserva
                                         int nroReserva = sistema.ReservarPropiedad(propiedadesMatch[e.RowIndex], cliente, fechaDesde.Value, fechaHasta.Value, Convert.ToInt32(nudCantPersonas.Value));
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
+                                        printDocument1.Print();
                                     }
                                     catch (Exception ex)
                                     {
@@ -661,6 +663,42 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             NavegadorWeb modal = new NavegadorWeb();
             modal.ShowDialog();
+        }
+
+        string textoActual;
+        Brush relleno;
+        Pen borde;
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font fuente = new Font("Arial", 14, FontStyle.Regular);
+            Font fuenteTitulos = new Font("Arial", 25, FontStyle.Bold);
+            Image icono = AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
+            // Image imagenPropiedad = 
+            e.Graphics.DrawImage(icono, 50, 50, 150, 150);
+            textoActual = "Alquileres temporarios";
+            SizeF tamañoLinea;
+            tamañoLinea = e.Graphics.MeasureString(textoActual, fuenteTitulos);
+            e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(220, 125));
+            float posY = 500;
+            float posX = 10;
+            int renglon = 0;
+            while (renglon < modalConfirmarReserva.lbDetallesReserva.Items.Count)
+            {
+                textoActual = modalConfirmarReserva.lbDetallesReserva.Items[renglon].ToString();
+                tamañoLinea = e.Graphics.MeasureString(textoActual, fuente);
+
+                posX = 50;
+                e.Graphics.DrawString(textoActual, fuente, relleno, new PointF(posX, posY));
+                posY = posY + tamañoLinea.Height + 2;
+                renglon++;
+            }
+        }
+
+        private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            relleno = new SolidBrush(Color.Black);
+            borde = new Pen(Color.Black);
         }
     }
     }

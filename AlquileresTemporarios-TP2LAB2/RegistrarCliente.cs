@@ -25,10 +25,14 @@ namespace AlquileresTemporarios_TP2LAB2
 
             if (tbDNI.Visible) { 
                 if (tbDNI.Text == "") throw new Exception("No se completaron los datos");
-                /*
-                Regex verificarDni = new Regex(@"^[0-9]{8}$");
-                if (!verificarDni.IsMatch(tbDNI.Text.ToString())) throw new Exception("El DNI no es válido");*/
+                
             }
+        }
+
+        private void btnVerContraseña_Click(object sender, EventArgs e)
+        {
+            if (tbDNI.PasswordChar == '\0') tbDNI.PasswordChar = '*';
+            else tbDNI.PasswordChar = '\0';
         }
     }
 }

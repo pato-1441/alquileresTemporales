@@ -57,7 +57,9 @@ namespace AlquileresTemporarios_TP2LAB2
             if (sistema == null)
                 sistema = new Sistema();
 
+            fechaDesde.MinDate = DateTime.Now;
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
+            fechaHasta.MaxDate = fechaDesde.MinDate.AddMonths(3);
             ssLFechaInicio.Text = DateTime.Today.ToShortDateString();
             ssInicio.Items[1].Alignment = (ToolStripItemAlignment)1;
 
@@ -68,6 +70,8 @@ namespace AlquileresTemporarios_TP2LAB2
             StreamReader sr = null;
             bool usuarioCorrecto = false;
             string tipo = null;
+            string nombre=null;
+            string contraseña=null;
             string ruta = Application.StartupPath + "/usuarios.txt";
             try
             {
@@ -87,7 +91,10 @@ namespace AlquileresTemporarios_TP2LAB2
                             if (linea[0] == inicio.tbNombreUsuario.Text && linea[1] == inicio.tbContraseña.Text)
                             {
                                 usuarioCorrecto = true;
+                                nombre = linea[0];
+                                contraseña = linea[1];
                                 tipo = linea[2];
+
                             }
 
                             lineaEntera = sr.ReadLine();
@@ -100,14 +107,15 @@ namespace AlquileresTemporarios_TP2LAB2
                                 EsEmpleado();
                             }
                             else sslInicio.Text += ": Administrador";
+
+                            sistema.CambiarUsuario(tipo, nombre, contraseña);
                         }
                         else MessageBox.Show("Usuario o contraseña incorrectos");
 
                     }
                     else Close();
                 }
-                //nombre;Contraseña;tipo
-                sistema.CambiarUsuario(tipo);
+                
             }
             catch(Exception ex)
             {
@@ -118,7 +126,6 @@ namespace AlquileresTemporarios_TP2LAB2
                 if(sr != null) sr.Close();
                 if(archivoUsuarios !=null) archivoUsuarios.Dispose();
             }
-            
 
         }
 
@@ -128,7 +135,13 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             btnAgregarPropiedad.Visible = false;
             btnEliminarReserva.Visible = false;
+            btnImportarReservas.Visible = false;
             sslInicio.Text += ": Empleado";
+            eliminarReservasToolStripMenuItem.Visible = false;
+            tsmiImportar.Visible = false;
+            propiedadesToolStripMenuItem.Visible = false;   
+            verToolStripMenuItem.Visible = false;   
+            agregarEmToolStripMenuItem.Visible = false; 
          //   verPropiedad.btnEliminarPropiedad.Visible = false;
          //   verPropiedad.btnModificar.Visible = false;
             
@@ -161,6 +174,9 @@ namespace AlquileresTemporarios_TP2LAB2
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
         }
 
+
+
+        //Botón Buscar
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int cantFilas = dgvPropiedades.Rows.Count;
@@ -394,6 +410,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                             }
                                         }
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
+                                        dgvPropiedades.Rows.Clear();
                                     }
                                     catch (Exception ex)
                                     {
@@ -535,6 +552,7 @@ namespace AlquileresTemporarios_TP2LAB2
             try {
             modal.lbPrecioFinal.Text = propiedad.CalcularPrecio(cantDias.Days).ToString("$0.00");
             modal.lbPrecioPorDia.Text = (propiedad.CalcularPrecio(cantDias.Days) / (cantDias.Days)).ToString("$0.00");
+                modal.Text += ": " + reserva.Cliente.Nombre;
             }
             catch (Exception ex)
             {
@@ -600,8 +618,9 @@ namespace AlquileresTemporarios_TP2LAB2
             Propiedad propiedad = null;
             modal.Text = "Consultar reserva";
             modal.tbDNI.Visible= false;
-            modal.label2.Visible = false;
+            modal.lbDNI.Visible = false;
             modal.lbNombre.Text = "Número de reserva";
+            modal.btnAceptar.Text = "Aceptar";
             modalPropiedad.btnCalendario.Visible = false;
             modalPropiedad.btnModificar.Visible = false;
             modalPropiedad.btnReservar.Visible = false;
@@ -798,11 +817,149 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void propiedadesReservadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Estadisticas estadisticas = new Estadisticas();
+            Estadisticas estadisticas = new Estadisticas(Grafico());
+            if (estadisticas.ShowDialog() == DialogResult.OK){  }
+        }
+        public Bitmap Grafico()
+        {
+            Bitmap bitmap = new Bitmap(650, 305);
+            Graphics g = Graphics.FromImage(bitmap);
+            Color[] colores = new Color[] { Color.Red, Color.Blue, Color.LightGray, Color.BlueViolet, Color.Green, Color.Black, Color.Yellow, Color.Brown, Color.LightBlue };
 
+            double[] porcentajeHuespedes;
+            double[] porcentajeReservas = sistema.GraficosPropiedades(out porcentajeHuespedes);
+
+            
+            Brush relleno_pie = new SolidBrush(colores[1]);
+            Pen bordePie = new Pen(Color.Black, 3);
+            Rectangle contenedor = new Rectangle(50, 50, 250, 250);
+            int cont = 1;
+            int finAnterior = 0;
+
+            foreach (double porcentaje in porcentajeReservas)
+            {
+                g.FillPie(relleno_pie, 50, 50, 250, 250, finAnterior, (float)(-(360 * porcentaje)));
+                finAnterior = (int)(finAnterior - (360 * porcentaje));
+                cont++;
+                relleno_pie.Dispose();
+                relleno_pie = new SolidBrush(colores[cont]);
+            }
+            g.DrawEllipse(bordePie, contenedor);
+            relleno_pie.Dispose();
+            
+            cont = 1;
+            finAnterior = 350;
+            Rectangle rectangulo;
+            Brush relleno_rec = new SolidBrush(colores[cont]);
+            foreach (double porcentaje in porcentajeHuespedes)
+            {
+                if (porcentaje > 0)
+                {
+                    rectangulo = new Rectangle(finAnterior, (int)(300 - (250 * porcentaje)), 50, (int)(250 * porcentaje));
+                    finAnterior += 50;
+                    cont++;
+                    g.FillRectangle(relleno_rec, rectangulo);
+                    relleno_rec = new SolidBrush(colores[cont]);
+                    
+
+                }
+                else
+                {
+                    rectangulo = new Rectangle(finAnterior, 299, 50, 1);
+                    finAnterior += 50;
+                    cont++;
+                    g.FillRectangle(relleno_rec, rectangulo);
+                    relleno_rec = new SolidBrush(colores[cont]);
+                }
+            }
+
+            relleno_pie.Dispose();
+
+            return bitmap;
         }
 
-        
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro de que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) {
+                e.Cancel=true;
+            }
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarCliente cambiarContraseña = new RegistrarCliente();
+
+            cambiarContraseña.lbNombre.Text = "Nombre de Usuario";
+            cambiarContraseña.lbDNI.Text = "Nueva Contraseña";
+
+            try
+            {
+                if (cambiarContraseña.ShowDialog() == DialogResult.OK)
+                {
+                    if (sistema.cambiarContraseña(cambiarContraseña.tbNombre.Text, cambiarContraseña.tbDNI.Text))
+                    {
+                        MessageBox.Show("Contraseña cambiada con éxito.");
+                    }
+                else MessageBox.Show("No hay ningún usuario con ese nombre.");
+                }
+            }
+            catch ( Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void agregarEmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarCliente agregarUsuario = new RegistrarCliente();
+            int sizeY = agregarUsuario.Size.Height + 50;
+            int sizeX = agregarUsuario.Size.Width;
+            agregarUsuario.Size= new Size(sizeX, sizeY); 
+            sizeX = agregarUsuario.btnAceptar.Location.X;
+            sizeY = agregarUsuario.btnAceptar.Location.Y+50;
+            agregarUsuario.btnAceptar.Location = new Point(sizeX, sizeY);
+            sizeX = agregarUsuario.btnCancelar.Location.X;
+            sizeY = agregarUsuario.btnCancelar.Location.Y + 50;
+            agregarUsuario.btnCancelar.Location = new Point(sizeX, sizeY);
+            agregarUsuario.rbAdministrador.Visible = true;
+            agregarUsuario.rbEmpleado.Visible = true;
+            agregarUsuario.lbDNI.Text = "Contraseña";
+            agregarUsuario.Text = "Nuevo Usuario";
+            agregarUsuario.lbNombre.Text = "Nombre de usuario";
+            agregarUsuario.btnVerContraseña.Visible = true;
+            agregarUsuario.btnVerContraseña.BringToFront();
+            bool salir = false;
+            while (!salir)
+            {
+                if (agregarUsuario.ShowDialog() == DialogResult.OK) 
+                {
+                    string tipo;
+                    if (agregarUsuario.rbAdministrador.Checked) tipo = "administrador";
+                    else tipo = "empleado";
+                    try
+                    {
+                    sistema.agregarUsuario(agregarUsuario.tbNombre.Text, agregarUsuario.tbDNI.Text, tipo);
+                    salir= true;
+                        MessageBox.Show("Usuario Agregado con éxito.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        agregarUsuario.tbDNI.Text = "";
+                        agregarUsuario.tbDNI.Text = "";
+                    }
+                }else salir= true;
+            }
+            
+
+
+
+        }
     }
     }
 

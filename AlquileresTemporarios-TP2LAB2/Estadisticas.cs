@@ -16,5 +16,20 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             InitializeComponent();
         }
+        Bitmap bitmap;
+        public Estadisticas(Bitmap bitmap)
+        {
+            this.bitmap = bitmap;
+            InitializeComponent();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if (bitmap != null)
+            {
+                e.Graphics.DrawImage(this.bitmap, 0, 0);
+                
+            }
+        }
     }
 }

@@ -47,5 +47,7 @@ namespace AlquileresTemporarios_TP2LAB2
             nroReserva = codigo;          
             this.idPropiedad = idPropiedad;
         }
+
+        
     }
 }

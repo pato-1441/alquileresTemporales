@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
+    [Serializable]
     internal class Usuario
     {
         string nombre;
@@ -19,12 +20,12 @@ namespace AlquileresTemporarios_TP2LAB2
         public string Tipo
         {
             get { return tipo; }
+            set { tipo = value; }
         }
 
         public string Contraseña
         {
             get { return contraseña; }
-            set { contraseña=value; }
         }
         public Usuario(string nombre, string contraseña, string tipo)
         {

@@ -12,22 +12,22 @@ using System.Globalization;
 
 namespace AlquileresTemporarios_TP2LAB2
 {
-   [Serializable]
-    internal class Sistema:IExportar
+    [Serializable]
+    internal class Sistema : IExportar
     {
         int cantPropiedades = 0;
         int cantidadReservas = 0;
         List<Propiedad> listaPropiedades = new List<Propiedad>();
         List<Cliente> listaClientes = new List<Cliente>();
-        string tipoUsuario;
-       /// List<Usuario> listaUsuarios = new List<Usuario>();
+        Usuario usuarioActual;
+        /// List<Usuario> listaUsuarios = new List<Usuario>();
         public List<Propiedad> ListaPropiedades
         {
             get { return listaPropiedades; }
         }
         public string TipoUsuario
         {
-            get { return tipoUsuario; }
+            get { return usuarioActual.Tipo; }
         }
         public int IdPropiedad { get { return cantPropiedades; } }
         public int CodigoReserva 
@@ -35,11 +35,11 @@ namespace AlquileresTemporarios_TP2LAB2
             get { return cantidadReservas; }
             set { cantidadReservas += value; }
         }
-       public void CambiarUsuario(string tipo)
+       public void CambiarUsuario(string tipo, string nombre, string contraseña)
         {
             if (tipo == "administrador" || tipo == "empleado")
             {
-                tipoUsuario = tipo;
+                usuarioActual = new Usuario(nombre, contraseña, tipo);
             }
             else throw new Exception("El tipo de usuario no es un tipo válido.");
 
@@ -285,8 +285,11 @@ namespace AlquileresTemporarios_TP2LAB2
 
                                 Cliente cliente = new Cliente(Convert.ToInt32(linea[6]), linea[7]);
                                 Reserva reserva = new Reserva(Convert.ToInt32(linea[0]), Convert.ToInt32(linea[1]), nuevaFechaInicio, nuevaFechaFin, Convert.ToInt32(linea[4]), Convert.ToDouble(linea[5]), cliente);
-                                prop.AgregarReserva(reserva);
+                                if (prop.AgregarReserva(reserva))
+                                {
                                 cantReservas++;
+                                    cantidadReservas++;
+                                }
                             }
                         }
                         else
@@ -429,14 +432,27 @@ namespace AlquileresTemporarios_TP2LAB2
             }
         }
 
-        public double[] GraficosPropiedades()
+        public double[] GraficosPropiedades(out double[] porcentajeHuespedes)
         {
             double[] porcentajes = new double[] { 0, 0 };
             int cont = 0;
+
+            porcentajeHuespedes = new double[7];
+            for (int i = 0; i < porcentajeHuespedes.Length; i++) porcentajeHuespedes[i] = 0;
+
             foreach (Propiedad propiedad in listaPropiedades)
             {
-                for (int i = 0; i < propiedad.Reservas.Count; i++)
+                foreach (Reserva reserva in propiedad.Reservas)
                 {
+                    if (reserva.CantPersonas > 0)
+                    {
+                        if (reserva.CantPersonas < 6)
+                            porcentajeHuespedes[reserva.CantPersonas-1]++;
+                        else porcentajeHuespedes[5]++;
+
+                    }
+                    else throw new Exception("La cantidad de Personas no es válida.");
+
                     if (propiedad is HabitacionHotel) porcentajes[0]++;
                     else porcentajes[1]++;
                     cont++;
@@ -446,8 +462,55 @@ namespace AlquileresTemporarios_TP2LAB2
             {
                 porcentajes[i] = (double)porcentajes[i] / cont;
             }
+            for (int i = 0; i < porcentajeHuespedes.Length; i++)
+            {
+                porcentajeHuespedes[i] = (double)porcentajeHuespedes[i] / cont;
+            }
             return porcentajes;
         }
 
+        public void agregarUsuario(string nombre, string contraseña, string tipo)
+        {
+            string ruta = Application.StartupPath + "/usuarios.txt";
+            FileStream fs = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamReader sr = new StreamReader(fs);
+            StreamWriter sw = new StreamWriter(fs);
+            string[] linea;
+            while(!sr.EndOfStream) { 
+                linea=sr.ReadLine().Split(';');
+                if (linea[0] == nombre)
+                {
+                    sw.Close();
+                    sr.Close();
+                    fs.Dispose();
+                    throw new Exception("El nombre de usuario que eligió ya" +
+                                        " está siendo utilizado por otra persona");
+                }
+            }
+            sw.WriteLine(nombre + ";" + contraseña + ";" + tipo);
+            sw.Close();
+            sr.Close();
+            fs.Dispose();
+        }
+
+        public bool cambiarContraseña(string nombre, string contraseñaNueva)
+        {
+            string ruta = Application.StartupPath + "/usuarios.txt";
+            FileStream fs = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamReader sr = new StreamReader(fs);
+            StreamWriter sw = new StreamWriter(fs);
+            bool encontrado = false;
+            string[] linea;
+            while (!sr.EndOfStream && encontrado ==false)
+            {
+                linea = sr.ReadLine().Split(';');
+                if (linea[0] == nombre)
+                {
+                    encontrado = true;
+                    sw.WriteLine(linea[0] + ";" + linea[1] + ";" + linea[2]);
+                }
+            }
+            return encontrado;
+        }
     }
 }

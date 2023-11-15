@@ -152,3 +152,34 @@ E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\Tr
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\Trabajo Práctico 3\alquileresTemporales\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\Trabajo Práctico 3\alquileresTemporales\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
 C:\Users\julie\OneDrive\Documentos\TUP 2023\Laboratorio II\AlquileresTemporarios\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Estadisticas.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.exe.config
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.exe
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\AlquileresTemporarios-TP2LAB2.pdb
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Core.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Core.xml
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.AssemblyReference.cache
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.SuggestedBindingRedirects.cache
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.AgregarPropiedad.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Calendario.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.ConfirmacionReserva.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Estadisticas.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Form1.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.InicioSesion.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.NavegadorWeb.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Properties.Resources.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.RegistrarCliente.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.RegistrarHuesped.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Splash.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.VerPropiedad.resources
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.GenerateResource.cache
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CoreCompileInputs.cache
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CopyComplete
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
+E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb

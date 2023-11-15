@@ -71,7 +71,7 @@
             // pbImagen4
             // 
             this.pbImagen4.Location = new System.Drawing.Point(409, 144);
-            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen4.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen4.Name = "pbImagen4";
             this.pbImagen4.Size = new System.Drawing.Size(127, 78);
             this.pbImagen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -81,7 +81,7 @@
             // pbImagen5
             // 
             this.pbImagen5.Location = new System.Drawing.Point(554, 144);
-            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen5.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen5.Name = "pbImagen5";
             this.pbImagen5.Size = new System.Drawing.Size(127, 78);
             this.pbImagen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +91,7 @@
             // pbImagen3
             // 
             this.pbImagen3.Location = new System.Drawing.Point(554, 28);
-            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen3.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen3.Name = "pbImagen3";
             this.pbImagen3.Size = new System.Drawing.Size(127, 84);
             this.pbImagen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +101,7 @@
             // pbImagen2
             // 
             this.pbImagen2.Location = new System.Drawing.Point(409, 28);
-            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen2.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen2.Name = "pbImagen2";
             this.pbImagen2.Size = new System.Drawing.Size(127, 84);
             this.pbImagen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +111,7 @@
             // pbImagen1
             // 
             this.pbImagen1.Location = new System.Drawing.Point(30, 28);
-            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbImagen1.Margin = new System.Windows.Forms.Padding(2);
             this.pbImagen1.Name = "pbImagen1";
             this.pbImagen1.Size = new System.Drawing.Size(354, 194);
             this.pbImagen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             this.tbDescripcion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbDescripcion.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescripcion.Location = new System.Drawing.Point(30, 286);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.ReadOnly = true;
@@ -138,7 +138,7 @@
             // 
             this.lbCaracteristicas.FormattingEnabled = true;
             this.lbCaracteristicas.Location = new System.Drawing.Point(410, 328);
-            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbCaracteristicas.Margin = new System.Windows.Forms.Padding(2);
             this.lbCaracteristicas.Name = "lbCaracteristicas";
             this.lbCaracteristicas.Size = new System.Drawing.Size(114, 82);
             this.lbCaracteristicas.TabIndex = 9;
@@ -169,7 +169,7 @@
             // 
             this.btnReservar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReservar.Location = new System.Drawing.Point(409, 466);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservar.Name = "btnReservar";
             this.btnReservar.Size = new System.Drawing.Size(66, 39);
             this.btnReservar.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(617, 466);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(66, 39);
             this.btnCancelar.TabIndex = 14;
@@ -202,7 +202,7 @@
             // 
             this.btnModificar.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnModificar.Location = new System.Drawing.Point(478, 466);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(66, 39);
             this.btnModificar.TabIndex = 16;
@@ -213,7 +213,7 @@
             // 
             this.btnEliminarPropiedad.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnEliminarPropiedad.Location = new System.Drawing.Point(547, 466);
-            this.btnEliminarPropiedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarPropiedad.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarPropiedad.Name = "btnEliminarPropiedad";
             this.btnEliminarPropiedad.Size = new System.Drawing.Size(66, 39);
             this.btnEliminarPropiedad.TabIndex = 17;
@@ -277,9 +277,9 @@
             // 
             // btnCalendario
             // 
-            this.btnCalendario.DialogResult = System.Windows.Forms.DialogResult.Retry;
+            this.btnCalendario.DialogResult = System.Windows.Forms.DialogResult.Ignore;
             this.btnCalendario.Location = new System.Drawing.Point(596, 242);
-            this.btnCalendario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalendario.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalendario.Name = "btnCalendario";
             this.btnCalendario.Size = new System.Drawing.Size(88, 40);
             this.btnCalendario.TabIndex = 23;
@@ -290,7 +290,7 @@
             // 
             this.btnImprimir.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.btnImprimir.Location = new System.Drawing.Point(547, 466);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(2);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(66, 39);
             this.btnImprimir.TabIndex = 24;
@@ -327,7 +327,7 @@
             this.Controls.Add(this.pbImagen2);
             this.Controls.Add(this.pbImagen1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VerPropiedad";

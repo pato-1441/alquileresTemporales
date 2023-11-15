@@ -480,7 +480,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     salirVerPropiedad = true;
 
                 }
-                else if (result == DialogResult.Retry)
+                else if (result == DialogResult.Ignore)
                 {
                     Calendario calendario = new Calendario();
                     CompletarCalendario(calendario, propiedadConfirmar);
@@ -537,7 +537,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
             bool exito = false;
-            modal.btnCalendario.Visible = false;
+            
             //Agregamos una hora ya que cuando hacemos 2 días nos lo toma como 1 día y 59 minutos
             TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
             if (propiedad != null)
@@ -592,6 +592,7 @@ namespace AlquileresTemporarios_TP2LAB2
             modal.tbDNI.Visible= false;
             modal.label2.Visible = false;
             modal.lbNombre.Text = "Número de reserva";
+            modalPropiedad.btnCalendario.Visible = false;
             modalPropiedad.btnModificar.Visible = false;
             modalPropiedad.btnReservar.Visible = false;
             modalPropiedad.btnEliminarPropiedad.Visible = false;

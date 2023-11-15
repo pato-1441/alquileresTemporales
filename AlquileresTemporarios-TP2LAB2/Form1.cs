@@ -388,8 +388,8 @@ namespace AlquileresTemporarios_TP2LAB2
                                             if (modalHuesped.ShowDialog() == DialogResult.OK)
                                             {
                                                 huespedes.Add("Nombre: "+ modalHuesped.tbNombre.Text+
-                                                            " DNI: "+ modalHuesped.tbDNI.Text+
-                                                            " Fec. Nacimiento: " + modalHuesped.dtpFecNacimiento.Value.ToShortDateString());
+                                                            ", DNI: "+ modalHuesped.tbDNI.Text+
+                                                            ", Fec. Nacimiento: " + modalHuesped.dtpFecNacimiento.Value.ToShortDateString());
                                             }
                                         }
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);
@@ -635,8 +635,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                     if (i == 0) itemsImpresion.Add("Huespedes:");
                                     itemsImpresion.Add(huespedes[i]);
                                 }
-
-                                printDocument1.Print();
+                                if(printDialog1.ShowDialog()==DialogResult.OK) printDocument1.Print();
                             }
                         }
                     }
@@ -709,6 +708,8 @@ namespace AlquileresTemporarios_TP2LAB2
         Pen borde;
         List<string> itemsImpresion;
         Image imagenPropiedad = null;
+        bool lineaFinal = false;
+        private int paginaActual = 0;
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -716,16 +717,32 @@ namespace AlquileresTemporarios_TP2LAB2
             Font fuenteTitulos = new Font("Arial", 18, FontStyle.Bold);
             Image icono = AlquileresTemporarios_TP2LAB2.Properties.Resources.iconoAlquileres;
             e.Graphics.DrawImage(icono, 50, 50, 100, 100);
-            if(imagenPropiedad != null) e.Graphics.DrawImage(imagenPropiedad, 50, 200, 300, 225);
+            if (imagenPropiedad != null) e.Graphics.DrawImage(imagenPropiedad, 50, 200, 300, 225);
             textoActual = "Alquileres temporarios";
             SizeF tamañoLinea;
             tamañoLinea = e.Graphics.MeasureString(textoActual, fuenteTitulos);
-            //dibuja titulo
+
+            // Dibuja el título
             e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(175, 82));
+
+            // Imprime "Original" en la primera página y "Copia" en las páginas subsiguientes
+            string marcaPagina;
+            if (paginaActual == 0)
+            {
+                marcaPagina = "Original";
+            } else
+            {
+                marcaPagina = "Copia";
+            }
+            e.Graphics.DrawString(marcaPagina, fuente, relleno, new PointF(175, 112));
+
             float posY = 450;
             float posX;
-            int renglon = 0;
-            while (renglon < itemsImpresion.Count)
+            int renglon = 0;            
+
+            posY += tamañoLinea.Height + 2;
+
+            while (renglon < itemsImpresion.Count && posY < e.MarginBounds.Bottom)
             {
                 textoActual = itemsImpresion[renglon];
                 tamañoLinea = e.Graphics.MeasureString(textoActual, fuente);
@@ -735,12 +752,36 @@ namespace AlquileresTemporarios_TP2LAB2
                 posY = posY + tamañoLinea.Height + 2;
                 renglon++;
             }
+
+            if (renglon < itemsImpresion.Count || paginaActual == 0)
+            {
+                e.HasMorePages = true;
+                paginaActual++;
+            }
+            else
+            {
+                e.HasMorePages = false;
+                paginaActual = 0;  // Reiniciar para la próxima impresión
+            }
         }
 
         private void printDocument1_BeginPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             relleno = new SolidBrush(Color.Black);
             borde = new Pen(Color.Black);
+
+            paginaActual = 0;  // Reiniciar currentPage al comenzar la impresión
+        }
+
+        private void printDocument1_QueryPageSettings(object sender, System.Drawing.Printing.QueryPageSettingsEventArgs e)
+        {
+            lineaFinal = false;
+        }
+
+        private void printDocument1_EndPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            huespedes.Clear();
+            itemsImpresion.Clear();
         }
     }
     }

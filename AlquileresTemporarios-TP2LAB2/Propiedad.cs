@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.IO;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace AlquileresTemporarios_TP2LAB2 
 {
@@ -133,6 +134,78 @@ namespace AlquileresTemporarios_TP2LAB2
             return exito;
         }
 
+        public void ImportarCalendario()
+        {
+            FileStream calendario =null;
+            StreamReader sr = null;
+            OpenFileDialog opf = null;
+            try
+            {
+                // Reserva(int codigo, int idPropiedad, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente)
+                Reserva reserva = null;
+                Cliente cliente = null;
+                int idReserva, nroReserva, cantPersonas;
+                double costo;
+
+                opf = new OpenFileDialog();
+                if(opf.ShowDialog() == DialogResult.OK)
+                {
+
+                    calendario = new FileStream(opf.FileName, FileMode.Open, FileAccess.Read);
+                    sr = new StreamReader(calendario);
+                    string[] linea = sr.ReadLine().Split(',');
+                    while (!(sr.EndOfStream))
+                    {
+                        idReserva = Convert.ToInt32(linea[1].Trim());
+                        linea = sr.ReadLine().Split(',');
+                        nroReserva = Convert.ToInt32(linea[0].Trim());
+                        string fechaEntrada = linea[1].Trim();
+                        string fechaSalida = linea[2].Trim();
+                        DateTime fechaInicio = DateTime.ParseExact(fechaEntrada, "d/M/yyyy", CultureInfo.InvariantCulture);
+                        DateTime fechaFinal = DateTime.ParseExact(fechaSalida, "d/M/yyyy", CultureInfo.InvariantCulture);
+                        cliente= new Cliente(Convert.ToInt32(linea[4].Trim()), linea[3].Trim());
+                        cantPersonas = Convert.ToInt32(linea[5].Trim());
+                        costo = Convert.ToDouble(linea[6].Trim());
+                        reserva = new Reserva(nroReserva, idReserva, fechaInicio, fechaFinal, cantPersonas, costo, cliente);
+                        bool reservaExiste = false;
+                       // linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() []3+ ", " + reserva.Cliente.Dni.ToString() + ", " + reserva.CantPersonas.ToString() + " " + reserva.Costo.ToString("$00.00");
+
+                        foreach (Reserva existeReserva in reservas)
+                        {
+                            if (existeReserva.NroReserva == nroReserva)
+                            {
+                                reservaExiste = true;
+                                                            }
+
+                            // Verificar si hay reservas en las mismas fechas para las mismas propiedades
+                            if (existeReserva.IdPropiedad == this.id &&  (fechaInicio >= existeReserva.FechaInicio && fechaInicio <= existeReserva.FechaFin) ||
+                                (fechaFinal >= existeReserva.FechaInicio && fechaFinal <= existeReserva.FechaFin))
+                            {
+                                reservaExiste = true;
+                            }
+                        }
+
+                        // Si no existe, agregar la reserva a la lista
+                        if (!reservaExiste)
+                        {
+                            reservas.Add(reserva);
+                        }
+                    }
+
+                }
+                
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if(sr!=null) sr.Close();
+                if (calendario != null) calendario.Dispose();
+            }
+        }
         public void ExportarCalendario()
         {
             FileStream calendario = null;
@@ -141,11 +214,12 @@ namespace AlquileresTemporarios_TP2LAB2
             try
             {
                 calendario = new FileStream(ruta, FileMode.Create, FileAccess.Write);
-                string linea = this.ToString() + this.IdPropiedad.ToString();
-                sw = new StreamWriter(linea);
+                string linea = this.ToString() +", "+ this.IdPropiedad.ToString();
+                sw = new StreamWriter(calendario);
+                sw.WriteLine(linea);
                 foreach (Reserva reserva in reservas)
                 {
-                    linea = "Desde: " + reserva.FechaInicio.ToShortTimeString() + ", Hasta: " + reserva.FechaFin.ToShortTimeString() + ", nro de reserva: " + reserva.NroReserva;
+                    linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() +", "+reserva.Cliente.Dni.ToString()+ ", " + reserva.CantPersonas.ToString() + ", "+reserva.Costo.ToString("$00.00");
                     sw.WriteLine(linea);
                 }
             }

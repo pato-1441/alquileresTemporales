@@ -485,12 +485,13 @@ namespace AlquileresTemporarios_TP2LAB2
                 {
                     Calendario calendario = new Calendario();
                     CompletarCalendario(calendario, propiedadConfirmar);
-                    if(calendario.ShowDialog()== DialogResult.No)
+                    DialogResult calendarioResult = calendario.ShowDialog();
+                    if(calendarioResult== DialogResult.No)
                     {
                         propiedadConfirmar.ExportarCalendario();
                         MessageBox.Show("Exportacion exitosa");
                     }
-                    else if (calendario.ShowDialog() == DialogResult.Yes)
+                    else if (calendarioResult == DialogResult.Yes)
                     {
                         propiedadConfirmar.ImportarCalendario();
                     }

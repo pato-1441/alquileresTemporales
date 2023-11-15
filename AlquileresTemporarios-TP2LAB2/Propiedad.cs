@@ -161,14 +161,18 @@ namespace AlquileresTemporarios_TP2LAB2
                         nroReserva = Convert.ToInt32(linea[0].Trim());
                         string fechaEntrada = linea[1].Trim();
                         string fechaSalida = linea[2].Trim();
-                        DateTime fechaInicio = DateTime.ParseExact(fechaEntrada, "d/M/yyyy", CultureInfo.InvariantCulture);
-                        DateTime fechaFinal = DateTime.ParseExact(fechaSalida, "d/M/yyyy", CultureInfo.InvariantCulture);
-                        cliente= new Cliente(Convert.ToInt32(linea[4].Trim()), linea[3].Trim());
+                        DateTime fechaInicio = DateTime.ParseExact(fechaEntrada, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+                        DateTime nuevaFechaInicio = new DateTime(fechaInicio.Year, fechaInicio.Month, fechaInicio.Day,
+                                                                         fechaInicio.Hour, fechaInicio.Minute, fechaInicio.Second);
+                        DateTime fechaFinal = DateTime.ParseExact(fechaSalida, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
+                        DateTime nuevaFechaFin = new DateTime(fechaFinal.Year, fechaFinal.Month, fechaFinal.Day,
+                                                                     fechaFinal.Hour, fechaFinal.Minute, fechaFinal.Second);
+                        cliente = new Cliente(Convert.ToInt32(linea[4].Trim()), linea[3].Trim());
                         cantPersonas = Convert.ToInt32(linea[5].Trim());
                         costo = Convert.ToDouble(linea[6].Trim());
-                        reserva = new Reserva(nroReserva, idReserva, fechaInicio, fechaFinal, cantPersonas, costo, cliente);
+                        reserva = new Reserva(nroReserva, idReserva, nuevaFechaInicio, nuevaFechaFin, cantPersonas, costo, cliente);
                         bool reservaExiste = false;
-                       // linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() []3+ ", " + reserva.Cliente.Dni.ToString() + ", " + reserva.CantPersonas.ToString() + " " + reserva.Costo.ToString("$00.00");
+                       // linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() []3+ ", " + reserva.Cliente.Dni.ToString() + ", " + reserva.CantPersonas.ToString() + " " + reserva.Costo.ToString("$00,00");
 
                         foreach (Reserva existeReserva in reservas)
                         {
@@ -219,7 +223,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 sw.WriteLine(linea);
                 foreach (Reserva reserva in reservas)
                 {
-                    linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() +", "+reserva.Cliente.Dni.ToString()+ ", " + reserva.CantPersonas.ToString() + ", "+reserva.Costo.ToString("$00.00");
+                    linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() +", "+reserva.Cliente.Dni.ToString()+ ", " + reserva.CantPersonas.ToString() + ", "+reserva.Costo.ToString();
                     sw.WriteLine(linea);
                 }
             }

@@ -537,6 +537,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             PictureBox[] listaPBmodal = new PictureBox[] {modal.pbImagen1, modal.pbImagen2, modal.pbImagen3, modal.pbImagen4, modal.pbImagen5 };
             bool exito = false;
+            modal.btnCalendario.Visible = false;
             //Agregamos una hora ya que cuando hacemos 2 días nos lo toma como 1 día y 59 minutos
             TimeSpan cantDias = fechaHasta.Value.AddHours(1) - fechaDesde.Value;
             if (propiedad != null)
@@ -626,7 +627,7 @@ namespace AlquileresTemporarios_TP2LAB2
                                 }
 
                                 itemsImpresion.Add("Cantidad de personas admitidas: " + propiedad.CantPersonas.ToString());
-                                itemsImpresion.Add("Cliente: " + reserva.Cliente.Nombre.ToString());
+                                itemsImpresion.Add("Cliente: " + reserva.Cliente.Nombre.ToString()+ " DNI: "+ reserva.Cliente.Dni.ToString());
                                 itemsImpresion.Add("Fecha de inicio: " + reserva.FechaInicio.ToString());
                                 itemsImpresion.Add("Fecha de fin: " + reserva.FechaFin.ToString());
                                 itemsImpresion.Add("Costo total: " + reserva.Costo.ToString("$00.00"));
@@ -725,7 +726,7 @@ namespace AlquileresTemporarios_TP2LAB2
             // Dibuja el título
             e.Graphics.DrawString(textoActual, fuenteTitulos, relleno, new PointF(175, 82));
 
-            // Imprime "Original" en la primera página y "Copia" en las páginas subsiguientes
+            // Imprime "Original" en la primera página y "Copia" en las páginas siguientes
             string marcaPagina;
             if (paginaActual == 0)
             {
@@ -761,7 +762,7 @@ namespace AlquileresTemporarios_TP2LAB2
             else
             {
                 e.HasMorePages = false;
-                paginaActual = 0;  // Reiniciar para la próxima impresión
+                paginaActual = 0;  
             }
         }
 
@@ -770,7 +771,7 @@ namespace AlquileresTemporarios_TP2LAB2
             relleno = new SolidBrush(Color.Black);
             borde = new Pen(Color.Black);
 
-            paginaActual = 0;  // Reiniciar currentPage al comenzar la impresión
+            paginaActual = 0;  
         }
 
         private void printDocument1_QueryPageSettings(object sender, System.Drawing.Printing.QueryPageSettingsEventArgs e)

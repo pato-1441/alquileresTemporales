@@ -428,5 +428,26 @@ namespace AlquileresTemporarios_TP2LAB2
                 if ( fs != null) fs.Dispose();
             }
         }
+
+        public double[] GraficosPropiedades()
+        {
+            double[] porcentajes = new double[] { 0, 0 };
+            int cont = 0;
+            foreach (Propiedad propiedad in listaPropiedades)
+            {
+                for (int i = 0; i < propiedad.Reservas.Count; i++)
+                {
+                    if (propiedad is HabitacionHotel) porcentajes[0]++;
+                    else porcentajes[1]++;
+                    cont++;
+                }
+            }
+            for (int i = 0; i < porcentajes.Length; i++)
+            {
+                porcentajes[i] = (double)porcentajes[i] / cont;
+            }
+            return porcentajes;
+        }
+
     }
 }

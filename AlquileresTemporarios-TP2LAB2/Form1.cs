@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -785,6 +786,14 @@ namespace AlquileresTemporarios_TP2LAB2
             huespedes.Clear();
             itemsImpresion.Clear();
         }
+
+        private void propiedadesReservadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Estadisticas estadisticas = new Estadisticas();
+
+        }
+
+        
     }
     }
 

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.IO;
+using System.Windows.Forms;
 
 namespace AlquileresTemporarios_TP2LAB2 
 {
@@ -28,6 +30,7 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             get { return cantPersonas; }
         }
+        
 
         public string[] Ubicacion
         {
@@ -130,6 +133,32 @@ namespace AlquileresTemporarios_TP2LAB2
             return exito;
         }
 
+        public void ExportarCalendario()
+        {
+            FileStream calendario = null;
+            StreamWriter sw = null;
+            string ruta = Application.StartupPath + "/calendario.txt";
+            try
+            {
+                calendario = new FileStream(ruta, FileMode.Create, FileAccess.Write);
+                string linea = this.ToString() + this.IdPropiedad.ToString();
+                sw = new StreamWriter(linea);
+                foreach (Reserva reserva in reservas)
+                {
+                    linea = "Desde: " + reserva.FechaInicio.ToShortTimeString() + ", Hasta: " + reserva.FechaFin.ToShortTimeString() + ", nro de reserva: " + reserva.NroReserva;
+                    sw.WriteLine(linea);
+                }
+            }
+            catch (Exception e) 
+            { 
+                throw new Exception (e.Message);
+            }
+            finally
+            {
+                if (sw != null) sw.Close();
+                if(calendario != null) calendario.Dispose();
+            }
+        }
 
     }
 }

@@ -58,8 +58,9 @@ namespace AlquileresTemporarios_TP2LAB2
                 sistema = new Sistema();
 
             fechaDesde.MinDate = DateTime.Now;
+            fechaDesde.MaxDate = fechaDesde.MinDate.AddMonths(3);
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
-            fechaHasta.MaxDate = fechaDesde.MinDate.AddMonths(3);
+            fechaHasta.MaxDate = fechaHasta.MinDate.AddMonths(3);
             ssLFechaInicio.Text = DateTime.Today.ToShortDateString();
             ssInicio.Items[1].Alignment = (ToolStripItemAlignment)1;
 
@@ -171,7 +172,15 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void fechaDesde_ValueChanged(object sender, EventArgs e)
         {
+            try
+            {
             fechaHasta.MinDate = fechaDesde.Value.AddDays(1);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -510,7 +519,11 @@ namespace AlquileresTemporarios_TP2LAB2
                     }
                     else if (calendarioResult == DialogResult.Yes)
                     {
-                        propiedadConfirmar.ImportarCalendario();
+                        if (!propiedadConfirmar.ImportarCalendario())
+                        {
+                            MessageBox.Show("No se importaron todas las reservas por errores en las fechas.");
+                        }
+                        else MessageBox.Show("Importación exitosa.");
                     }
                     calendario.Dispose();
                 }
@@ -934,6 +947,7 @@ namespace AlquileresTemporarios_TP2LAB2
             agregarUsuario.lbNombre.Text = "Nombre de usuario";
             agregarUsuario.btnVerContraseña.Visible = true;
             agregarUsuario.btnVerContraseña.BringToFront();
+            agregarUsuario.tbDNI.PasswordChar = '*';
             bool salir = false;
             while (!salir)
             {

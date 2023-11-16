@@ -134,11 +134,12 @@ namespace AlquileresTemporarios_TP2LAB2
             return exito;
         }
 
-        public void ImportarCalendario()
+        public bool ImportarCalendario()
         {
             FileStream calendario = null;
             StreamReader sr = null;
             OpenFileDialog opf = null;
+            bool exito = true;
             try
             {
                 // Reserva(int codigo, int idPropiedad, DateTime fechaInicio, DateTime fechaFin, int cantPersonas, double costo, Cliente cliente)
@@ -155,9 +156,14 @@ namespace AlquileresTemporarios_TP2LAB2
                     sr = new StreamReader(calendario);
                     string lineaEntera = sr.ReadLine();
                     string[] linea;
-                    linea = lineaEntera.Split(',');
+
+                    if (lineaEntera != null) linea = lineaEntera.Split(',');
+                    else throw new Exception("El archivo está vació");
+
                     idProp = Convert.ToInt32(linea[1].Trim());
                     lineaEntera = sr.ReadLine();
+
+
                     while (lineaEntera != null)
                     {
                         linea = lineaEntera.Split(',');
@@ -165,15 +171,19 @@ namespace AlquileresTemporarios_TP2LAB2
                         string fechaEntrada = linea[1].Trim();
                         string fechaSalida = linea[2].Trim();
                         DateTime fechaInicio = DateTime.ParseExact(fechaEntrada, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
-                        DateTime nuevaFechaInicio = new DateTime(fechaInicio.Year, fechaInicio.Month, fechaInicio.Day/*,
-                                                                         fechaInicio.Hour, fechaInicio.Minute, fechaInicio.Second*/);
+                        DateTime nuevaFechaInicio = new DateTime(fechaInicio.Year, fechaInicio.Month, fechaInicio.Day,
+                                                                         fechaInicio.Hour, fechaInicio.Minute, fechaInicio.Second);
                         DateTime fechaFinal = DateTime.ParseExact(fechaSalida, "d/M/yyyy H:mm:ss", CultureInfo.InvariantCulture);
-                        DateTime nuevaFechaFin = new DateTime(fechaFinal.Year, fechaFinal.Month, fechaFinal.Day/*,
-                                                                     fechaFinal.Hour, fechaFinal.Minute, fechaFinal.Second*/);
+                        DateTime nuevaFechaFin = new DateTime(fechaFinal.Year, fechaFinal.Month, fechaFinal.Day,
+                                                                     fechaFinal.Hour, fechaFinal.Minute, fechaFinal.Second);
                         cliente = new Cliente(Convert.ToInt32(linea[4].Trim()), linea[3].Trim());
                         cantPersonas = Convert.ToInt32(linea[5].Trim());
                         costo = Convert.ToDouble(linea[6].Trim());
-                        reserva = new Reserva(nroReserva, idProp, nuevaFechaInicio, nuevaFechaFin, cantPersonas, costo, cliente);
+                        
+
+                        
+
+
                         bool reservaExiste = false;
                         // linea = reserva.NroReserva.ToString() + ", " + reserva.FechaInicio.ToString() + ", " + reserva.FechaFin.ToString() + ", " + reserva.Cliente.Nombre.ToString() []3+ ", " + reserva.Cliente.Dni.ToString() + ", " + reserva.CantPersonas.ToString() + " " + reserva.Costo.ToString("$00,00");
 
@@ -183,22 +193,26 @@ namespace AlquileresTemporarios_TP2LAB2
                             {
                                 reservaExiste = true;
                             }
-
+/*(existeReserva.IdPropiedad == this.id && (fechaInicio >= existeReserva.FechaInicio && fechaInicio <= existeReserva.FechaFin) ||
+                                (fechaFinal >= existeReserva.FechaInicio && fechaFinal <= existeReserva.FechaFin))*/
                             // Verificar si hay reservas en las mismas fechas para las mismas propiedades
-                            if (existeReserva.IdPropiedad == this.id && (fechaInicio >= existeReserva.FechaInicio && fechaInicio <= existeReserva.FechaFin) ||
-                                (fechaFinal >= existeReserva.FechaInicio && fechaFinal <= existeReserva.FechaFin))
+                            if (existeReserva.IdPropiedad == this.id && !((fechaFinal<existeReserva.FechaInicio && fechaInicio<fechaFinal)||(fechaInicio>existeReserva.FechaFin && fechaFinal>fechaInicio))) 
                             {
                                 reservaExiste = true;
                             }
                         }
 
-                        // Si no existe, agregar la reserva a la lista
+                        // Si no existe, crea la reserva y la agrega a la lista
                         if (!reservaExiste)
                         {
-                            reservas.Add(reserva);
+                            if (nuevaFechaInicio >= DateTime.Now && nuevaFechaFin > nuevaFechaInicio)
+                                reserva = new Reserva(nroReserva, idProp, nuevaFechaInicio, nuevaFechaFin, cantPersonas, costo, cliente);
+                            else exito = false;
+                               reservas.Add(reserva);
                         }
                         lineaEntera = sr.ReadLine();
                     }
+                    
 
                 }
 
@@ -206,6 +220,7 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             catch (Exception ex)
             {
+                exito = false;
                 throw new Exception(ex.Message);
             }
             finally
@@ -213,6 +228,7 @@ namespace AlquileresTemporarios_TP2LAB2
                 if (sr != null) sr.Close();
                 if (calendario != null) calendario.Dispose();
             }
+            return exito;
         }
         public void ExportarCalendario()
         {

@@ -360,30 +360,6 @@ namespace AlquileresTemporarios_TP2LAB2
             }
             return clienteEncontrado;
         }
-
-       /* public Usuario BuscarUsuario(string nombre, string contraseña)
-        {
-            Usuario usuarioBuscado = null;
-            foreach(Usuario usuario in listaUsuarios)
-            {
-                if(usuario.Contraseña == contraseña && usuario.Nombre == nombre) usuarioBuscado=usuario;
-            }
-            return usuarioBuscado;
-        }
-
-        public bool AgregarUsuario(Usuario usuario)
-        {
-            bool exito=false;
-            if (usuario != null)
-            {
-                listaUsuarios.Add(usuario);
-                exito=true;
-            }
-            return exito;
-        }
-
-        */
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();

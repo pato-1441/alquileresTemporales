@@ -89,7 +89,6 @@
             this.tbDNI.Location = new System.Drawing.Point(17, 93);
             this.tbDNI.Margin = new System.Windows.Forms.Padding(2);
             this.tbDNI.Name = "tbDNI";
-            this.tbDNI.PasswordChar = '*';
             this.tbDNI.Size = new System.Drawing.Size(156, 20);
             this.tbDNI.TabIndex = 5;
             // 

@@ -183,3 +183,4 @@ E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\al
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.csproj.CopyComplete
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.exe
 E:\UTN FRP\Materias\Año 1 Cuatrimestre 2\Laboratorio II\Trabajo Practico III\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios-TP2LAB2.pdb
+E:\Facultad\laboratorioII\alquileresTemporales\AlquileresTemporarios-TP2LAB2\obj\Debug\AlquileresTemporarios_TP2LAB2.Estadisticas.resources

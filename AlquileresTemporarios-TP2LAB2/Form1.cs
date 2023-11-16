@@ -413,9 +413,9 @@ namespace AlquileresTemporarios_TP2LAB2
                                         {
                                             if (modalHuesped.ShowDialog() == DialogResult.OK)
                                             {
-                                                huespedes.Add("Nombre: "+ modalHuesped.tbNombre.Text+
-                                                            ", DNI: "+ modalHuesped.tbDNI.Text+
-                                                            ", Fec. Nacimiento: " + modalHuesped.dtpFecNacimiento.Value.ToShortDateString());
+                                                huespedes.Add("\tNombre: "+ modalHuesped.tbNombre.Text+
+                                                            "\n\tDNI: " + modalHuesped.tbDNI.Text+
+                                                            "\n\tFec. Nacimiento: " + modalHuesped.dtpFecNacimiento.Value.ToShortDateString());
                                             }
                                         }
                                         MessageBox.Show("Se ha registrado el cliente con DNI: " + registrarCliente.tbDNI.Text.ToString() + " con éxito.\n[IMPORTANTE] Su numero de reserva es: " + nroReserva);

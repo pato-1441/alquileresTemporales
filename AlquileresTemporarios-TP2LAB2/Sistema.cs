@@ -254,7 +254,8 @@ namespace AlquileresTemporarios_TP2LAB2
         {            
             FileStream archivo = null;
             StreamReader sr = null;
-            cantReservas = 0;            
+            cantReservas = 0;
+            bool exito = true;
             try
             {
                 archivo = new FileStream(path, FileMode.Open, FileAccess.Read);
@@ -268,6 +269,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     linea = lineaEntera.Split(';');
                     foreach (Propiedad prop in listaPropiedades)
                     {
+                        exito = true;
                         if (linea.Length == 8)
                         {
                             if (prop.IdPropiedad.ToString() == linea[1])
@@ -285,11 +287,24 @@ namespace AlquileresTemporarios_TP2LAB2
 
                                 Cliente cliente = new Cliente(Convert.ToInt32(linea[6]), linea[7]);
                                 Reserva reserva = new Reserva(Convert.ToInt32(linea[0]), Convert.ToInt32(linea[1]), nuevaFechaInicio, nuevaFechaFin, Convert.ToInt32(linea[4]), Convert.ToDouble(linea[5]), cliente);
-                                if (prop.AgregarReserva(reserva))
+
+
+                                foreach(Reserva reservaVieja in prop.Reservas)
                                 {
-                                cantReservas++;
-                                    cantidadReservas++;
+                                    if (!(nuevaFechaFin < reservaVieja.FechaInicio) || (nuevaFechaInicio > reservaVieja.FechaFin))
+                                    {
+                                        exito = false;
+                                    }
                                 }
+                                if (exito)
+                                {
+                                    prop.AgregarReserva(reserva);
+
+                                    cantReservas++;
+                                    cantidadReservas++;
+
+                                }
+                                
                             }
                         }
                         else
@@ -318,6 +333,7 @@ namespace AlquileresTemporarios_TP2LAB2
 
         public void ExportarReservas(string path)
         {
+            
             FileStream archivo = null;
             StreamWriter sr = null;
             try

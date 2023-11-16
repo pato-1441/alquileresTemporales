@@ -487,30 +487,54 @@ namespace AlquileresTemporarios_TP2LAB2
                                         " está siendo utilizado por otra persona");
                 }
             }
-            sw.WriteLine(nombre + ";" + contraseña + ";" + tipo);
+            sw.WriteLine(nombre + ";" + contraseña + ";" + tipo+";");
             sw.Close();
             sr.Close();
             fs.Dispose();
         }
-
-        public bool cambiarContraseña(string nombre, string contraseñaNueva)
+        public bool cambiarContraseña(string contraseñaNueva)
         {
             string ruta = Application.StartupPath + "/usuarios.txt";
-            FileStream fs = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
-            StreamWriter sw = new StreamWriter(fs);
+            string[] texto = sr.ReadToEnd().Split(';');
+            string parte = texto[0];
+            int cont = -1;
             bool encontrado = false;
-            string[] linea;
-            while (!sr.EndOfStream && encontrado ==false)
+            while(!encontrado && cont<texto.Length)
             {
-                linea = sr.ReadLine().Split(';');
-                if (linea[0] == nombre)
+                cont++;
+                parte = parte.Replace("\r", "");
+                parte = parte.Replace("\n", "");
+                if (cont % 3 == 0) 
                 {
-                    encontrado = true;
-                    sw.WriteLine(linea[0] + ";" + linea[1] + ";" + linea[2]);
+                    //texto[cont] = parte;
+                    if (parte == this.usuarioActual.Nombre)
+                    {
+                        texto[cont + 1] = contraseñaNueva;
+                        encontrado = true;
+                    }
                 }
+                if(cont<texto.Length)
+                parte = texto[cont+1];
             }
+            sr.Close();
+            fs.Dispose();
+
+            fs = new FileStream(ruta, FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            for (int i = 0; i < ((texto.Length-1) / 3); i++)
+            {
+                for(int j = 0; j < 3; j++)
+                {
+                    sw.Write(texto[(i*3)+j]+";");
+                }
+                //sw.WriteLine();
+            }
+            sw.Close();
+            fs.Dispose();
             return encontrado;
+
         }
-    }
+        }
 }

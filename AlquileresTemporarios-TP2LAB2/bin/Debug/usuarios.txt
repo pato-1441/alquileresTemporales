@@ -1,4 +1,4 @@
-admin;admin;administrador
-patricio;patricio;administrador
-julieta;julieta;empleado
-matias;matias;administrador
+admin;admin;administrador;
+patricio;hola;administrador;
+julieta;julieta;empleado;
+matias;matias;administrador;

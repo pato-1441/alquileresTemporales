@@ -894,19 +894,20 @@ namespace AlquileresTemporarios_TP2LAB2
         {
             RegistrarCliente cambiarContraseña = new RegistrarCliente();
 
-            cambiarContraseña.lbNombre.Text = "Nombre de Usuario";
-            cambiarContraseña.lbDNI.Text = "Nueva Contraseña";
+            cambiarContraseña.lbNombre.Text = "Nueva Contraseña";
+            cambiarContraseña.lbDNI.Visible=false ;
+            cambiarContraseña.tbDNI.Visible = false ;
 
-            try
-            {
                 if (cambiarContraseña.ShowDialog() == DialogResult.OK)
                 {
-                    if (sistema.cambiarContraseña(cambiarContraseña.tbNombre.Text, cambiarContraseña.tbDNI.Text))
+                    if (sistema.cambiarContraseña(cambiarContraseña.tbNombre.Text))
                     {
                         MessageBox.Show("Contraseña cambiada con éxito.");
                     }
                 else MessageBox.Show("No hay ningún usuario con ese nombre.");
                 }
+            try
+            {
             }
             catch ( Exception ex)
             {

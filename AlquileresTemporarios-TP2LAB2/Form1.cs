@@ -872,6 +872,7 @@ namespace AlquileresTemporarios_TP2LAB2
                     finAnterior += 50;
                     cont++;
                     g.FillRectangle(relleno_rec, rectangulo);
+                    relleno_rec.Dispose();
                     relleno_rec = new SolidBrush(colores[cont]);
                     
 
@@ -882,11 +883,12 @@ namespace AlquileresTemporarios_TP2LAB2
                     finAnterior += 50;
                     cont++;
                     g.FillRectangle(relleno_rec, rectangulo);
+                    relleno_rec.Dispose();
                     relleno_rec = new SolidBrush(colores[cont]);
                 }
             }
 
-            relleno_pie.Dispose();
+            //relleno_pie.Dispose();
 
             return bitmap;
         }
@@ -970,10 +972,6 @@ namespace AlquileresTemporarios_TP2LAB2
                     }
                 }else salir= true;
             }
-            
-
-
-
         }
     }
     }

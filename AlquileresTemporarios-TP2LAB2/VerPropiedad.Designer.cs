@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerPropiedad));
             this.lbUbicacion = new System.Windows.Forms.Label();
             this.pbImagen4 = new System.Windows.Forms.PictureBox();
             this.pbImagen5 = new System.Windows.Forms.PictureBox();
@@ -277,13 +278,14 @@
             // 
             // btnCalendario
             // 
+            this.btnCalendario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalendario.BackgroundImage")));
+            this.btnCalendario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCalendario.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.btnCalendario.Location = new System.Drawing.Point(596, 242);
+            this.btnCalendario.Location = new System.Drawing.Point(643, 242);
             this.btnCalendario.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalendario.Name = "btnCalendario";
-            this.btnCalendario.Size = new System.Drawing.Size(88, 40);
+            this.btnCalendario.Size = new System.Drawing.Size(40, 40);
             this.btnCalendario.TabIndex = 23;
-            this.btnCalendario.Text = " Ver calendario de reservas";
             this.btnCalendario.UseVisualStyleBackColor = true;
             // 
             // btnImprimir

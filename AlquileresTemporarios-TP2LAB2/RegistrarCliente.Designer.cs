@@ -147,10 +147,13 @@
             this.btnVerContraseña.BackColor = System.Drawing.SystemColors.Control;
             this.btnVerContraseña.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerContraseña.BackgroundImage")));
             this.btnVerContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVerContraseña.Location = new System.Drawing.Point(144, 91);
+            this.btnVerContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerContraseña.Location = new System.Drawing.Point(144, 93);
             this.btnVerContraseña.Name = "btnVerContraseña";
-            this.btnVerContraseña.Size = new System.Drawing.Size(30, 24);
+            this.btnVerContraseña.Size = new System.Drawing.Size(29, 20);
             this.btnVerContraseña.TabIndex = 9;
+            this.btnVerContraseña.TabStop = false;
+            this.btnVerContraseña.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVerContraseña.UseVisualStyleBackColor = false;
             this.btnVerContraseña.Visible = false;
             this.btnVerContraseña.Click += new System.EventHandler(this.btnVerContraseña_Click);
@@ -175,7 +178,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistrarCliente";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cliente nuevo";
             this.statusStrip1.ResumeLayout(false);

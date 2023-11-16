@@ -333,6 +333,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VerPropiedad";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerPropiedad";
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen4)).EndInit();

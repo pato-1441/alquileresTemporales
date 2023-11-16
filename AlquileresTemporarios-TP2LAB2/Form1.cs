@@ -950,6 +950,7 @@ namespace AlquileresTemporarios_TP2LAB2
             agregarUsuario.btnVerContraseña.Visible = true;
             agregarUsuario.btnVerContraseña.BringToFront();
             agregarUsuario.tbDNI.PasswordChar = '*';
+            agregarUsuario.tbDNI.Width = 129;
             bool salir = false;
             while (!salir)
             {

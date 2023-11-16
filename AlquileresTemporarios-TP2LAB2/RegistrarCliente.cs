@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlquileresTemporarios_TP2LAB2.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,8 +32,16 @@ namespace AlquileresTemporarios_TP2LAB2
 
         private void btnVerContraseña_Click(object sender, EventArgs e)
         {
-            if (tbDNI.PasswordChar == '\0') tbDNI.PasswordChar = '*';
-            else tbDNI.PasswordChar = '\0';
+            if (tbDNI.PasswordChar == '\0')
+            {
+                tbDNI.PasswordChar = '*';
+                btnVerContraseña.BackgroundImage = Resources.ojosContraseñas2;
+            }
+            else
+            {
+                tbDNI.PasswordChar = '\0';
+                btnVerContraseña.BackgroundImage = Resources.ojosContraseñas___copia;
+            }
         }
     }
 }

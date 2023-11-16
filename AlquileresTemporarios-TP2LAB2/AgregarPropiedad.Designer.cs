@@ -710,6 +710,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarPropiedad";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar propiedad";
             ((System.ComponentModel.ISupportInitialize)(this.nudCantPersonas)).EndInit();
